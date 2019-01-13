@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as THREE from 'three';
+import { LightShadow } from 'three';
 
 @Component({
   selector: 'app-cube-component',
@@ -20,6 +21,9 @@ export class CubeComponentComponent implements OnInit {
       1000
     );
 
+    const axis = new THREE.AxesHelper(15);
+    scene.add(axis);
+
     const renderer = new THREE.WebGLRenderer();
 
     // set size
@@ -28,36 +32,52 @@ export class CubeComponentComponent implements OnInit {
     // add canvas to dom
     document.body.getElementsByClassName('renderElement')[0].appendChild(renderer.domElement);
 
-    // add axis to the scene
-    const axis = new THREE.AxesHelper(10);
+    scene.add( new THREE.AmbientLight( 0x505050, 3 ) );
+   
+    var dirLight = new THREE.DirectionalLight( 0x55505a, 1 );
+    dirLight.position.set( 0, 3, 0 );
+    dirLight.castShadow = true;
+    dirLight.shadow.camera.near = 1;
+    dirLight.shadow.camera.far = 10;
+    dirLight.shadow.camera.right = 1;
+    dirLight.shadow.camera.left = - 1;
+    dirLight.shadow.camera.top	= 1;
+    dirLight.shadow.camera.bottom = - 1;
+    dirLight.shadow.mapSize.width = 1024;
+    dirLight.shadow.mapSize.height = 1024;
+    scene.add( dirLight );
+    
 
-    scene.add(axis);
+    const material = new THREE.MeshPhongMaterial({
+      color: 0xFF9900,
+      shininess: 100,
+    });
 
-    // add lights
-    const light = new THREE.DirectionalLight(0xffffff, 1.0);
-
-    light.position.set(100, 100, 100);
-
-    scene.add(light);
-
-    const light2 = new THREE.DirectionalLight(0xffffff, 1.0);
-
-    light2.position.set(-100, 100, -100);
-
-    scene.add(light2);
-
-    const material = new THREE.MeshBasicMaterial({
-      color: 0xaaaaaa,
-      wireframe: true
+    const material2 = new THREE.MeshPhongMaterial({
+      color: 0xFFFFFF,
+      shininess: 150
     });
 
     // create a box and add it to the scene
     const box = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), material);
-
+    box.castShadow = true;
     scene.add(box);
 
-    box.position.x = 0.5;
-    // box.rotation.y = 0.5;
+    const plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(9, 9, 1, 1), material2);
+    plane.receiveShadow = true;
+    plane.rotation.x = -1.57;
+    plane.rotation.y = 0;
+    plane.rotation.z = 0;
+
+    plane.position.x = -5;
+    plane.position.y = -5;
+    plane.position.z = -5;
+
+    scene.add(plane);
+  
+    box.position.x = 2;
+    box.position.y = 2.5;
+    box.position.z = 2;
 
     camera.position.x = 5;
     camera.position.y = 5;
@@ -72,8 +92,6 @@ export class CubeComponentComponent implements OnInit {
 
     function render(): void {
       const timer = 0.002 * Date.now();
-      // box.position.y = 0.5 + 0.5 * Math.sin(timer);
-      // box.rotation.x += 0.1;
       renderer.render(scene, camera);
     }
 
