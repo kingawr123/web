@@ -5,21 +5,24 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { MatButtonModule, MatCheckboxModule, MatIconModule, MatSidenavModule, MatListModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatIconModule, MatSidenavModule, MatListModule, MatToolbarModule,
+MatSliderModule } from '@angular/material';
 import { CubeComponentComponent } from './cube-component/cube-component.component';
+import { CuboidComponentComponent } from './cuboid-component/cuboid-component.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CubeComponentComponent
+    CubeComponentComponent,
+    CuboidComponentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatButtonModule, MatCheckboxModule, MatIconModule, MatSidenavModule, MatListModule, MatToolbarModule
+    MatButtonModule, MatCheckboxModule, MatIconModule, MatSidenavModule, MatListModule, MatToolbarModule, MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,14 +4,15 @@ import { MatSliderChange } from '@angular/material';
 import { addPlane } from 'src/threejsHelpers/addPlane';
 import { addBox } from 'src/threejsHelpers/addFigure';
 import { addLight } from '../../threejsHelpers/addLight';
+import { addCuboid } from '../../threejsHelpers/addFigure';
 
 @Component({
-  selector: 'app-cube-component',
-  templateUrl: './cube-component.component.html',
-  styleUrls: ['./cube-component.component.scss']
+  selector: 'app-cuboid-component',
+  templateUrl: './cuboid-component.component.html',
+  styleUrls: ['./cuboid-component.component.scss']
 })
-export class CubeComponentComponent implements OnInit {
 
+export class CuboidComponentComponent implements OnInit {
   value: number;
 
   box: THREE.Mesh;
@@ -45,7 +46,7 @@ export class CubeComponentComponent implements OnInit {
     scene.add( dirLight );
 
     // create a box and add it to the scene
-    this.box = addBox();
+    this.box = addCuboid();
     scene.add(this.box);
 
     const plane = addPlane();
@@ -71,4 +72,5 @@ export class CubeComponentComponent implements OnInit {
   updateBoxX(change: MatSliderChange) {
     this.box.position.x = change.value;
   }
+
 }
