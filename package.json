@@ -1,44 +1,54 @@
 {
-  "name": "three-typescript-starter",
-  "version": "1.0.0",
-  "description": "three.js + typescript",
-  "main": "index.js",
+  "name": "my-app",
+  "version": "0.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --inline --open"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pinqy520/three-typescript-starter.git"
-  },
-  "keywords": [],
-  "author": "Huang Qi",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pinqy520/three-typescript-starter/issues"
-  },
-  "homepage": "https://github.com/pinqy520/three-typescript-starter#readme",
-  "devDependencies": {
-    "awesome-typescript-loader": "latest",
-    "browser-sync": "latest",
-    "browser-sync-webpack-plugin": "latest",
-    "css-loader": "latest",
-    "extract-text-webpack-plugin": "latest",
-    "html-webpack-plugin": "latest",
-    "json-loader": "latest",
-    "progress-bar-webpack-plugin": "latest",
-    "style-loader": "latest",
-    "typescript": "latest",
-    "webpack": "latest",
-    "webpack-cli": "^3.0.8",
-    "webpack-dev-server": "latest"
-  },
+  "private": true,
   "dependencies": {
-    "@types/dat.gui": "^0.7.2",
+    "@angular/animations": "^7.2.0",
+    "@angular/cdk": "^7.2.1",
+    "@angular/common": "~7.2.0",
+    "@angular/compiler": "~7.2.0",
+    "@angular/core": "~7.2.0",
+    "@angular/forms": "~7.2.0",
+    "@angular/material": "^7.2.1",
+    "@angular/platform-browser": "~7.2.0",
+    "@angular/platform-browser-dynamic": "~7.2.0",
+    "@angular/router": "~7.2.0",
     "@types/three": "latest",
-    "dat.gui": "^0.7.5",
+    "core-js": "^2.5.4",
+    "hammerjs": "^2.0.8",
+    "rxjs": "~6.3.3",
+    "sigma": "^1.2.1",
     "three": "latest",
-    "three-dragcontrols": "^0.88.2",
-    "three-orbitcontrols": "^2.99.1"
+    "tslib": "^1.9.0",
+    "zone.js": "~0.8.26"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.12.0",
+    "@angular/cli": "~7.2.1",
+    "@angular/compiler-cli": "~7.2.0",
+    "@angular/language-service": "~7.2.0",
+    "@types/node": "~8.9.4",
+    "@types/jasmine": "~2.8.8",
+    "@types/jasminewd2": "~2.0.3",
+    "codelyzer": "~4.5.0",
+    "jasmine-core": "~2.99.1",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~3.1.1",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "~2.0.1",
+    "karma-jasmine": "~1.1.2",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "protractor": "~5.4.0",
+    "ts-node": "~7.0.0",
+    "tslint": "~5.11.0",
+    "typescript": "~3.2.2"
   }
 }
