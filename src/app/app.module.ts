@@ -6,23 +6,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { MatButtonModule, MatCheckboxModule, MatIconModule, MatSidenavModule, MatListModule, MatToolbarModule,
-MatSliderModule } from '@angular/material';
+MatSliderModule, MatMenuModule } from '@angular/material';
 import { CubeComponentComponent } from './cube-component/cube-component.component';
 import { CuboidComponentComponent } from './cuboid-component/cuboid-component.component';
+import { StartPagedComponentComponent } from './start-paged-component/start-paged-component.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CubeComponentComponent,
-    CuboidComponentComponent
+    CuboidComponentComponent,
+    StartPagedComponentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatButtonModule, MatCheckboxModule, MatIconModule, MatSidenavModule, MatListModule, MatToolbarModule, MatSliderModule
+    MatButtonModule, MatCheckboxModule, MatIconModule, MatSidenavModule, MatListModule, MatToolbarModule, MatSliderModule, MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

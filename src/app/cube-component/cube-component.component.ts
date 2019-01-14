@@ -4,6 +4,7 @@ import { MatSliderChange } from '@angular/material';
 import { addPlane } from 'src/threejsHelpers/addPlane';
 import { addBox } from 'src/threejsHelpers/addFigure';
 import { addLight } from '../../threejsHelpers/addLight';
+import { Button } from 'protractor';
 
 @Component({
   selector: 'app-cube-component',
@@ -50,7 +51,6 @@ export class CubeComponentComponent implements OnInit {
 
     const plane = addPlane();
     scene.add(plane);
-
 
     camera.position.set(5, 5, 5);
 

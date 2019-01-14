@@ -1,10 +1,14 @@
 <div>
   <mat-toolbar>
-      <span>Przekroje figur</span>
+    <div>
+      <i class="material-icons md-36pd" style="margin-right: 0.4em">dashboard</i>
+      <span mat-raised-button routerLink="startPage">Przekroje figur</span>
       <a mat-raised-button routerLink="cube">Sześcian</a>
       <a mat-raised-button routerLink="cuboid">Prostopadłościan</a>
       <a mat-raised-button routerLink=".">Kula</a>
       <a mat-raised-button routerLink=".">Stożek</a>
+      <a mat-raised-button routerLink="startPage" style="margin-left: 800px">Strona główna</a>
+    </div>
   </mat-toolbar>
 </div>
 <router-outlet></router-outlet>
