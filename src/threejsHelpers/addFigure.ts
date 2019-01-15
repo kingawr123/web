@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { Mesh } from 'three';
 
 export function addBox() {
 
@@ -41,6 +42,23 @@ export function addCuboid(){
   box.position.set(2, 2.5, 2);
 
   return box;
+}
+
+export function addPyrmid(){
+  const material = new THREE.MeshPhongMaterial({
+    color: 0xFF9900,
+    shininess: 100,
+  });
+
+  var geo = new THREE.CylinderGeometry(0, 1.75, 2, 4, 1, true);
+
+  var pyramid = new THREE.Mesh(geo, material);
+  pyramid.position.set(2, 2.5, 2);
+  pyramid.castShadow = true;
+
+  pyramid.rotation.y = 70;
+
+  return pyramid
 }
 
 

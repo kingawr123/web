@@ -11,6 +11,7 @@ import { CubeComponentComponent } from './cube-component/cube-component.componen
 import { CuboidComponentComponent } from './cuboid-component/cuboid-component.component';
 import { StartPagedComponentComponent } from './start-paged-component/start-paged-component.component';
 import { SphereComponentComponent } from './sphere-component/sphere-component.component';
+import { PyramidComponentComponent } from './pyramid-component/pyramid-component.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { SphereComponentComponent } from './sphere-component/sphere-component.co
     CubeComponentComponent,
     CuboidComponentComponent,
     StartPagedComponentComponent,
-    SphereComponentComponent
+    SphereComponentComponent,
+    PyramidComponentComponent
   ],
   imports: [
     BrowserModule,
