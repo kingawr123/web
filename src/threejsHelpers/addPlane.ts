@@ -3,7 +3,7 @@ import * as THREE from 'three';
 export function addPlane() {
 
   const material2 = new THREE.MeshPhongMaterial({
-    color: 0xFFFFFF,
+    color: 0xBDBDBD,
     shininess: 150
   });
 

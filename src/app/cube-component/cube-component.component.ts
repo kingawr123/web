@@ -4,7 +4,6 @@ import { MatSliderChange } from '@angular/material';
 import { addPlane } from 'src/threejsHelpers/addPlane';
 import { addBox } from 'src/threejsHelpers/addFigure';
 import { addLight } from '../../threejsHelpers/addLight';
-import { Button } from 'protractor';
 
 @Component({
   selector: 'app-cube-component',
@@ -22,12 +21,7 @@ export class CubeComponentComponent implements OnInit {
     const scene = new THREE.Scene();
 
     // create the camera
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000
-    );
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
     const axis = new THREE.AxesHelper(15);
     scene.add(axis);

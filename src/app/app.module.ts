@@ -10,6 +10,7 @@ MatSliderModule, MatMenuModule } from '@angular/material';
 import { CubeComponentComponent } from './cube-component/cube-component.component';
 import { CuboidComponentComponent } from './cuboid-component/cuboid-component.component';
 import { StartPagedComponentComponent } from './start-paged-component/start-paged-component.component';
+import { SphereComponentComponent } from './sphere-component/sphere-component.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { StartPagedComponentComponent } from './start-paged-component/start-page
     AppComponent,
     CubeComponentComponent,
     CuboidComponentComponent,
-    StartPagedComponentComponent
+    StartPagedComponentComponent,
+    SphereComponentComponent
   ],
   imports: [
     BrowserModule,
