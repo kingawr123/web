@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as THREE from 'three';
 import { addLight } from 'src/threejsHelpers/addLight';
 import { addPlane } from 'src/threejsHelpers/addPlane';
-import { addSphere } from 'src/threejsHelpers/addFigure';
-import { addPyrmid } from '../../threejsHelpers/addFigure';
+import { addPyramid } from '../../threejsHelpers/addFigure';
 
 @Component({
   selector: 'app-pyramid-component',
@@ -38,7 +37,7 @@ export class PyramidComponentComponent implements OnInit {
       const plane = addPlane();
       scene.add(plane);
 
-      const pyramid = addPyrmid();
+      const pyramid = addPyramid();
       scene.add(pyramid);
 
       function render(): void {

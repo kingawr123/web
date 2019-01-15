@@ -44,13 +44,30 @@ export function addCuboid(){
   return box;
 }
 
-export function addPyrmid(){
+export function addCone(){
   const material = new THREE.MeshPhongMaterial({
     color: 0xFF9900,
     shininess: 100,
   });
 
-  var geo = new THREE.CylinderGeometry(0, 1.75, 2, 4, 1, true);
+  var geo = new THREE.CylinderGeometry(0, 1, 2, 50, 1, true);
+
+  var cone = new THREE.Mesh(geo, material);
+  cone.position.set(2, 2.5, 2);
+  cone.castShadow = true;
+
+  cone.rotation.y = 70;
+
+  return cone
+}
+
+export function addPyramid(){
+  const material = new THREE.MeshPhongMaterial({
+    color: 0xFF9900,
+    shininess: 100,
+  });
+
+  var geo = new THREE.CylinderGeometry(0, 1, 2, 4, 1, true);
 
   var pyramid = new THREE.Mesh(geo, material);
   pyramid.position.set(2, 2.5, 2);
