@@ -4,7 +4,7 @@ import { MatSliderChange } from '@angular/material';
 import { addPlane } from 'src/threejsHelpers/addPlane';
 import { addBox } from 'src/threejsHelpers/addFigure';
 import { addLight } from '../../threejsHelpers/addLight';
-import { addClippingPlane } from '../../threejsHelpers/addPlane';
+import { Camera } from 'three';
 
 @Component({
   selector: 'app-cube-component',
@@ -17,12 +17,15 @@ export class CubeComponentComponent implements OnInit {
 
   box: THREE.Mesh;
 
+  camera: THREE.PerspectiveCamera;
+
   constructor() { }
   ngOnInit(): void {
     const scene = new THREE.Scene();
 
     // create the camera
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    this.camera = camera;
 
     const axis = new THREE.AxesHelper(15);
     scene.add(axis);
@@ -30,7 +33,7 @@ export class CubeComponentComponent implements OnInit {
     const renderer = new THREE.WebGLRenderer();
 
     // set size
-    renderer.setSize(window.innerWidth , window.innerHeight - 68);
+    renderer.setSize(window.innerWidth /2 , window.innerHeight /2);
 
     // add canvas to dom
     document.body.getElementsByClassName('renderElement')[0].appendChild(renderer.domElement);
@@ -47,15 +50,9 @@ export class CubeComponentComponent implements OnInit {
     const plane = addPlane();
     scene.add(plane);
 
-    const clippingPlane = addClippingPlane();
-    clippingPlane.position.set(0, 0, 0);
-    scene.add(clippingPlane);
+    this.camera.position.set(5, 5, 5);
 
-    clippingPlane.visible = false;
-
-    camera.position.set(2, 2.5, 3.5);
-
-    camera.lookAt(scene.position);
+    this.camera.lookAt(scene.position);
 
     function animate(): void {
       requestAnimationFrame(animate);
@@ -71,5 +68,9 @@ export class CubeComponentComponent implements OnInit {
 
   updateBoxX(change: MatSliderChange) {
     this.box.position.x = change.value;
+  }
+
+  testMethod() {
+    this.camera.position.set(3, 3, 3);
   }
 }

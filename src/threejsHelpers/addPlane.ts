@@ -17,12 +17,3 @@ export function addPlane() {
 
   return plane;
 }
-
-export function addClippingPlane(){
-  const material2 = new THREE.MeshPhongMaterial({
-    color: 0x000000,
-  })
-  const clippingPlane = new THREE.Mesh(new THREE.PlaneBufferGeometry(50,20,10), material2);
-
-  return clippingPlane;
-}

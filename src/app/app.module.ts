@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { MatButtonModule, MatCheckboxModule, MatIconModule, MatSidenavModule, MatListModule, MatToolbarModule,
-MatSliderModule, MatMenuModule, MatProgressSpinner } from '@angular/material';
+MatSliderModule, MatMenuModule, MatProgressSpinner, MatCardModule } from '@angular/material';
 import { CubeComponentComponent } from './cube-component/cube-component.component';
 import { CuboidComponentComponent } from './cuboid-component/cuboid-component.component';
 import { StartPagedComponentComponent } from './start-paged-component/start-paged-component.component';
@@ -31,7 +31,7 @@ import { ConeComponentComponent } from './cone-component/cone-component.componen
     FormsModule,
     BrowserAnimationsModule,
     MatButtonModule, MatCheckboxModule, MatIconModule, MatSidenavModule, MatListModule, MatToolbarModule, MatSliderModule, MatMenuModule,
-
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
