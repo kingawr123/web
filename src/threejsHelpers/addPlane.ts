@@ -2,20 +2,27 @@ import * as THREE from 'three';
 
 export function addPlane() {
 
-  const material2 = new THREE.MeshPhongMaterial({
+  const material = new THREE.MeshPhongMaterial({
     color: 0xBDBDBD,
     shininess: 150
   });
 
-  const plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(25, 25), material2);
+  const plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(25, 25), material);
   plane.receiveShadow = true;
   plane.rotation.x = -1.57;
   plane.rotation.y = 0;
   plane.rotation.z = 0;
 
-  plane.position.x = -5;
-  plane.position.y = -5;
-  plane.position.z = -5;
+  plane.position.set(-5, -5, -5);
 
   return plane;
+}
+
+export function addClippingPlane(){
+  const material2 = new THREE.MeshPhongMaterial({
+    color: 0x000000,
+  })
+  const clippingPlane = new THREE.Mesh(new THREE.PlaneBufferGeometry(50,20,10), material2);
+
+  return clippingPlane;
 }

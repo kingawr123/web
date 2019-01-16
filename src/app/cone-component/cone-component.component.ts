@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import { addLight } from 'src/threejsHelpers/addLight';
 import { addPlane } from 'src/threejsHelpers/addPlane';
 import { addCone } from '../../threejsHelpers/addFigure';
+import { Button, element } from 'protractor';
 
 @Component({
   selector: 'app-cone-component',

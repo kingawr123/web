@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, enableProdMode } from '@angular/core';
 import * as THREE from 'three';
 import { MatSliderChange } from '@angular/material';
 import { addPlane } from 'src/threejsHelpers/addPlane';
 import { addBox } from 'src/threejsHelpers/addFigure';
 import { addLight } from '../../threejsHelpers/addLight';
+import { addClippingPlane } from '../../threejsHelpers/addPlane';
 
 @Component({
   selector: 'app-cube-component',
@@ -46,7 +47,13 @@ export class CubeComponentComponent implements OnInit {
     const plane = addPlane();
     scene.add(plane);
 
-    camera.position.set(5, 5, 5);
+    const clippingPlane = addClippingPlane();
+    clippingPlane.position.set(0, 0, 0);
+    scene.add(clippingPlane);
+
+    clippingPlane.visible = false;
+
+    camera.position.set(2, 2.5, 3.5);
 
     camera.lookAt(scene.position);
 

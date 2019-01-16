@@ -11,7 +11,7 @@ export function addBox() {
   const box = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), material);
   box.castShadow = true;
 
-  box.position.set(2, 2.5, 2);
+  box.position.set(0, 0, 0);
 
   return box;
 }
