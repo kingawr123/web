@@ -6,5 +6,56 @@ body {
   margin:0px;
   width: 100%;
   height: 100%;
+  background-color:white;
+}
+p{
+  font-size: 1em;
+  font-family:'Book Antiqua';
+  color: black;
+  text-align: center;
+  margin-top: 0.1em;
+  margin-bottom: 0.1em
+}
+
+h1{
+  vertical-align: middle;
+  line-height: 200px;
+  height: 200px;
+  width: 100%;
+  margin-bottom: 0%;
+  margin-top: 0%;
+  color:black;
+  font-family:'Book Antiqua';
+  font-size: 5em;
+  text-align: center;
+  text-decoration-line: underline
+}
+
+h2{
+  color:black;
+  font-family:'Book Antiqua';
+  font-size: 2.5em;
+  text-align: center;
+  text-decoration-line: underline;
+}
+
+.main-navigation {
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.452);
+}
+
+.teorySpace{
   background-color:#FAFAFA;
+  height:auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 40px;
+  padding-top: 20px;
+}
+
+.main-page{
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 10px;
+  margin-bottom: 80px;
+  background-color: #FAFAFA
 }

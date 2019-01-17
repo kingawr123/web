@@ -33,7 +33,7 @@ export class CubeComponentComponent implements OnInit {
     const renderer = new THREE.WebGLRenderer();
 
     // set size
-    renderer.setSize(window.innerWidth /2 , window.innerHeight /2);
+    renderer.setSize(window.innerWidth /1.3 , window.innerHeight /1.3);
 
     // add canvas to dom
     document.body.getElementsByClassName('renderElement')[0].appendChild(renderer.domElement);
