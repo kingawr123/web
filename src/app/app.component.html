@@ -1,14 +1,30 @@
 <div>
   <mat-toolbar>
     <div>
-      <i class="material-icons md-36pd" style="margin-right: 0.4em">dashboard</i>
-      <span mat-raised-button routerLink="startPage">Przekroje figur</span>
+      <i class="material-icons md-36pd" style="margin-right: 0.4em; color: black">dashboard</i>
+      <span mat-raised-button routerLink="startPage" style="color: black; font-family:Georgia, 'Times New Roman', Times, serif">Przekroje Figur</span>
       <a mat-raised-button routerLink="cube">Sześcian</a>
       <a mat-raised-button routerLink="cuboid">Prostopadłościan</a>
       <a mat-raised-button routerLink="sphere">Kula</a>
       <a mat-raised-button routerLink="pyramid">Ostrosłup</a>
       <a mat-raised-button routerLink="cone">Stożek</a>
-      <a mat-raised-button routerLink="startPage" style="margin-left: 700px">Strona główna</a>
+      <button style="position: absolute; right: 0" mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon style="color: black">more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>perm_identity</mat-icon>
+            <span>O autorze</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>web</mat-icon>
+            <span>O stronie</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>refresh</mat-icon>
+            <span>Strona Główna</span>
+            </button>
+        </mat-menu>
     </div>
   </mat-toolbar>
 </div>

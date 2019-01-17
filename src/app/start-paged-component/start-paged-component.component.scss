@@ -1,8 +1,4 @@
-body{
-  background-image:url("tlo.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+
 p{
   font-size: 1em;
   font-family:'Book Antiqua';
@@ -11,3 +7,18 @@ p{
   margin-top: 0.1em;
   margin-bottom: 0.1em
 }
+
+h1{
+  vertical-align: middle;
+  line-height: 200px;
+  height: 200px;
+  width: 100%;
+  margin-bottom: 0%;
+  margin-top: 0%;
+  color:black;
+  font-family:'Book Antiqua';
+  font-size: 5em;
+  text-align: center;
+  text-decoration-line: underline
+}
+
