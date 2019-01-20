@@ -1,6 +1,6 @@
   <body>
       <div class="main-navigation" class="main-page">
-      <div class="main-navigation" style="background-image: url('tlo2.jpg'); background-repeat: no-repeat; background-size: cover;">
+      <div class="main-head">
        <h1>SZEŚCIAN</h1>
        <div style="padding-bottom: 3em">
        <p>Ta strona zostałą stworzona na konkurs "Zobaczyć Matematyke" prowadzony przez AGH.</p>
@@ -9,34 +9,24 @@
      </div>
      <div style="padding-top: 10px">
      <div>
-       <div class="teorySpace">
-        <p>Tu będzie tekst.</p>
+       <div class="teorySpace1">
+         <div>
+           <div style="box-align: left">
+              <p>Tu będzie tekst.</p>
+           </div>
+            <div style="box-align: right">
+              Tu będzie obrazek.
+            </div>
+         </div>
       </div>
         <div>
         <h2>WIZUALIZACJA</h2>
       </div>
         <div>
             <div class="renderElement" style="background-color: black; padding-bottom: 20px">
-              <div>
-                <button mat-icon-button [matMenuTriggerFor]="menu">
-                  <mat-icon style="color:white">more_vert</mat-icon>
-                </button>
-                <mat-menu #menu="matMenu">
-                  <button mat-menu-item>
-                    <mat-icon>change_history</mat-icon>
-                    <span>Trójkąt</span>
-                  </button>
-                  <button mat-menu-item (click)="testMethod()">
-                    <mat-icon>check_box_outline_blank</mat-icon>
-                    <span>Kwadrat</span>
-                  </button>
-                  <button mat-menu-item>
-                    <mat-icon>refresh</mat-icon>
-                    <span>Powrót</span>
-                    </button>
-                </mat-menu>
-                <mat-slider min="1" max="5" step="0.01" [(ngModel)]="value" (input)="updateBoxX($event)" color="primary" style="width:15%; position:absolute"></mat-slider>
-              </div>
+                <mat-slider min="-1" max="1" step="0.01" [(ngModel)]="x" (input)="updateX($event)" color="primary" style="width:15%; position:absolute; margin-top:20px"></mat-slider>
+                <mat-slider min="-1" max="1" step="0.01" [(ngModel)]="y" (input)="updateY($event)" color="primary" style="width:15%; position:absolute; margin-top:40px"></mat-slider>
+                <mat-slider min="-1" max="1" step="0.01" [(ngModel)]="z" (input)="updateZ($event)" color="primary" style="width:15%; position:absolute; margin-top:60px"></mat-slider>
               </div>
          </div>
      </div>

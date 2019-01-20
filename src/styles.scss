@@ -17,6 +17,7 @@ p{
   margin-bottom: 0.1em
 }
 
+
 h1{
   vertical-align: middle;
   line-height: 200px;
@@ -25,7 +26,7 @@ h1{
   margin-bottom: 0%;
   margin-top: 0%;
   color:black;
-  font-family:'Book Antiqua';
+  font-family: 'Book Antiqua';
   font-size: 5em;
   text-align: center;
   text-decoration-line: underline
@@ -39,11 +40,23 @@ h2{
   text-decoration-line: underline;
 }
 
-.main-navigation {
-  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.452);
+h3{
+  color:black;
+  font-family:'Book Antiqua';
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 0.5em;
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.76);
 }
 
-.teorySpace{
+.main-head {
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.452);
+  background-image: url("tlo2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.teorySpace1{
   background-color:#FAFAFA;
   height:auto;
   padding-left: 50px;
@@ -52,10 +65,34 @@ h2{
   padding-top: 20px;
 }
 
+.teory-space2{
+  background-color:#FAFAFA;
+  height:auto;
+  padding: 2%;
+  color: #424242;
+}
+
 .main-page{
   margin-left: 100px;
   margin-right: 100px;
   margin-top: 10px;
   margin-bottom: 80px;
   background-color: #FAFAFA
+}
+
+.main-navigation{
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.452);
+}
+
+.card-style{
+  background-color: #CFD8DC;
+}
+
+.tab-style{
+  color: #424242;
+  padding-right: 0.5em
+}
+
+.all{
+  margin: auto;
 }

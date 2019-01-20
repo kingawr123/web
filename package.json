@@ -27,6 +27,8 @@
     "rxjs": "~6.3.3",
     "sigma": "^1.2.1",
     "three": "latest",
+    "three-orbitcontrols": "^2.99.1",
+    "three-orbitcontrols-ts": "^0.1.2",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },

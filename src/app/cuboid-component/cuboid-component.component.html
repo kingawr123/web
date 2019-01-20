@@ -1,20 +1,56 @@
-<div class="renderElement">
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon style="color: white">more_vert</mat-icon>
-      </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-          <mat-icon>change_history</mat-icon>
-          <span>Trójkąt</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>check_box_outline_blank</mat-icon>
-          <span>Kwadrat</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>refresh</mat-icon>
-          <span>Powrót</span>
-          </button>
-      </mat-menu>
-  <mat-slider min="1" max="5" step="0.01" [(ngModel)]="value" (input)="updateBoxX($event)" color="primary" style="width:15%; position:absolute"></mat-slider>
-  </div>
+<div class="all">
+<mat-grid-list cols="10">
+  <mat-grid-tile [colspan]='6' [rowspan]='5'>
+
+    <mat-card class="card-style mat-elevation-z8">
+        <mat-card-content>
+      <div class="renderElement">
+          <mat-slider min="1" max="5" step="0.01" [(ngModel)]="value" (input)="updateBoxX($event)" color="primary" style="width:15%; position:absolute"></mat-slider>
+      </div>
+    </mat-card-content>
+    </mat-card>
+
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]='4' [rowspan]='5'>
+    <mat-card class="card-style mat-elevation-z8">
+      <h3>PROSTOPADŁOCIAN</h3>
+    <div>
+      <mat-tab-group style="height: 80%">
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <mat-icon class="example-tab-icon tab-style">check_box_outline_blank</mat-icon>
+              <div class="tab-style">Kwadrat</div>
+            </ng-template>
+            <div class="teory-space2">
+              Tekst
+            </div>
+          </mat-tab>
+
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <mat-icon class="example-tab-icon tab-style">thumb_up</mat-icon>
+              <div class="tab-style">Prostokąt</div>
+            </ng-template>
+            <div class="teory-space2">
+                Tekst
+              </div>
+          </mat-tab>
+
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <mat-icon class="example-tab-icon tab-style">change_history</mat-icon>
+              <div class="tab-style">Trójkąt</div>
+            </ng-template>
+            <div class="teory-space2">
+                Tekst
+              </div>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+    </mat-card>
+
+  </mat-grid-tile>
+
+</mat-grid-list>
+</div>

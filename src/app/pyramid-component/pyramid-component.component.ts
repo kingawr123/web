@@ -22,7 +22,7 @@ export class PyramidComponentComponent implements OnInit {
       camera.lookAt(scene.position);
 
       const renderer = new THREE.WebGLRenderer();
-      renderer.setSize(window.innerWidth , window.innerHeight - 68);
+      renderer.setSize(window.innerWidth , window.innerHeight);
 
       document.body.getElementsByClassName('renderElement')[0].appendChild(renderer.domElement);
 

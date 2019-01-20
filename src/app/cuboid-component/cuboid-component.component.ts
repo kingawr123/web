@@ -12,7 +12,8 @@ import { addCuboid } from '../../threejsHelpers/addFigure';
   styleUrls: ['./cuboid-component.component.scss']
 })
 
-export class CuboidComponentComponent implements OnInit {
+export class CuboidComponentComponent implements OnInit  {
+
   value: number;
 
   box: THREE.Mesh;
@@ -22,12 +23,7 @@ export class CuboidComponentComponent implements OnInit {
     const scene = new THREE.Scene();
 
     // create the camera
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000
-    );
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
     const axis = new THREE.AxesHelper(15);
     scene.add(axis);
@@ -35,7 +31,7 @@ export class CuboidComponentComponent implements OnInit {
     const renderer = new THREE.WebGLRenderer();
 
     // set size
-    renderer.setSize(window.innerWidth , window.innerHeight - 68);
+    renderer.setSize(window.innerWidth/1.75 , (window.innerHeight)/1.6);
 
     // add canvas to dom
     document.body.getElementsByClassName('renderElement')[0].appendChild(renderer.domElement);
