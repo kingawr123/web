@@ -49,6 +49,21 @@ h3{
   box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.76);
 }
 
+h4{
+  color:black;
+  font-family:'Book Antiqua';
+  font-size: 2em;
+  margin-bottom: 1em;
+  text-align: left;
+}
+
+li{
+  color:black;
+  font-family:'Book Antiqua';
+  font-size: 20px;
+  text-align: left;
+}
+
 .main-head {
   box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.452);
   background-image: url("tlo2.jpg");
@@ -68,8 +83,14 @@ h3{
 .teory-space2{
   background-color:#FAFAFA;
   height:auto;
-  padding: 2%;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   color: #424242;
+  font-family: initial;
+  font-size: 1.3em;
+  text-indent: 1cm
 }
 
 .main-page{
@@ -86,11 +107,12 @@ h3{
 
 .card-style{
   background-color: #CFD8DC;
+  margin: 2%;
 }
 
 .tab-style{
   color: #424242;
-  padding-right: 0.5em
+  padding-right: 0.2em;
 }
 
 .all{

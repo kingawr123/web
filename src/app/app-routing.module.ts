@@ -6,6 +6,7 @@ import { StartPagedComponentComponent } from './start-paged-component/start-page
 import { SphereComponentComponent } from './sphere-component/sphere-component.component';
 import { PyramidComponentComponent } from './pyramid-component/pyramid-component.component';
 import { ConeComponentComponent } from './cone-component/cone-component.component';
+import { AboutPageComponentComponent } from './about-page-component/about-page-component.component';
 
 const routes: Routes = [
   {path: 'cube', component: CubeComponentComponent},
@@ -14,8 +15,8 @@ const routes: Routes = [
   {path: 'sphere', component: SphereComponentComponent},
   {path: 'pyramid', component: PyramidComponentComponent},
   {path: 'cone', component: ConeComponentComponent},
-  {path:'', redirectTo: '/startPage',
-   pathMatch: 'full'}
+  {path: 'aboutPage', component: AboutPageComponentComponent},
+  {path:'', redirectTo: '/startPage', pathMatch: 'full'}
 ];
 
 @NgModule({

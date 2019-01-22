@@ -13,6 +13,7 @@ import { StartPagedComponentComponent } from './start-paged-component/start-page
 import { SphereComponentComponent } from './sphere-component/sphere-component.component';
 import { PyramidComponentComponent } from './pyramid-component/pyramid-component.component';
 import { ConeComponentComponent } from './cone-component/cone-component.component';
+import { AboutPageComponentComponent } from './about-page-component/about-page-component.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ConeComponentComponent } from './cone-component/cone-component.componen
     SphereComponentComponent,
     PyramidComponentComponent,
     ConeComponentComponent,
+    AboutPageComponentComponent,
   ],
   imports: [
     BrowserModule,

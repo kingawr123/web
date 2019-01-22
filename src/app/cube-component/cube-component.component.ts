@@ -4,9 +4,10 @@ import { MatSliderChange } from '@angular/material';
 import { addPlane } from 'src/threejsHelpers/addPlane';
 import { addBox } from 'src/threejsHelpers/addFigure';
 import { addLight } from '../../threejsHelpers/addLight';
-import { Camera, Geometry } from 'three';
+import { Camera, Geometry, Scene, Vector3, Clock } from 'three';
 import { getPointsGeometry } from 'src/threejsHelpers/intersection';
 import { OrbitControls } from 'three-orbitcontrols-ts';
+import { Time } from '@angular/common';
 
 @Component({
   selector: 'app-cube-component',
@@ -44,7 +45,7 @@ export class CubeComponentComponent implements OnInit {
     const controls = new OrbitControls(camera, renderer.domElement);
 
     // set size
-    renderer.setSize(window.innerWidth / 1.3, window.innerHeight / 1.3);
+    renderer.setSize(window.innerWidth / 1.75, (window.innerHeight) / 1.6);
 
     // add canvas to dom
     document.body.getElementsByClassName('renderElement')[0].appendChild(renderer.domElement);
@@ -58,7 +59,7 @@ export class CubeComponentComponent implements OnInit {
     this.box = addBox();
     const box = this.box;
     box.visible = false;
-    this.helper = new THREE.EdgesHelper(this.box, 0xff0000);
+    this.helper = new THREE.EdgesHelper(this.box, 0xFF6D00);
     scene.add(this.helper);
     scene.add(box);
 
@@ -66,10 +67,10 @@ export class CubeComponentComponent implements OnInit {
     // scene.add(plane);
 
     this.camera.position.set(5, 5, 5);
-
     this.camera.lookAt(scene.position);
 
     function animate(): void {
+
       scene.remove(...scene.children.filter(e => e.name === 'linie'));
       debugger;
       const intersectionPoints = getPointsGeometry(box, thisComponent.x, thisComponent.y, thisComponent.z);
@@ -102,7 +103,44 @@ export class CubeComponentComponent implements OnInit {
     this.z = change.value;
   }
 
-  testMethod() {
-    this.camera.position.set(3, 3, 3);
+  cubeClipping1(){
+    this.camera.position.set(6, 1.5, 5.5)
+
+    this.camera.lookAt(new Vector3(0, 0, 0));
+    this.x = 0.1;
+    this.y = 0;
+    this.z = 0;
+  }
+
+  cubeClipping2() {
+   // const targetPosition = new Vector3(6, 1, 2);
+
+    this.camera.position.set(6, 1, 2)
+
+    this.camera.lookAt(new Vector3(0, 0, 0));
+    this.x = 0.00001;
+    this.y = 0.5;
+    this.z = 0.5;
+
+ //   this.camera.position = new THREE.Vector3().lerpVectors(this.camera.position, targetPosition, 0.01);
+
+  }
+
+  cubeClipping3(){
+    this.camera.position.set(6, 1.5, 5.5)
+
+    this.camera.lookAt(new Vector3(0, 0, 0));
+    this.x = 0.1;
+    this.y = -0.10011;
+    this.z = 0;
+  }
+
+  cubeClipping4(){
+    this.camera.position.set(6, 1.5, 5.5)
+
+    this.camera.lookAt(new Vector3(0, 0, 0));
+    this.x = 0.5;
+    this.y = 0.5;
+    this.z = 0.5;
   }
 }

@@ -1,36 +1,66 @@
-  <body>
-      <div class="main-navigation" class="main-page">
-      <div class="main-head">
-       <h1>SZEŚCIAN</h1>
-       <div style="padding-bottom: 3em">
-       <p>Ta strona zostałą stworzona na konkurs "Zobaczyć Matematyke" prowadzony przez AGH.</p>
-       <p>Ma ona na celu zwizualizacje przekrojów figur geometrycznych.</p>
-      </div>
-     </div>
-     <div style="padding-top: 10px">
-     <div>
-       <div class="teorySpace1">
-         <div>
-           <div style="box-align: left">
-              <p>Tu będzie tekst.</p>
-           </div>
-            <div style="box-align: right">
-              Tu będzie obrazek.
-            </div>
-         </div>
-      </div>
-        <div>
-        <h2>WIZUALIZACJA</h2>
-      </div>
-        <div>
-            <div class="renderElement" style="background-color: black; padding-bottom: 20px">
-                <mat-slider min="-1" max="1" step="0.01" [(ngModel)]="x" (input)="updateX($event)" color="primary" style="width:15%; position:absolute; margin-top:20px"></mat-slider>
+   <div class="all">
+    <mat-grid-list cols="10">
+      <mat-grid-tile [colspan]='6' [rowspan]='5'>
+
+        <mat-card class="card-style mat-elevation-z8">
+            <mat-card-content>
+              <div class="renderElement" style="background-color: black; padding-bottom: 20px">
+                <mat-slider min="-1" max="0.99" step="0.01" [(ngModel)]="x" (input)="updateX($event)" color="primary" style="width:15%; position:absolute; margin-top:20px"></mat-slider>
                 <mat-slider min="-1" max="1" step="0.01" [(ngModel)]="y" (input)="updateY($event)" color="primary" style="width:15%; position:absolute; margin-top:40px"></mat-slider>
                 <mat-slider min="-1" max="1" step="0.01" [(ngModel)]="z" (input)="updateZ($event)" color="primary" style="width:15%; position:absolute; margin-top:60px"></mat-slider>
               </div>
-         </div>
-     </div>
+        </mat-card-content>
+        </mat-card>
+
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]='4' [rowspan]='5'>
+        <mat-card class="card-style mat-elevation-z8">
+          <h3>SZEŚCIAN</h3>
+        <div>
+          <mat-tab-group style="height: 80%">
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="tab-style"(click)="cubeClipping1()">Kwadrat</div>
+                </ng-template>
+                <div class="teory-space2">
+                  Tekst
+                </div>
+              </mat-tab>
+
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="tab-style"(click)="cubeClipping2()">Prostokąt</div>
+                </ng-template>
+                <div class="teory-space2">
+                    Tekst
+                  </div>
+              </mat-tab>
+
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="tab-style" (click)="cubeClipping3()">Trójkąt</div>
+                </ng-template>
+                <div class="teory-space2">
+                    Tekst
+                  </div>
+              </mat-tab>
+
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="tab-style" (click)="cubeClipping4()">Sześciokąt</div>
+                </ng-template>
+                <div class="teory-space2">
+                    Tekst
+                  </div>
+              </mat-tab>
+
+            </mat-tab-group>
+          </div>
+        </mat-card>
+
+      </mat-grid-tile>
+
+    </mat-grid-list>
     </div>
-     </div>
-   </body>
 
