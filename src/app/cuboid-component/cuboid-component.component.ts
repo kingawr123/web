@@ -5,6 +5,8 @@ import { addPlane } from 'src/threejsHelpers/addPlane';
 import { addBox } from 'src/threejsHelpers/addFigure';
 import { addLight } from '../../threejsHelpers/addLight';
 import { addCuboid } from '../../threejsHelpers/addFigure';
+import { OrbitControls } from 'three-orbitcontrols-ts';
+import { getPointsGeometry } from 'src/threejsHelpers/intersection';
 
 @Component({
   selector: 'app-cuboid-component',
@@ -18,8 +20,16 @@ export class CuboidComponentComponent implements OnInit  {
 
   box: THREE.Mesh;
 
+  lines: THREE.LineSegments;
+  helper: THREE.EdgesHelper;
+
+  x = 0.5;
+  y = 0.5;
+  z = 0.5;
+
   constructor() { }
   ngOnInit(): void {
+    const thisComponent = this;
     const scene = new THREE.Scene();
 
     // create the camera
@@ -30,10 +40,10 @@ export class CuboidComponentComponent implements OnInit  {
 
     const renderer = new THREE.WebGLRenderer();
 
-    // set size
-    renderer.setSize(window.innerWidth/1.75 , (window.innerHeight)/1.6);
+    renderer.setSize(window.innerWidth/1.75 , window.innerHeight/1.6);
 
-    // add canvas to dom
+    const controls = new OrbitControls(camera, renderer.domElement);
+
     document.body.getElementsByClassName('renderElement')[0].appendChild(renderer.domElement);
 
     scene.add( new THREE.AmbientLight( 0x505050, 3 ) );
@@ -41,12 +51,15 @@ export class CuboidComponentComponent implements OnInit  {
     const dirLight = addLight();
     scene.add( dirLight );
 
-    // create a box and add it to the scene
     this.box = addCuboid();
+    const box = this.box;
+    box.visible = false;
+    this.helper = new THREE.EdgesHelper(box, 0xFF6D00);
+    scene.add(this.helper);
     scene.add(this.box);
 
-    const plane = addPlane();
-    scene.add(plane);
+    // const plane = addPlane();
+    // scene.add(plane);
 
 
     camera.position.set(5, 5, 5);
@@ -54,6 +67,15 @@ export class CuboidComponentComponent implements OnInit  {
     camera.lookAt(scene.position);
 
     function animate(): void {
+      scene.remove(...scene.children.filter(e => e.name === 'linie'));
+      debugger;
+      const intersectionPoints = getPointsGeometry(box, thisComponent.x, thisComponent.y, thisComponent.z);
+      const lines = new THREE.LineSegments(intersectionPoints, new THREE.LineBasicMaterial({
+        color: 0xffffff
+      }));
+      lines.name = 'linie';
+      scene.add(lines);
+
       requestAnimationFrame(animate);
       render();
     }
@@ -65,8 +87,16 @@ export class CuboidComponentComponent implements OnInit  {
     animate();
   }
 
-  updateBoxX(change: MatSliderChange) {
-    this.box.position.x = change.value;
+  updateX(change: MatSliderChange) {
+    this.x = change.value;
+  }
+
+  updateY(change: MatSliderChange) {
+    this.y = change.value;
+  }
+
+  updateZ(change: MatSliderChange) {
+    this.z = change.value;
   }
 
 }

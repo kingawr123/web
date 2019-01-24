@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import { addLight } from 'src/threejsHelpers/addLight';
 import { addPlane } from 'src/threejsHelpers/addPlane';
 import { addPyramid } from '../../threejsHelpers/addFigure';
+import { OrbitControls } from 'three-orbitcontrols-ts';
 
 @Component({
   selector: 'app-pyramid-component',
@@ -10,6 +11,15 @@ import { addPyramid } from '../../threejsHelpers/addFigure';
   styleUrls: ['./pyramid-component.component.scss']
 })
 export class PyramidComponentComponent implements OnInit {
+
+  box: THREE.Mesh;
+
+  lines: THREE.LineSegments;
+  helper: THREE.EdgesHelper;
+
+  x = 0.5;
+  y = 0.5;
+  z = 0.5;
 
     constructor() { }
 
@@ -22,7 +32,9 @@ export class PyramidComponentComponent implements OnInit {
       camera.lookAt(scene.position);
 
       const renderer = new THREE.WebGLRenderer();
-      renderer.setSize(window.innerWidth , window.innerHeight);
+      renderer.setSize(window.innerWidth/1.75 , window.innerHeight/1.6);
+
+      const controls = new OrbitControls(camera, renderer.domElement);
 
       document.body.getElementsByClassName('renderElement')[0].appendChild(renderer.domElement);
 
@@ -34,11 +46,13 @@ export class PyramidComponentComponent implements OnInit {
       const dirLight = addLight();
       scene.add( dirLight );
 
-      const plane = addPlane();
-      scene.add(plane);
-
-      const pyramid = addPyramid();
-      scene.add(pyramid);
+      this.box = addPyramid();
+      const box = this.box;
+      box.visible = false;
+      this.helper = new THREE.EdgesHelper(box, 0xFF6D00);
+      this.helper.rotation.y = 0.75;
+      scene.add(this.helper);
+      scene.add(box);
 
       function render(): void {
         renderer.render(scene, camera);

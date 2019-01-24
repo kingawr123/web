@@ -8,6 +8,8 @@ import { Camera, Geometry, Scene, Vector3, Clock } from 'three';
 import { getPointsGeometry } from 'src/threejsHelpers/intersection';
 import { OrbitControls } from 'three-orbitcontrols-ts';
 import { Time } from '@angular/common';
+import { timer } from 'rxjs';
+import { posix } from 'path';
 
 @Component({
   selector: 'app-cube-component',
@@ -24,9 +26,11 @@ export class CubeComponentComponent implements OnInit {
 
   lines: THREE.LineSegments;
   helper: THREE.EdgesHelper;
-  x = 0.5;
-  y = 0.5;
-  z = 0.5;
+  x = 0.1;
+  y = 0;
+  z = 0;
+
+  clock: Clock;
 
   constructor() { }
   ngOnInit(): void {
@@ -66,7 +70,7 @@ export class CubeComponentComponent implements OnInit {
     // const plane = addPlane();
     // scene.add(plane);
 
-    this.camera.position.set(5, 5, 5);
+    this.camera.position.set(5,5,5);
     this.camera.lookAt(scene.position);
 
     function animate(): void {
@@ -113,17 +117,16 @@ export class CubeComponentComponent implements OnInit {
   }
 
   cubeClipping2() {
-   // const targetPosition = new Vector3(6, 1, 2);
+    const targetPosition = new Vector3(6, 1, 2);
 
-    this.camera.position.set(6, 1, 2)
+   // this.camera.position.set(6, 1, 2)
 
     this.camera.lookAt(new Vector3(0, 0, 0));
     this.x = 0.00001;
     this.y = 0.5;
     this.z = 0.5;
 
- //   this.camera.position = new THREE.Vector3().lerpVectors(this.camera.position, targetPosition, 0.01);
-
+    this.camera.position = new THREE.Vector3().lerpVectors(this.camera.position, targetPosition, 0.2);
   }
 
   cubeClipping3(){

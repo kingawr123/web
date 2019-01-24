@@ -11,8 +11,6 @@ export function addBox() {
   const box = new THREE.Mesh(new THREE.BoxGeometry(4, 4, 4), material);
   box.castShadow = true;
 
-  // box.position.set(2, 2.5, 2);
-
   return box;
 }
 
@@ -38,10 +36,10 @@ export function addCuboid(){
     wireframe: true,
   });
 
-  const box = new THREE.Mesh(new THREE.BoxGeometry(1.5, 2.5, 1.5), material);
+  const box = new THREE.Mesh(new THREE.BoxGeometry(3, 4, 3), material);
   box.castShadow = true;
 
-  box.position.set(2, 2.5, 2);
+ // box.position.set(2, 2.5, 2);
 
   return box;
 }
@@ -71,10 +69,10 @@ export function addPyramid(){
     wireframe: true,
   });
 
-  var geo = new THREE.CylinderGeometry(0, 1, 2, 4, 1, true);
+  var geo = new THREE.CylinderGeometry(0, 3, 5, 4, 1, true);
 
   var pyramid = new THREE.Mesh(geo, material);
-  pyramid.position.set(2, 2.5, 2);
+ // pyramid.position.set(2, 2.5, 2);
   pyramid.castShadow = true;
 
   pyramid.rotation.y = 70;

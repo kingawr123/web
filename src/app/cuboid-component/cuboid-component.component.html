@@ -5,8 +5,10 @@
     <mat-card class="card-style mat-elevation-z8">
         <mat-card-content>
       <div class="renderElement">
-          <mat-slider min="1" max="5" step="0.01" [(ngModel)]="value" (input)="updateBoxX($event)" color="primary" style="width:15%; position:absolute"></mat-slider>
-      </div>
+          <mat-slider min="-1" max="1" step="0.01" [(ngModel)]="x" (input)="updateX($event)" color="primary" style="width:15%; position:absolute; margin-top:20px"></mat-slider>
+          <mat-slider min="-1" max="1" step="0.01" [(ngModel)]="y" (input)="updateY($event)" color="primary" style="width:15%; position:absolute; margin-top:40px"></mat-slider>
+          <mat-slider min="-1" max="1" step="0.01" [(ngModel)]="z" (input)="updateZ($event)" color="primary" style="width:15%; position:absolute; margin-top:60px"></mat-slider>
+        </div>
     </mat-card-content>
     </mat-card>
 
@@ -19,7 +21,6 @@
       <mat-tab-group style="height: 80%">
           <mat-tab>
             <ng-template mat-tab-label>
-              <mat-icon class="example-tab-icon tab-style">check_box_outline_blank</mat-icon>
               <div class="tab-style">Kwadrat</div>
             </ng-template>
             <div class="teory-space2">
@@ -29,7 +30,6 @@
 
           <mat-tab>
             <ng-template mat-tab-label>
-              <mat-icon class="example-tab-icon tab-style">thumb_up</mat-icon>
               <div class="tab-style">Prostokąt</div>
             </ng-template>
             <div class="teory-space2">
@@ -39,7 +39,6 @@
 
           <mat-tab>
             <ng-template mat-tab-label>
-              <mat-icon class="example-tab-icon tab-style">change_history</mat-icon>
               <div class="tab-style">Trójkąt</div>
             </ng-template>
             <div class="teory-space2">
