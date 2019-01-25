@@ -69,7 +69,7 @@ export class CuboidComponentComponent implements OnInit  {
     function animate(): void {
       scene.remove(...scene.children.filter(e => e.name === 'linie'));
       debugger;
-      const intersectionPoints = getPointsGeometry(box, thisComponent.x, thisComponent.y, thisComponent.z);
+      const intersectionPoints = getPointsGeometry(box, thisComponent.x, thisComponent.y, thisComponent.z, 0);
       const lines = new THREE.LineSegments(intersectionPoints, new THREE.LineBasicMaterial({
         color: 0xffffff
       }));

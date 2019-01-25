@@ -4,15 +4,15 @@ import { Geometry, Vector3 } from 'three';
 export function getPointsOfIntersection(line: THREE.Line3, plane: THREE.Plane) {
 
   const pointsOfIntersection: THREE.Vector3[] = [];
-  const pointOfIntersection = plane.intersectLine(line, undefined);
+  const pointOfIntersection = plane.intersectLine(line, new Vector3());
   if (pointOfIntersection) {
     pointsOfIntersection.push(pointOfIntersection.clone());
   };
   return pointsOfIntersection;
 }
 
-export function getPointsGeometry(object: THREE.Mesh, x: number, y: number, z: number) {
-  const mathPlane = new THREE.Plane(new Vector3(x, y, z) );
+export function getPointsGeometry(object: THREE.Mesh, x: number, y: number, z: number, offset: number) {
+  const mathPlane = new THREE.Plane(new Vector3(x, y, z), offset);
 
   const pointsGeometry = new THREE.Geometry();
   (object.geometry as Geometry).faces.forEach(function(face) {
