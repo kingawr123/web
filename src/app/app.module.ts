@@ -10,7 +10,6 @@ MatSliderModule, MatMenuModule, MatProgressSpinner, MatCardModule, MatGridListMo
 import { CubeComponentComponent } from './cube-component/cube-component.component';
 import { CuboidComponentComponent } from './cuboid-component/cuboid-component.component';
 import { StartPagedComponentComponent } from './start-paged-component/start-paged-component.component';
-import { SphereComponentComponent } from './sphere-component/sphere-component.component';
 import { PyramidComponentComponent } from './pyramid-component/pyramid-component.component';
 import { ConeComponentComponent } from './cone-component/cone-component.component';
 import { AboutPageComponentComponent } from './about-page-component/about-page-component.component';
@@ -22,7 +21,6 @@ import { AboutPageComponentComponent } from './about-page-component/about-page-c
     CubeComponentComponent,
     CuboidComponentComponent,
     StartPagedComponentComponent,
-    SphereComponentComponent,
     PyramidComponentComponent,
     ConeComponentComponent,
     AboutPageComponentComponent,

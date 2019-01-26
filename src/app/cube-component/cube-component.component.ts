@@ -74,6 +74,9 @@ export class CubeComponentComponent implements OnInit {
     self.camera.position.set(5, 5, 5);
     self.camera.lookAt(scene.position);
 
+    // const plane = addPlane();
+    // scene.add(plane);
+
     function animate(): void {
       self.camera.lookAt(self.cameraLookAtTarget);
 
