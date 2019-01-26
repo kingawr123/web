@@ -5,10 +5,10 @@
         <mat-card class="card-style mat-elevation-z8">
             <mat-card-content>
               <div class="renderElement" style="background-color: black; padding-bottom: 20px">
-                <mat-slider min="-1" max="0.99" step="0.01" [(ngModel)]="x" (input)="updateX($event)" color="primary" style="width:15%; position:absolute; margin-top:20px"></mat-slider>
-                <mat-slider min="-1" max="1" step="0.01" [(ngModel)]="y" (input)="updateY($event)" color="primary" style="width:15%; position:absolute; margin-top:40px"></mat-slider>
-                <mat-slider min="-1" max="1" step="0.01" [(ngModel)]="z" (input)="updateZ($event)" color="primary" style="width:15%; position:absolute; margin-top:60px"></mat-slider>
-                <mat-slider min="-1" max="1" step="0.01" [(ngModel)]="offset" (input)="updateOffset($event)" color="primary" style="width:15%; position:absolute; margin-top:80px"></mat-slider>
+                <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.x" (input)="planeVector.setX($event.value)" color="primary" style="width:15%; position:absolute; margin-top:20px"></mat-slider>
+                <mat-slider min="-1" max="1" step="0.01" [ngModel]="planeVector.y" (input)="planeVector.setY($event.value)" color="primary" style="width:15%; position:absolute; margin-top:40px"></mat-slider>
+                <mat-slider min="-1" max="1" step="0.01" [ngModel]="planeVector.z" (input)="planeVector.setZ($event.value)" color="primary" style="width:15%; position:absolute; margin-top:60px"></mat-slider>
+                <mat-slider min="-1" max="1" step="0.01" [ngModel]="planeVector.w" (input)="planeVector.setW($event.value)" color="primary" style="width:15%; position:absolute; margin-top:80px"></mat-slider>
               </div>
         </mat-card-content>
         </mat-card>

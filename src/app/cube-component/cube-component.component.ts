@@ -4,12 +4,13 @@ import { MatSliderChange, MatTabChangeEvent } from '@angular/material';
 import { addPlane } from 'src/threejsHelpers/addPlane';
 import { addBox } from 'src/threejsHelpers/addFigure';
 import { addLight } from '../../threejsHelpers/addLight';
-import { Camera, Geometry, Scene, Vector3, Clock } from 'three';
+import { Camera, Geometry, Scene, Vector3, Clock, Vector4 } from 'three';
 import { getPointsGeometry } from 'src/threejsHelpers/intersection';
 import { OrbitControls } from 'three-orbitcontrols-ts';
 import { Time } from '@angular/common';
 import { timer } from 'rxjs';
 import { posix } from 'path';
+import { compereVectors4 } from 'src/threejsHelpers/vectorsHelper';
 
 @Component({
   selector: 'app-cube-component',
@@ -26,14 +27,14 @@ export class CubeComponentComponent implements OnInit {
 
   lines: THREE.LineSegments;
   helper: THREE.EdgesHelper;
-  x = 0.1;
-  y = 0;
-  z = 0;
-  offset = 0;
 
   clock: Clock = new Clock();
   targetPosition: Vector3;
   startPosition: Vector3;
+  startPlaneVector: Vector4 = new Vector4(0.1, 0, 0, 0);
+  planeVector: Vector4 = new Vector4(0.1, 0, 0, 0);
+  targetPlaneVector: Vector4 = new Vector4(0.1, 0, 0, 0);
+  cameraLookAtTarget: Vector3 = new Vector3(0, 0, 0);
 
   constructor() { }
   ngOnInit(): void {
@@ -70,16 +71,23 @@ export class CubeComponentComponent implements OnInit {
     scene.add(self.helper);
     scene.add(box);
 
-    // const plane = addPlane();
-    // scene.add(plane);
-
     self.camera.position.set(5, 5, 5);
     self.camera.lookAt(scene.position);
 
     function animate(): void {
+      self.camera.lookAt(self.cameraLookAtTarget);
+
+      if (!self.targetPlaneVector.equals(self.startPlaneVector)) {
+        const elapsedTime = self.clock.getElapsedTime();
+        self.planeVector = new THREE.Vector4().lerpVectors(self.startPlaneVector, self.targetPlaneVector, Math.min(elapsedTime / 2.5, 1));
+        if(compereVectors4(self.targetPlaneVector, self.planeVector)) {
+          console.log('kupa');
+          self.startPlaneVector = self.targetPlaneVector;
+        }
+      }
 
       scene.remove(...scene.children.filter(e => e.name === 'linie'));
-      const intersectionPoints = getPointsGeometry(box, self.x, self.y, self.z, self.offset);
+      const intersectionPoints = getPointsGeometry(box, self.planeVector.x, self.planeVector.y, self.planeVector.z, self.planeVector.w);
       const lines = new THREE.LineSegments(intersectionPoints, new THREE.LineBasicMaterial({
         color: 0xffffff
       }));
@@ -92,16 +100,11 @@ export class CubeComponentComponent implements OnInit {
 
       if (self.targetPosition && !self.targetPosition.equals(self.startPosition)) {
         const elapsedTime = self.clock.getElapsedTime();
-        const { x, y, z } = new THREE.Vector3().lerpVectors(self.startPosition, self.targetPosition, Math.min(elapsedTime / 3, 1));
-        console.log(self.clock.getElapsedTime());
+        const {x,y,z} = new THREE.Vector3().lerpVectors(self.startPosition, self.targetPosition, Math.min(elapsedTime / 2.5, 1));
         self.camera.position.set(x, y, z);
-
-        if (self.camera.position.equals(self.targetPosition)) {
+        if(self.camera.position.equals(self.targetPosition)) {
           self.startPosition = self.targetPosition;
-          self.clock.stop();
         }
-        new THREE.Vector3().equals
-        // self.isClick = false;
       }
 
       requestAnimationFrame(animate);
@@ -115,23 +118,11 @@ export class CubeComponentComponent implements OnInit {
     animate();
   }
 
-  updateX(change: MatSliderChange) {
-    this.x = change.value;
-  }
-
-  updateY(change: MatSliderChange) {
-    this.y = change.value;
-  }
-
-  updateZ(change: MatSliderChange) {
-    this.z = change.value;
-  }
-
-  updateOffset(change: MatSliderChange) {
-    this.offset = change.value;
-  }
-
   tabChanged(event: MatTabChangeEvent) {
+    this.startPosition = this.camera.position;
+    this.startPlaneVector = this.planeVector.clone();
+    this.clock.stop();
+    this.clock.start();
     switch (event.index) {
       case 0:
         this.cubeClipping1();
@@ -149,44 +140,22 @@ export class CubeComponentComponent implements OnInit {
   }
 
   cubeClipping1() {
-    this.targetPosition = new Vector3(3, 3, 3);
-    this.clock.stop();
-    this.clock.start();
-    // this.camera.lookAt(new Vector3(0, 0, 0));
-    this.x = 0.1;
-    this.y = 0;
-    this.z = 0;
+    this.targetPosition = new Vector3(5, 5, 5);
+    this.targetPlaneVector.set(0.1, 0, 0, 0);
   }
 
   cubeClipping2() {
     this.targetPosition = new Vector3(6, 1, 2);
-    this.clock.stop();
-    this.clock.start();
-    // this.camera.lookAt(new Vector3(0, 0, 0));
-    this.x = 0.00001;
-    this.y = 0.5;
-    this.z = 0.5;
-
-    // this.camera.position = new THREE.Vector3().lerpVectors(this.camera.position, targetPosition, 0.2);
+    this.targetPlaneVector.set(0.0001, 0.5, 0.5, 0);
   }
 
   cubeClipping3() {
-    this.camera.position.set(6, 1.5, 5.5);
-    this.clock.stop();
-    this.clock.start();
-    // this.camera.lookAt(new Vector3(0, 0, 0));
-    this.x = 0.1;
-    this.y = -0.10011;
-    this.z = 0;
+    this.targetPosition = new Vector3(4, 1, 4);
+    this.targetPlaneVector.set(0.1, -0.1001, 0.1, -0.35);
   }
 
   cubeClipping4() {
-    this.camera.position.set(6, 1.5, 5.5)
-    this.clock.stop();
-    this.clock.start();
-    // this.camera.lookAt(new Vector3(0, 0, 0));
-    this.x = 0.5;
-    this.y = 0.5;
-    this.z = 0.5;
+    this.targetPosition = new Vector3(5, 5, 5);
+    this.targetPlaneVector.set(0.5, 0.5, 0.5, 0);
   }
 }
