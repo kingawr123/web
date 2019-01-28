@@ -13,6 +13,8 @@ import { StartPagedComponentComponent } from './start-paged-component/start-page
 import { PyramidComponentComponent } from './pyramid-component/pyramid-component.component';
 import { ConeComponentComponent } from './cone-component/cone-component.component';
 import { AboutPageComponentComponent } from './about-page-component/about-page-component.component';
+import { APP_BASE_HREF, LocationStrategy, HashLocationStrategy } from '@angular/common';
+
 
 
 @NgModule({
@@ -33,7 +35,10 @@ import { AboutPageComponentComponent } from './about-page-component/about-page-c
     MatButtonModule, MatCheckboxModule, MatIconModule, MatSidenavModule, MatListModule, MatToolbarModule, MatSliderModule, MatMenuModule,
     MatCardModule, MatGridListModule, MatTabsModule
   ],
-  providers: [],
+  providers: [
+    { provide: APP_BASE_HREF, useValue: '/' },
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

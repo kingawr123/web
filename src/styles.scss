@@ -109,11 +109,19 @@ li{
 .card-style{
   background-color: #CFD8DC;
   margin: 2%;
+  min-height: 280px;
 }
+
 
 .tab-style{
   color: #424242;
   padding-right: 0.2em;
+}
+
+mat-slider{
+  width:20%;
+  position:absolute;
+  margin-top:20px;
 }
 
 .all{

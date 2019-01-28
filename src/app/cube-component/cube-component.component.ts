@@ -52,10 +52,8 @@ export class CubeComponentComponent implements OnInit {
 
     const controls = new OrbitControls(camera, renderer.domElement);
 
-    // set size
-    renderer.setSize(window.innerWidth / 1.75, (window.innerHeight) / 1.6);
+    renderer.setSize(window.innerWidth, window.innerHeight);
 
-    // add canvas to dom
     document.body.getElementsByClassName('renderElement')[0].appendChild(renderer.domElement);
 
     scene.add(new THREE.AmbientLight(0x505050, 3));
