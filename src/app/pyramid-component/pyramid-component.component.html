@@ -1,37 +1,36 @@
 <div class="all">
-  <mat-grid-list cols="10">
-    <mat-grid-tile [colspan]='6' [rowspan]='5'>
+  <mat-grid-list cols="20">
+    <mat-grid-tile [colspan]='11' [rowspan]='10'>
 
-      <mat-card class="card-style mat-elevation-z8">
-          <mat-card-content>
-        <div class="renderElement">
-          </div>
-      </mat-card-content>
-      </mat-card>
+      <div class="renderElement" style="background-color: black; padding-bottom: 20px"></div>
 
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]='4' [rowspan]='5'>
+    <mat-grid-tile [colspan]='9' [rowspan]='10'>
       <mat-card class="card-style mat-elevation-z8">
         <h3>OSTROSŁUP</h3>
-      <div>
-        <mat-tab-group style="height: 80%">
+        <div>
+          <mat-tab-group style="height: 80%" (selectedTabChange)="tabChanged($event)">
             <mat-tab>
               <ng-template mat-tab-label>
                 <div class="tab-style">Kwadrat</div>
               </ng-template>
               <div class="teory-space2">
-                Tekst
+                <mat-slider min="-0.5" max="0.7" step="0.001" [ngModel]="planeVector.w" (input)="planeVector.setW($event.value)"
+                  color="primary"></mat-slider>
               </div>
             </mat-tab>
 
             <mat-tab>
               <ng-template mat-tab-label>
-                <div class="tab-style">Trapez</div>
+                <div class="tab-style">Prostokąt</div>
               </ng-template>
               <div class="teory-space2">
-                  Tekst
-                </div>
+                <mat-slider min="-1" max="1" step="0.01" [ngModel]="planeVector.y" (input)="planeVector.setY($event.value)"
+                  color="primary"></mat-slider>
+                <mat-slider min="-1" max="1" step="0.01" [ngModel]="planeVector.z" (input)="planeVector.setZ($event.value)"
+                  color="primary"></mat-slider>
+              </div>
             </mat-tab>
 
             <mat-tab>
@@ -39,9 +38,21 @@
                 <div class="tab-style">Trójkąt</div>
               </ng-template>
               <div class="teory-space2">
-                  Tekst
-                </div>
+                  <mat-slider min="-0.5" max="0.7" step="0.001" [ngModel]="planeVector.w" (input)="planeVector.setW($event.value)"
+                  color="primary"></mat-slider>
+              </div>
             </mat-tab>
+
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <div class="tab-style">Sześciokąt</div>
+              </ng-template>
+              <div class="teory-space2">
+                  <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.x" (input)="planeVector.setX($event.value)"
+                  color="primary"></mat-slider>
+              </div>
+            </mat-tab>
+
           </mat-tab-group>
         </div>
       </mat-card>
@@ -49,4 +60,4 @@
     </mat-grid-tile>
 
   </mat-grid-list>
-  </div>
+</div>

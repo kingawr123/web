@@ -51,7 +51,7 @@ export function addCone(){
     wireframe: true,
   });
 
-  var geo = new THREE.CylinderGeometry(0, 1, 2, 50, 1, true);
+  var geo = new THREE.ConeGeometry(2,4.5,50);
 
   var cone = new THREE.Mesh(geo, material);
   cone.position.set(2, 2.5, 2);
@@ -69,13 +69,11 @@ export function addPyramid(){
     wireframe: true,
   });
 
-  var geo = new THREE.CylinderGeometry(0, 3, 5, 4, 1, true);
+  var geo = new THREE.ConeGeometry(2,4.5,10);
 
   var pyramid = new THREE.Mesh(geo, material);
- // pyramid.position.set(2, 2.5, 2);
-  pyramid.castShadow = true;
 
-  pyramid.rotation.y = 70;
+  pyramid.castShadow = true;
 
   return pyramid
 }

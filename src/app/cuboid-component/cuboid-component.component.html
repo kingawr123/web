@@ -1,55 +1,65 @@
 <div class="all">
-<mat-grid-list cols="10">
-  <mat-grid-tile [colspan]='6' [rowspan]='5'>
+    <mat-grid-list cols="20">
+      <mat-grid-tile [colspan]='11' [rowspan]='10'>
 
-    <mat-card class="card-style mat-elevation-z8">
-        <mat-card-content>
-      <div class="renderElement">
-          <mat-slider min="-1" max="1" step="0.01" [(ngModel)]="x" (input)="updateX($event)" color="primary" style="width:15%; position:absolute; margin-top:20px"></mat-slider>
-          <mat-slider min="-1" max="1" step="0.01" [(ngModel)]="y" (input)="updateY($event)" color="primary" style="width:15%; position:absolute; margin-top:40px"></mat-slider>
-          <mat-slider min="-1" max="1" step="0.01" [(ngModel)]="z" (input)="updateZ($event)" color="primary" style="width:15%; position:absolute; margin-top:60px"></mat-slider>
-        </div>
-    </mat-card-content>
-    </mat-card>
+        <div class="renderElement" style="background-color: black; padding-bottom: 20px"></div>
 
-  </mat-grid-tile>
+      </mat-grid-tile>
 
-  <mat-grid-tile [colspan]='4' [rowspan]='5'>
-    <mat-card class="card-style mat-elevation-z8">
-      <h3>PROSTOPADŁOCIAN</h3>
-    <div>
-      <mat-tab-group style="height: 80%">
-          <mat-tab>
-            <ng-template mat-tab-label>
-              <div class="tab-style">Kwadrat</div>
-            </ng-template>
-            <div class="teory-space2">
-              Tekst
-            </div>
-          </mat-tab>
+      <mat-grid-tile [colspan]='9' [rowspan]='10'>
+        <mat-card class="card-style mat-elevation-z8">
+          <h3>PROSTOPADŁOCIAN</h3>
+          <div>
+            <mat-tab-group style="height: 80%" (selectedTabChange)="tabChanged($event)">
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="tab-style">Kwadrat</div>
+                </ng-template>
+                <div class="teory-space2">
+                  <div class="slide-box">
+                  <mat-slider min="-0.5" max="0.7" step="0.001" [ngModel]="planeVector.w" (input)="planeVector.setW($event.value)"
+                    color="primary"></mat-slider>
+                    </div>
+                </div>
+              </mat-tab>
 
-          <mat-tab>
-            <ng-template mat-tab-label>
-              <div class="tab-style">Prostokąt</div>
-            </ng-template>
-            <div class="teory-space2">
-                Tekst
-              </div>
-          </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="tab-style">Prostokąt</div>
+                </ng-template>
+                <div class="teory-space2">
+                  <div class="slide-box">
+                      <mat-slider min="-1" max="1" step="0.01" [ngModel]="planeVector.y" (input)="planeVector.setY($event.value)"
+                      color="primary"></mat-slider>
+                  </div>
+                </div>
+              </mat-tab>
 
-          <mat-tab>
-            <ng-template mat-tab-label>
-              <div class="tab-style">Trójkąt</div>
-            </ng-template>
-            <div class="teory-space2">
-                Tekst
-              </div>
-          </mat-tab>
-        </mat-tab-group>
-      </div>
-    </mat-card>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="tab-style">Trójkąt</div>
+                </ng-template>
+                <div class="teory-space2">
+                    <mat-slider min="-0.5" max="0.7" step="0.001" [ngModel]="planeVector.w" (input)="planeVector.setW($event.value)"
+                    color="primary"></mat-slider>
+                </div>
+              </mat-tab>
 
-  </mat-grid-tile>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div class="tab-style">Sześciokąt</div>
+                </ng-template>
+                <div class="teory-space2">
+                    <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.x" (input)="planeVector.setX($event.value)"
+                    color="primary"></mat-slider>
+                </div>
+              </mat-tab>
 
-</mat-grid-list>
-</div>
+            </mat-tab-group>
+          </div>
+        </mat-card>
+
+      </mat-grid-tile>
+
+    </mat-grid-list>
+  </div>

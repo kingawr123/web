@@ -7,9 +7,6 @@ import { addLight } from '../../threejsHelpers/addLight';
 import { Camera, Geometry, Scene, Vector3, Clock, Vector4 } from 'three';
 import { getPointsGeometry } from 'src/threejsHelpers/intersection';
 import { OrbitControls } from 'three-orbitcontrols-ts';
-import { Time } from '@angular/common';
-import { timer } from 'rxjs';
-import { posix } from 'path';
 import { compereVectors4 } from 'src/threejsHelpers/vectorsHelper';
 
 @Component({
@@ -72,8 +69,6 @@ export class CubeComponentComponent implements OnInit {
     self.camera.position.set(5, 5, 5);
     self.camera.lookAt(scene.position);
 
-    // const plane = addPlane();
-    // scene.add(plane);
 
     function animate(): void {
       self.camera.lookAt(self.cameraLookAtTarget);
@@ -82,7 +77,6 @@ export class CubeComponentComponent implements OnInit {
         const elapsedTime = self.clock.getElapsedTime();
         self.planeVector = new THREE.Vector4().lerpVectors(self.startPlaneVector, self.targetPlaneVector, Math.min(elapsedTime / 2.5, 1));
         if(compereVectors4(self.targetPlaneVector, self.planeVector)) {
-          console.log('kupa');
           self.startPlaneVector = self.targetPlaneVector;
         }
       }

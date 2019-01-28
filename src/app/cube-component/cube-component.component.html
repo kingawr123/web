@@ -16,8 +16,10 @@
                 <div class="tab-style">Kwadrat</div>
               </ng-template>
               <div class="teory-space2">
+                <div class="slide-box">
                 <mat-slider min="-0.5" max="0.7" step="0.001" [ngModel]="planeVector.w" (input)="planeVector.setW($event.value)"
                   color="primary"></mat-slider>
+                  </div>
               </div>
             </mat-tab>
 
@@ -26,10 +28,10 @@
                 <div class="tab-style">Prostokąt</div>
               </ng-template>
               <div class="teory-space2">
-                <mat-slider min="-1" max="1" step="0.01" [ngModel]="planeVector.y" (input)="planeVector.setY($event.value)"
-                  color="primary"></mat-slider>
-                <mat-slider min="-1" max="1" step="0.01" [ngModel]="planeVector.z" (input)="planeVector.setZ($event.value)"
-                  color="primary"></mat-slider>
+                <div class="slide-box">
+                    <mat-slider min="-1" max="1" step="0.01" [ngModel]="planeVector.y" (input)="planeVector.setY($event.value)"
+                    color="primary"></mat-slider>
+                </div>
               </div>
             </mat-tab>
 
