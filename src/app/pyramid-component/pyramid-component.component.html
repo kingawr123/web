@@ -2,7 +2,7 @@
   <mat-grid-list cols="20">
     <mat-grid-tile [colspan]='11' [rowspan]='10'>
 
-      <div class="renderElement" style="background-color: black; padding-bottom: 20px"></div>
+      <div class="renderElement"></div>
 
     </mat-grid-tile>
 
@@ -13,7 +13,7 @@
           <mat-tab-group style="height: 80%" (selectedTabChange)="tabChanged($event)">
             <mat-tab>
               <ng-template mat-tab-label>
-                <div class="tab-style">Kwadrat</div>
+                <div class="tab-style">Trójkąt</div>
               </ng-template>
               <div class="teory-space2">
                 <mat-slider min="-0.5" max="0.7" step="0.001" [ngModel]="planeVector.w" (input)="planeVector.setW($event.value)"
@@ -23,11 +23,9 @@
 
             <mat-tab>
               <ng-template mat-tab-label>
-                <div class="tab-style">Prostokąt</div>
+                <div class="tab-style">Podstawa</div>
               </ng-template>
               <div class="teory-space2">
-                <mat-slider min="-1" max="1" step="0.01" [ngModel]="planeVector.y" (input)="planeVector.setY($event.value)"
-                  color="primary"></mat-slider>
                 <mat-slider min="-1" max="1" step="0.01" [ngModel]="planeVector.z" (input)="planeVector.setZ($event.value)"
                   color="primary"></mat-slider>
               </div>
@@ -35,7 +33,7 @@
 
             <mat-tab>
               <ng-template mat-tab-label>
-                <div class="tab-style">Trójkąt</div>
+                <div class="tab-style">Trapez</div>
               </ng-template>
               <div class="teory-space2">
                   <mat-slider min="-0.5" max="0.7" step="0.001" [ngModel]="planeVector.w" (input)="planeVector.setW($event.value)"
@@ -43,7 +41,7 @@
               </div>
             </mat-tab>
 
-            <mat-tab>
+            <!-- <mat-tab>
               <ng-template mat-tab-label>
                 <div class="tab-style">Sześciokąt</div>
               </ng-template>
@@ -51,7 +49,7 @@
                   <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.x" (input)="planeVector.setX($event.value)"
                   color="primary"></mat-slider>
               </div>
-            </mat-tab>
+            </mat-tab> -->
 
           </mat-tab-group>
         </div>

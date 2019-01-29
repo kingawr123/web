@@ -6,6 +6,8 @@ import { StartPagedComponentComponent } from './start-paged-component/start-page
 import { PyramidComponentComponent } from './pyramid-component/pyramid-component.component';
 import { ConeComponentComponent } from './cone-component/cone-component.component';
 import { AboutPageComponentComponent } from './about-page-component/about-page-component.component';
+import { DodecahedronComponentComponent } from './dodecahedron-component/dodecahedron-component.component';
+import { OctahedronComponentComponent } from './octahedron-component/octahedron-component.component';
 
 const routes: Routes = [
   {path: 'cube', component: CubeComponentComponent},
@@ -14,6 +16,8 @@ const routes: Routes = [
   {path: 'pyramid', component: PyramidComponentComponent},
   {path: 'cone', component: ConeComponentComponent},
   {path: 'aboutPage', component: AboutPageComponentComponent},
+  {path: 'dodecahedron', component: DodecahedronComponentComponent},
+  {path: 'octaedr', component: OctahedronComponentComponent},
   {path:'', redirectTo: '/startPage', pathMatch: 'full'}
 ];
 

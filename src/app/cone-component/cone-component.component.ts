@@ -8,7 +8,7 @@ import { Camera, Geometry, Scene, Vector3, Clock, Vector4 } from 'three';
 import { getPointsGeometry } from 'src/threejsHelpers/intersection';
 import { OrbitControls } from 'three-orbitcontrols-ts';
 import { compereVectors4 } from 'src/threejsHelpers/vectorsHelper';
-import { addCuboid, addCone } from '../../threejsHelpers/addFigure';
+import { addCuboid, addCone, addDeco } from '../../threejsHelpers/addFigure';
 
 @Component({
   selector: 'app-cone-component',

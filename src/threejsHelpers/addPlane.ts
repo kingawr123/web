@@ -1,6 +1,7 @@
 import * as THREE from 'three';
+import { Vector3 } from 'three';
 
-export function addPlane() {
+export function addPlane(x: number, y: number, z: number, offset:number) {
 
   const material = new THREE.MeshBasicMaterial({
     color: 0xBDBDBD,
@@ -9,12 +10,8 @@ export function addPlane() {
     side: THREE.DoubleSide,
   });
 
-  const plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(10, 10), material);
-  plane.receiveShadow = true;
-  plane.rotation.x = -1.57;
-  plane.rotation.y = 0;
-  plane.rotation.z = 0;
-  plane.position.set(0, 0, 0);
-
+  const plane = new THREE.Mesh( new THREE.PlaneGeometry( 5, 5 ), material);
+  plane.rotation.set(x,y,z);
+  plane.position.x = offset;
   return plane;
 }

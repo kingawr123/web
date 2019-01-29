@@ -14,6 +14,8 @@ import { PyramidComponentComponent } from './pyramid-component/pyramid-component
 import { ConeComponentComponent } from './cone-component/cone-component.component';
 import { AboutPageComponentComponent } from './about-page-component/about-page-component.component';
 import { APP_BASE_HREF, LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { DodecahedronComponentComponent } from './dodecahedron-component/dodecahedron-component.component';
+import { OctahedronComponentComponent } from './octahedron-component/octahedron-component.component';
 
 
 
@@ -26,6 +28,8 @@ import { APP_BASE_HREF, LocationStrategy, HashLocationStrategy } from '@angular/
     PyramidComponentComponent,
     ConeComponentComponent,
     AboutPageComponentComponent,
+    DodecahedronComponentComponent,
+    OctahedronComponentComponent,
   ],
   imports: [
     BrowserModule,

@@ -62,6 +62,36 @@ export function addCone(){
   return cone
 }
 
+export function addDeco(){
+  const material = new THREE.MeshPhongMaterial({
+    color: 0xFF9900,
+    shininess: 100,
+    wireframe: true,
+  });
+
+  var geo =   new THREE.DodecahedronGeometry(4);
+  var dodecahedron = new THREE.Mesh(geo, material);
+
+  dodecahedron.castShadow = true;
+
+  return dodecahedron;
+}
+
+export function addOctahedron(){
+  const material = new THREE.MeshPhongMaterial({
+    color: 0xFF9900,
+    shininess: 100,
+    wireframe: true,
+  });
+
+  var geo =   new THREE.OctahedronGeometry(4);
+  var octahedron = new THREE.Mesh(geo, material);
+
+  octahedron.castShadow = true;
+
+  return octahedron;
+}
+
 export function addPyramid(){
   const material = new THREE.MeshPhongMaterial({
     color: 0xFF9900,
@@ -70,7 +100,6 @@ export function addPyramid(){
   });
 
   var geo = new THREE.ConeGeometry(2,4.5,10);
-
   var pyramid = new THREE.Mesh(geo, material);
 
   pyramid.castShadow = true;

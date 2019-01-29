@@ -2,19 +2,21 @@ import { Component, OnInit, enableProdMode } from '@angular/core';
 import * as THREE from 'three';
 import { MatSliderChange, MatTabChangeEvent } from '@angular/material';
 import { addPlane } from 'src/threejsHelpers/addPlane';
-import { addBox, addPyramid } from 'src/threejsHelpers/addFigure';
+import { addBox } from 'src/threejsHelpers/addFigure';
 import { addLight } from '../../threejsHelpers/addLight';
 import { Camera, Geometry, Scene, Vector3, Clock, Vector4 } from 'three';
 import { getPointsGeometry } from 'src/threejsHelpers/intersection';
 import { OrbitControls } from 'three-orbitcontrols-ts';
 import { compereVectors4 } from 'src/threejsHelpers/vectorsHelper';
+import { addCuboid, addCone, addDeco } from '../../threejsHelpers/addFigure';
+
 
 @Component({
-  selector: 'app-pyramid-component',
-  templateUrl: './pyramid-component.component.html',
-  styleUrls: ['./pyramid-component.component.scss']
+  selector: 'app-dodecahedron-component',
+  templateUrl: './dodecahedron-component.component.html',
+  styleUrls: ['./dodecahedron-component.component.scss']
 })
-export class PyramidComponentComponent implements OnInit {
+export class DodecahedronComponentComponent implements OnInit {
 
   value: number;
 
@@ -25,12 +27,10 @@ export class PyramidComponentComponent implements OnInit {
   lines: THREE.LineSegments;
   helper: THREE.EdgesHelper;
 
-  plane: THREE.Mesh;
-
   clock: Clock = new Clock();
   targetPosition: Vector3;
   startPosition: Vector3;
-  startPlaneVector: Vector4 = new Vector4(0.1, 0, 0, 0);
+  startPlaneVector: Vector4 = new Vector4(0, 0, 0, 0.1);
   planeVector: Vector4 = new Vector4(0.1, 0, 0, 0);
   targetPlaneVector: Vector4 = new Vector4(0.1, 0, 0, 0);
   cameraLookAtTarget: Vector3 = new Vector3(0, 0, 0);
@@ -60,7 +60,8 @@ export class PyramidComponentComponent implements OnInit {
     const dirLight = addLight();
     scene.add(dirLight);
 
-    self.box = addPyramid();
+    // create a box and add it to the scene
+    self.box = addDeco();
     const box = self.box;
     box.visible = false;
     self.helper = new THREE.EdgesHelper(self.box, 0xFF6D00);
@@ -89,13 +90,6 @@ export class PyramidComponentComponent implements OnInit {
       }));
       lines.name = 'linie';
       scene.add(lines);
-
-      // scene.remove(...scene.children.filter(e => e.name === 'plane'));
-      // self.plane = addPlane(self.planeVector.x, self.planeVector.y, self.planeVector.z, self.planeVector.w)
-      // self.plane.name = 'plane'
-      // scene.add(self.plane);
-
-
 
       if (!self.startPosition) {
         self.startPosition = self.camera.position;
@@ -136,25 +130,25 @@ export class PyramidComponentComponent implements OnInit {
       case 2:
         this.cubeClipping3();
         break;
-      // case 3:
-      //   this.cubeClipping4();
-      //   break;
+      case 3:
+        this.cubeClipping4();
+        break;
     }
   }
 
   cubeClipping1() {
-    this.targetPosition = new Vector3(3, 3, 0);
-    this.targetPlaneVector.set(0.1, 0, 0, 0);
+    this.targetPosition = new Vector3(5, 5, 5);
+    this.targetPlaneVector.set(-7, 0, 0, -0.2);
   }
 
   cubeClipping2() {
-    this.targetPosition = new Vector3(1, 3, 1);
-    this.targetPlaneVector.set(0, 0.1, 0, 0);
+    this.targetPosition = new Vector3(6, 1, 2);
+    this.targetPlaneVector.set(0.0001, 0.5, 0.68, 0);
   }
 
   cubeClipping3() {
     this.targetPosition = new Vector3(4, 1, 4);
-    this.targetPlaneVector.set(0.1, 0, 0, -0.13);
+    this.targetPlaneVector.set(0.1, -0.1001, 0.1, -0.35);
   }
 
   cubeClipping4() {
