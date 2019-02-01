@@ -8,6 +8,7 @@ import { ConeComponentComponent } from './cone-component/cone-component.componen
 import { AboutPageComponentComponent } from './about-page-component/about-page-component.component';
 import { DodecahedronComponentComponent } from './dodecahedron-component/dodecahedron-component.component';
 import { OctahedronComponentComponent } from './octahedron-component/octahedron-component.component';
+import { TeoryComponentComponent } from './teory-component/teory-component.component';
 
 const routes: Routes = [
   {path: 'cube', component: CubeComponentComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'aboutPage', component: AboutPageComponentComponent},
   {path: 'dodecahedron', component: DodecahedronComponentComponent},
   {path: 'octaedr', component: OctahedronComponentComponent},
+  {path: 'teory', component: TeoryComponentComponent},
   {path:'', redirectTo: '/startPage', pathMatch: 'full'}
 ];
 

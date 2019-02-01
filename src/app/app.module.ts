@@ -16,6 +16,7 @@ import { AboutPageComponentComponent } from './about-page-component/about-page-c
 import { APP_BASE_HREF, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { DodecahedronComponentComponent } from './dodecahedron-component/dodecahedron-component.component';
 import { OctahedronComponentComponent } from './octahedron-component/octahedron-component.component';
+import { TeoryComponentComponent } from './teory-component/teory-component.component';
 
 
 
@@ -30,6 +31,7 @@ import { OctahedronComponentComponent } from './octahedron-component/octahedron-
     AboutPageComponentComponent,
     DodecahedronComponentComponent,
     OctahedronComponentComponent,
+    TeoryComponentComponent,
   ],
   imports: [
     BrowserModule,

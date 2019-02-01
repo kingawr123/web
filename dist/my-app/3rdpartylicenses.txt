@@ -404,23 +404,23 @@ THE SOFTWARE.
 
 @angular/material/card
 
-@angular/forms
+@angular/animations
 MIT
 
-@angular/animations
+@angular/material/tabs
+
+@angular/forms
 MIT
 
 @angular/material/slider
 
-@angular/material/tabs
+@angular/material/toolbar
 
 @angular/material/button
 
 @angular/material/icon
 
 @angular/material/menu
-
-@angular/material/toolbar
 
 zone.js
 MIT
