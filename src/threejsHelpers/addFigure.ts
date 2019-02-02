@@ -36,7 +36,7 @@ export function addCuboid(){
     wireframe: true,
   });
 
-  const box = new THREE.Mesh(new THREE.BoxGeometry(3, 4, 3), material);
+  const box = new THREE.Mesh(new THREE.BoxGeometry(3, 6, 3), material);
   box.castShadow = true;
 
  // box.position.set(2, 2.5, 2);
@@ -99,7 +99,7 @@ export function addPyramid(){
     wireframe: true,
   });
 
-  var geo = new THREE.ConeGeometry(2,4.5,10);
+  var geo = new THREE.ConeGeometry(2,4.5,4);
   var pyramid = new THREE.Mesh(geo, material);
 
   pyramid.castShadow = true;

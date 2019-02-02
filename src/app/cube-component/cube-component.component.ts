@@ -30,7 +30,7 @@ export class CubeComponentComponent implements OnInit {
   startPosition: Vector3;
   startPlaneVector: Vector4 = new Vector4(0.1, 0, 0, 0);
   planeVector: Vector4 = new Vector4(0.1, 0, 0, 0);
-  targetPlaneVector: Vector4 = new Vector4(0.1, 0, 0, 0);
+  targetPlaneVector: Vector4 = new Vector4(0.1, -0.04, 0.1,-0.08);
   cameraLookAtTarget: Vector3 = new Vector3(0, 0, 0);
 
   constructor() { }
@@ -66,7 +66,7 @@ export class CubeComponentComponent implements OnInit {
     scene.add(self.helper);
     scene.add(box);
 
-    self.camera.position.set(5, 5, 5);
+    self.camera.position.set(1.5, 0.5, 6);
     self.camera.lookAt(scene.position);
 
 
@@ -135,18 +135,18 @@ export class CubeComponentComponent implements OnInit {
   }
 
   cubeClipping1() {
-    this.targetPosition = new Vector3(5, 5, 5);
-    this.targetPlaneVector.set(0.1, 0, 0, 0);
+    this.targetPosition = new Vector3(1, 3, 6);
+    this.targetPlaneVector.set(0.1, -0.04, 0.1,-0.0801);
   }
 
   cubeClipping2() {
-    this.targetPosition = new Vector3(6, 1, 2);
-    this.targetPlaneVector.set(0.0001, 0.5, 0.5, 0);
+    this.targetPosition = new Vector3(6, 3, 1.5);
+    this.targetPlaneVector.set(0.5, 0.74999, 0.5, -0.5);
   }
 
   cubeClipping3() {
-    this.targetPosition = new Vector3(4, 1, 4);
-    this.targetPlaneVector.set(0.1, -0.1001, 0.1, -0.35);
+    this.targetPosition = new Vector3(5, 4, 1);
+    this.targetPlaneVector.set(0.5, 0.5, 0.5, -1);
   }
 
   cubeClipping4() {

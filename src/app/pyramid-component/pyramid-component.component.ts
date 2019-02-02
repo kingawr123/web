@@ -67,7 +67,7 @@ export class PyramidComponentComponent implements OnInit {
     scene.add(self.helper);
     scene.add(box);
 
-    self.camera.position.set(5, 5, 5);
+    self.camera.position.set(4, 4, 0);
     self.camera.lookAt(scene.position);
 
 
@@ -136,9 +136,9 @@ export class PyramidComponentComponent implements OnInit {
       case 2:
         this.cubeClipping3();
         break;
-      // case 3:
-      //   this.cubeClipping4();
-      //   break;
+      case 3:
+        this.cubeClipping4();
+        break;
     }
   }
 
@@ -148,17 +148,17 @@ export class PyramidComponentComponent implements OnInit {
   }
 
   cubeClipping2() {
-    this.targetPosition = new Vector3(1, 3, 1);
+    this.targetPosition = new Vector3(4, 2, 0.5);
     this.targetPlaneVector.set(0, 0.1, 0, 0);
   }
 
   cubeClipping3() {
-    this.targetPosition = new Vector3(4, 1, 4);
-    this.targetPlaneVector.set(0.1, 0, 0, -0.13);
+    this.targetPosition = new Vector3(3, 3, 3);
+    this.targetPlaneVector.set(0, 0.1, 0.13, 0);
   }
 
   cubeClipping4() {
-    this.targetPosition = new Vector3(5, 5, 5);
-    this.targetPlaneVector.set(0.5, 0.5, 0.5, 0);
+    this.targetPosition = new Vector3(3, 3, 3);
+    this.targetPlaneVector.set(0, 0.1, 0.1, 0);
   }
 }

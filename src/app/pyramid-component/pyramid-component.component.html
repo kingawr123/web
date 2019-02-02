@@ -23,7 +23,7 @@
 
             <mat-tab>
               <ng-template mat-tab-label>
-                <div class="tab-style">Podstawa</div>
+                <div class="tab-style">Kwadrat</div>
               </ng-template>
               <div class="teory-space2">
                 <mat-slider min="-1" max="1" step="0.01" [ngModel]="planeVector.z" (input)="planeVector.setZ($event.value)"
@@ -33,7 +33,7 @@
 
             <mat-tab>
               <ng-template mat-tab-label>
-                <div class="tab-style">Trapez</div>
+                <div class="tab-style">Pięciokąt</div>
               </ng-template>
               <div class="teory-space2">
                   <mat-slider min="-0.5" max="0.7" step="0.001" [ngModel]="planeVector.w" (input)="planeVector.setW($event.value)"
@@ -41,15 +41,15 @@
               </div>
             </mat-tab>
 
-            <!-- <mat-tab>
+             <mat-tab>
               <ng-template mat-tab-label>
-                <div class="tab-style">Sześciokąt</div>
+                <div class="tab-style">Deltoid</div>
               </ng-template>
               <div class="teory-space2">
                   <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.x" (input)="planeVector.setX($event.value)"
                   color="primary"></mat-slider>
-              </div>
-            </mat-tab> -->
+               </div>
+            </mat-tab>
 
           </mat-tab-group>
         </div>

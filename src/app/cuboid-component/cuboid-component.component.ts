@@ -142,17 +142,17 @@ export class CuboidComponentComponent implements OnInit  {
   }
 
   cubeClipping2() {
-    this.targetPosition = new Vector3(6, 1, 2);
-    this.targetPlaneVector.set(0.0001, 0.5, 0.68, 0);
+    this.targetPosition = new Vector3(5, 5, 5);
+    this.targetPlaneVector.set(0.499, 0.4, 0.5, 0);
   }
 
   cubeClipping3() {
-    this.targetPosition = new Vector3(4, 1, 4);
-    this.targetPlaneVector.set(0.1, -0.1001, 0.1, -0.35);
+    this.targetPosition = new Vector3(5, 4, 1);
+    this.targetPlaneVector.set(0.5, 0.5, 0.5, -1);
   }
 
   cubeClipping4() {
     this.targetPosition = new Vector3(5, 5, 5);
-    this.targetPlaneVector.set(0.5, 0.5, 0.5, 0);
+    this.targetPlaneVector.set(0.499, 0.5, 0.5, 0);
   }
 }

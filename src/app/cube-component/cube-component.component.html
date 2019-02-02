@@ -13,7 +13,7 @@
           <mat-tab-group style="height: 80%" (selectedTabChange)="tabChanged($event)">
             <mat-tab>
               <ng-template mat-tab-label>
-                <div class="tab-style">Kwadrat</div>
+                <div class="tab-style">Trapez</div>
               </ng-template>
               <div class="teory-space2">
                 <div class="slide-box">
@@ -25,7 +25,7 @@
 
             <mat-tab>
               <ng-template mat-tab-label>
-                <div class="tab-style">Prostokąt</div>
+                <div class="tab-style">Pięciokąt</div>
               </ng-template>
               <div class="teory-space2">
                 <div class="slide-box">
@@ -40,7 +40,7 @@
                 <div class="tab-style">Trójkąt</div>
               </ng-template>
               <div class="teory-space2">
-                  <mat-slider min="-0.5" max="0.7" step="0.001" [ngModel]="planeVector.w" (input)="planeVector.setW($event.value)"
+                  <mat-slider min="-2" max="2" step="0.001" [ngModel]="planeVector.w" (input)="planeVector.setW($event.value)"
                   color="primary"></mat-slider>
               </div>
             </mat-tab>
