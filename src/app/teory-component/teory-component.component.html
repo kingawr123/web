@@ -1,51 +1,115 @@
 <body>
-    <div class="main-page">
-      <div class="main-navigation main-head">
-        <h1>TROCHĘ TEORI</h1>
-      </div>
-      <div style="padding-top: 10px">
-        <div class="teory-space1">
+  <div class="main-page">
+    <div class="main-navigation main-head">
+      <h1>TEORIA</h1>
+    </div>
+    <div style="padding-top: 10px">
+      <div class="teory-space1">
 
-            <mat-card class="card-style mat-elevation-z8">
-                <h3>Co to jest przekrój wielościanu?</h3>
-                <div class="teory-space2">
-                <p>
-                    <b>Przekrojem wielościanu</b> płaszczyzną π nazywamy figurę, która jest częścią wspólną płaszczyzny π i tego wielościanu.<br><br>
-                    Przekrojem wielościanu może być <b>wielokąt</b>, punkt, odcinek, lub zbiór pusty.<br><br>
-                    Omówię sposoby wyznaczania przekrojów wielościanów w przypadku, gdy płaszczyzna przekroju określona jest przez podanie <b>trzech nie współliniowych punktów</b>. Własnię tą metodę wykorzystałam przy tworzeniu wizualizacji przekrojów figur.<br><br>
-                    Aby przedstawić przekrój płaszczyzną π wielościanu, wystarczy skonstruować punkty przecięcia płaszczyzny π z krawędziami wielościanu i połączyć punkty leżące na tej samej ścianie. <br><br>
-                </p>
-                <div class="remamber-space-margin">
-                  <div class="remember-space">
+        <mat-card class="card-style mat-elevation-z8">
+          <h3>Przekroje Wielościanów</h3>
+          <div class="teory-space2">
+            <p>
+              <b>Przekrojem wielościanu</b> płaszczyzną π nazywamy figurę, która jest częścią wspólną płaszczyzny π i
+              tego wielościanu.<br><br>
+              Przekrojem wielościanu może być <b>wielokąt</b>, punkt, odcinek, lub zbiór pusty.<br><br>
+            </p>
+            <div>
+              <h3>Konstrukcje</h3>
+            </div>
+            <p>
+              Omówię sposoby wyznaczania przekrojów wielościanów w przypadku, gdy płaszczyzna przekroju określona jest
+              przez podanie <b>trzech nie współliniowych punktów</b>. Własnię tą metodę wykorzystałam przy tworzeniu
+              wizualizacji przekrojów figur.<br><br>
+              Aby przedstawić przekrój płaszczyzną π wielościanu, wystarczy skonstruować punkty przecięcia płaszczyzny
+              π z krawędziami wielościanu i połączyć punkty leżące na tej samej ścianie. <br><br>
+            </p>
+            <div class="remamber-space-margin">
+              <div class="remember-space">
 
-                   <ul style="font-family: 'Bookman Old'; ">
-                      <h5><i>Przypomij sobie!</i></h5>
-                    </ul>
+                <ul style="font-family: 'Bookman Old'; ">
+                  <h5><i>Przypomij sobie!</i></h5>
+                </ul>
 
-                <mat-grid-list cols="4" rowHeight="250px" >
+                <mat-grid-list cols="4" rowHeight="250px">
                   <mat-grid-tile [colspan]='2' [rowspan]='1'>
-                    <li>Aby wyznaczyć krawędź przecięcia się dwóch płaszczyzn (np. płaszczyzny przecinającej i płaszczyzny zawierającej ścianę wielościanu), wystarczy wyznaczyć dwa punkty należące do obu tych płaszczyzn. Prosta poprowadzona przez te punkty jest krawędzią przecięcia danych płaszczyzn.</li>
+                    <li>Aby wyznaczyć krawędź przecięcia się dwóch płaszczyzn (np. płaszczyzny przecinającej i
+                      płaszczyzny zawierającej ścianę wielościanu), wystarczy wyznaczyć dwa punkty należące do obu tych
+                      płaszczyzn. Prosta poprowadzona przez te punkty jest krawędzią przecięcia danych płaszczyzn.</li>
                   </mat-grid-tile>
 
                   <mat-grid-tile [colspan]='2' [rowspan]='1'>
-                    <img src="/assets/images/plaszczyzny.gif" style="width: 300px; border: 2px solid #000000; box-sizing: border-box;"/>
+                    <img src="/assets/images/plaszczyzny.gif" style="width: 300px; border: 2px solid #000000; box-sizing: border-box;" />
                   </mat-grid-tile>
 
                   <mat-grid-tile [colspan]='2' [rowspan]='1'>
-                    <li>Aby wyznaczyć punkt, w którym prosta <i>k </i>przebija płaszczyznę π, wystarczy wyznaczyć punkt przecięcia prostej <i>k </i> i prostej <i>l</i>, która jest krawędzią przecięcia płaszczyzny π zawierającej prostą <i>k </i>.</li>
+                    <li>Aby wyznaczyć punkt, w którym prosta <i>k </i>przebija płaszczyznę π, wystarczy wyznaczyć punkt
+                      przecięcia prostej <i>k </i> i prostej <i>l</i>, która jest krawędzią przecięcia płaszczyzny π
+                      zawierającej prostą <i>k </i>.</li>
                   </mat-grid-tile>
 
-                 </mat-grid-list>
+                </mat-grid-list>
 
-                  </div>
-                </div>
-                </div>
-              </mat-card>
+              </div>
+            </div>
+          </div>
+        </mat-card
+
+        >
+        <div>
+          <mat-card class="card-style mat-elevation-z8">
+            <div class="teory-space2">
               <div>
-                <h2>Konstrukcje</h2>
+                <h3>Przykład</h3>
               </div>
 
+              <mat-tab-group style="height: 80%">
+                <mat-tab>
+                  <ng-template mat-tab-label>
+                    <div class="tab-style">Treść</div>
+                  </ng-template>
+                  <div class="teory-space2">
+
+                    <mat-grid-list cols="2" rowHeight="300px">
+                      <mat-grid-tile [colspan]='1' [rowspan]='1'>
+                        <p>
+                          Na sześcianie ABCDA'B'C'D' zostały zazaczone punkty P i Q, które odpowiednio należą do
+                          krawędzi C'D' i A'D'. Skonstruuj przekrój sześcianu płaszczyzną PQB.
+                        </p>
+                      </mat-grid-tile>
+
+                      <mat-grid-tile [colspan]='1' [rowspan]='1'>
+                        <img src="/assets/images/szescian.png" style="width: 300px; border: 2px solid #000000; box-sizing: border-box;" />
+                      </mat-grid-tile>
+                    </mat-grid-list>
+
+                  </div>
+                </mat-tab>
+
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                      <div class="tab-style">Gotowa konstrukcja</div>
+                    </ng-template>
+                  <div class="teory-space2">
+                    <img src="/assets/images/szescian5-katZrobiony.png" style="width: 100%; border: 2px solid #000000; box-sizing: border-box;" />
+                  </div>
+                </mat-tab>
+
+                <mat-tab>
+                  <ng-template mat-tab-label>
+                    <div class="tab-style">Opis konstrukcji</div>
+                  </ng-template>
+                  <div class="teory-space2">
+
+                  </div>
+                </mat-tab>
+
+              </mat-tab-group>
+            </div>
+          </mat-card>
         </div>
+
       </div>
     </div>
-  </body>
+  </div>
+</body>
