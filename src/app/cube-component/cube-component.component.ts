@@ -30,7 +30,7 @@ export class CubeComponentComponent implements OnInit {
   startPosition: Vector3;
   startPlaneVector: Vector4 = new Vector4(0.1, 0, 0, 0);
   planeVector: Vector4 = new Vector4(0.1, 0, 0, 0);
-  targetPlaneVector: Vector4 = new Vector4(0.1, -0.04, 0.1,-0.08);
+  targetPlaneVector: Vector4 = new Vector4(0.1, -0.04001, 0.1,-0.08);
   cameraLookAtTarget: Vector3 = new Vector3(0, 0, 0);
 
   constructor() { }
@@ -66,7 +66,7 @@ export class CubeComponentComponent implements OnInit {
     scene.add(self.helper);
     scene.add(box);
 
-    self.camera.position.set(1.5, 0.5, 6);
+    self.camera.position.set(5, 5, 5);
     self.camera.lookAt(scene.position);
 
 

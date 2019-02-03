@@ -67,7 +67,7 @@ export class PyramidComponentComponent implements OnInit {
     scene.add(self.helper);
     scene.add(box);
 
-    self.camera.position.set(4, 4, 0);
+    self.camera.position.set(5, 5, 5);
     self.camera.lookAt(scene.position);
 
 
