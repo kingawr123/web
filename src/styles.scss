@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import "~@angular/material/prebuilt-themes/purple-green.css";
 
 body {
   margin:0px;
@@ -17,6 +17,30 @@ body {
   margin-bottom: 0.1em;
 }
 
+.img-plaszczyzna{
+  width: 250px;
+  height: 210px;
+  background-repeat: no-repeat;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  background-image:url("plaszczyzny.gif");
+}
+.img-szescian{
+  width: 353px;
+  height: 344px;
+  background-repeat: no-repeat;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  background-image:url("szescian.png");
+}
+.img-szescian5-katZrobiony{
+  width: 1063px;
+  height: 442px;
+  background-repeat: no-repeat;
+  border: 2px solid #000000;
+  background-image:url("szescian5-katZrobiony.png");
+  box-sizing: border-box;
+}
 
 h1{
   vertical-align: middle;
@@ -140,7 +164,10 @@ margin: 5%;
 
 .card-style{
   background-color: #CFD8DC;
-  margin: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  margin-top: auto;
   min-height: 280px;
 }
 

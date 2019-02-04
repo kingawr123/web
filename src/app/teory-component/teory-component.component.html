@@ -39,7 +39,7 @@
                   </mat-grid-tile>
 
                   <mat-grid-tile [colspan]='2' [rowspan]='1'>
-                    <img src="/assets/images/plaszczyzny.gif" style="width: 300px; border: 2px solid #000000; box-sizing: border-box;" />
+                    <img class="img-plaszczyzna">
                   </mat-grid-tile>
 
                   <mat-grid-tile [colspan]='2' [rowspan]='1'>
@@ -53,9 +53,8 @@
               </div>
             </div>
           </div>
-        </mat-card
+        </mat-card>
 
-        >
         <div>
           <mat-card class="card-style mat-elevation-z8">
             <div class="teory-space2">
@@ -70,7 +69,7 @@
                   </ng-template>
                   <div class="teory-space2">
 
-                    <mat-grid-list cols="2" rowHeight="300px">
+                    <mat-grid-list cols="2" rowHeight="350px">
                       <mat-grid-tile [colspan]='1' [rowspan]='1'>
                         <p>
                           Na sześcianie ABCDA'B'C'D' zostały zazaczone punkty P i Q, które odpowiednio należą do
@@ -79,7 +78,7 @@
                       </mat-grid-tile>
 
                       <mat-grid-tile [colspan]='1' [rowspan]='1'>
-                        <img src="/assets/images/szescian.png" style="width: 300px; border: 2px solid #000000; box-sizing: border-box;" />
+                        <img class="img-szescian" />
                       </mat-grid-tile>
                     </mat-grid-list>
 
@@ -87,11 +86,11 @@
                 </mat-tab>
 
                 <mat-tab>
-                    <ng-template mat-tab-label>
-                      <div class="tab-style">Gotowa konstrukcja</div>
-                    </ng-template>
+                  <ng-template mat-tab-label>
+                    <div class="tab-style">Gotowa konstrukcja</div>
+                  </ng-template>
                   <div class="teory-space2">
-                    <img src="/assets/images/szescian5-katZrobiony.png" style="width: 100%; border: 2px solid #000000; box-sizing: border-box;" />
+                    <img class="img-szescian5-katZrobiony" />
                   </div>
                 </mat-tab>
 
@@ -100,7 +99,20 @@
                     <div class="tab-style">Opis konstrukcji</div>
                   </ng-template>
                   <div class="teory-space2">
-
+                    <li>
+                      Przez punkt B prowadzimy prostą równoległą do PQ. Prosta ta leży na płaszczyźnie ABCD i przecina
+                      krawędzie DC i DA odpowiednio w punktach X1 I X3,
+                    </li>
+                    <li>
+                      Punkt X1 i P leżą na tej samej płaszczyźnie C’CDD’, więc możemy poprowadzić prostą PX1, która
+                      przecina krawędź CC’ w punkcie X2,
+                    </li>
+                    <li>
+                      Następnie rysujemu prostą X3Q, przecinającą krawędź AA’ w punkcie X4,
+                    </li>
+                    <li>
+                      Pięciokąt QPX2BX4 jest szukanym przekrojem.
+                    </li>
                   </div>
                 </mat-tab>
 
