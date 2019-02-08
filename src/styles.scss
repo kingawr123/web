@@ -167,8 +167,13 @@ margin: 5%;
   margin-left: 2%;
   margin-right: 2%;
   margin-bottom: 2%;
-  margin-top: auto;
   min-height: 280px;
+}
+
+.button-style{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 

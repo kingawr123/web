@@ -1,4 +1,4 @@
-import { Component, OnInit, enableProdMode } from '@angular/core';
+import { Component, OnInit, enableProdMode, DebugElement } from '@angular/core';
 import * as THREE from 'three';
 import { MatSliderChange, MatTabChangeEvent } from '@angular/material';
 import { addPlane } from 'src/threejsHelpers/addPlane';
@@ -8,6 +8,7 @@ import { Camera, Geometry, Scene, Vector3, Clock, Vector4 } from 'three';
 import { getPointsGeometry } from 'src/threejsHelpers/intersection';
 import { OrbitControls } from 'three-orbitcontrols-ts';
 import { compereVectors4 } from 'src/threejsHelpers/vectorsHelper';
+import { debuglog, debug } from 'util';
 
 @Component({
   selector: 'app-cube-component',
@@ -30,7 +31,7 @@ export class CubeComponentComponent implements OnInit {
   startPosition: Vector3;
   startPlaneVector: Vector4 = new Vector4(0.1, 0, 0, 0);
   planeVector: Vector4 = new Vector4(0.1, 0, 0, 0);
-  targetPlaneVector: Vector4 = new Vector4(0.1, -0.04001, 0.1,-0.08);
+  targetPlaneVector: Vector4 = new Vector4(0.1, -0.04001, 0.1, -0.08);
   cameraLookAtTarget: Vector3 = new Vector3(0, 0, 0);
 
   constructor() { }
@@ -58,7 +59,6 @@ export class CubeComponentComponent implements OnInit {
     const dirLight = addLight();
     scene.add(dirLight);
 
-    // create a box and add it to the scene
     self.box = addBox();
     const box = self.box;
     box.visible = false;
@@ -76,7 +76,7 @@ export class CubeComponentComponent implements OnInit {
       if (!self.targetPlaneVector.equals(self.startPlaneVector)) {
         const elapsedTime = self.clock.getElapsedTime();
         self.planeVector = new THREE.Vector4().lerpVectors(self.startPlaneVector, self.targetPlaneVector, Math.min(elapsedTime / 2.5, 1));
-        if(compereVectors4(self.targetPlaneVector, self.planeVector)) {
+        if (compereVectors4(self.targetPlaneVector, self.planeVector)) {
           self.startPlaneVector = self.targetPlaneVector;
         }
       }
@@ -95,9 +95,9 @@ export class CubeComponentComponent implements OnInit {
 
       if (self.targetPosition && !self.targetPosition.equals(self.startPosition)) {
         const elapsedTime = self.clock.getElapsedTime();
-        const {x,y,z} = new THREE.Vector3().lerpVectors(self.startPosition, self.targetPosition, Math.min(elapsedTime / 2.5, 1));
+        const { x, y, z } = new THREE.Vector3().lerpVectors(self.startPosition, self.targetPosition, Math.min(elapsedTime / 2.5, 1));
         self.camera.position.set(x, y, z);
-        if(self.camera.position.equals(self.targetPosition)) {
+        if (self.camera.position.equals(self.targetPosition)) {
           self.startPosition = self.targetPosition;
         }
       }
@@ -136,6 +136,13 @@ export class CubeComponentComponent implements OnInit {
 
   cubeClipping1() {
     this.targetPosition = new Vector3(1, 3, 6);
+    this.targetPlaneVector.set(0.1, -0.04, 0.1, -0.0801);
+  }
+
+  reset1() {
+    this.startPlaneVector = this.planeVector.clone();
+    this.clock.stop();
+    this.clock.start();
     this.targetPlaneVector.set(0.1, -0.04, 0.1,-0.0801);
   }
 
@@ -144,13 +151,34 @@ export class CubeComponentComponent implements OnInit {
     this.targetPlaneVector.set(0.5, 0.74999, 0.5, -0.5);
   }
 
+  reset2() {
+    this.startPlaneVector = this.planeVector.clone();
+    this.clock.stop();
+    this.clock.start();
+    this.targetPlaneVector.set(0.5, 0.74999, 0.5, -0.5);
+  }
+
   cubeClipping3() {
     this.targetPosition = new Vector3(5, 4, 1);
-    this.targetPlaneVector.set(0.5, 0.5, 0.5, -1);
+    this.targetPlaneVector.set(0.5001, 0.5001, 0.5001, -1.001);
+  }
+
+  reset3() {
+    this.startPlaneVector = this.planeVector.clone();
+    this.clock.stop();
+    this.clock.start();
+    this.targetPlaneVector.set(0.5001, 0.5001, 0.5001, -1.001);
   }
 
   cubeClipping4() {
     this.targetPosition = new Vector3(5, 5, 5);
+    this.targetPlaneVector.set(0.5, 0.5, 0.5, 0);
+  }
+
+  reset4() {
+    this.startPlaneVector = this.planeVector.clone();
+    this.clock.stop();
+    this.clock.start();
     this.targetPlaneVector.set(0.5, 0.5, 0.5, 0);
   }
 }
