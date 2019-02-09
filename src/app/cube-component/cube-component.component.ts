@@ -39,12 +39,11 @@ export class CubeComponentComponent implements OnInit {
     const self = this;
     const scene = new THREE.Scene();
 
-    // create the camera
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     self.camera = camera;
 
-    const axis = new THREE.AxesHelper(15);
-    scene.add(axis);
+    // const axis = new THREE.AxesHelper(15);
+    // scene.add(axis);
 
     const renderer = new THREE.WebGLRenderer();
 

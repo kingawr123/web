@@ -174,6 +174,7 @@ margin: 5%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 5%;
 }
 
 
@@ -190,7 +191,8 @@ mat-slider{
 
 .slide-box{
   height: auto;
-  background-color: #424242;
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.452);
+  margin-bottom: 2%;
 }
 
 .all{
