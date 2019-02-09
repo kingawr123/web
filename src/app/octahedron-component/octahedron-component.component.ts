@@ -9,6 +9,7 @@ import { getPointsGeometry } from 'src/threejsHelpers/intersection';
 import { OrbitControls } from 'three-orbitcontrols-ts';
 import { compereVectors4 } from 'src/threejsHelpers/vectorsHelper';
 import { addCuboid, addCone, addDeco, addOctahedron } from '../../threejsHelpers/addFigure';
+import { ColorConsts } from '../../threejsHelpers/colorConst';
 
 @Component({
   selector: 'app-octahedron-component',
@@ -39,12 +40,8 @@ export class OctahedronComponentComponent implements OnInit {
     const self = this;
     const scene = new THREE.Scene();
 
-    // create the camera
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     self.camera = camera;
-
-    const axis = new THREE.AxesHelper(15);
-    scene.add(axis);
 
     const renderer = new THREE.WebGLRenderer();
 
@@ -55,15 +52,15 @@ export class OctahedronComponentComponent implements OnInit {
     document.body.getElementsByClassName('renderElement')[0].appendChild(renderer.domElement);
 
     scene.add(new THREE.AmbientLight(0x505050, 3));
+    scene.background = new THREE.Color( ColorConsts.BACKGROUND_COLOR );
 
     const dirLight = addLight();
     scene.add(dirLight);
 
-    // create a box and add it to the scene
     self.box = addOctahedron();
     const box = self.box;
     box.visible = false;
-    self.helper = new THREE.EdgesHelper(self.box, 0xFF6D00);
+    self.helper = new THREE.EdgesHelper(self.box, ColorConsts.EDGES_COLOR);
     scene.add(self.helper);
     scene.add(box);
 
@@ -85,7 +82,7 @@ export class OctahedronComponentComponent implements OnInit {
       scene.remove(...scene.children.filter(e => e.name === 'linie'));
       const intersectionPoints = getPointsGeometry(box, self.planeVector.x, self.planeVector.y, self.planeVector.z, self.planeVector.w);
       const lines = new THREE.LineSegments(intersectionPoints, new THREE.LineBasicMaterial({
-        color: 0xffffff
+        color: ColorConsts.LINES_COLOR
       }));
       lines.name = 'linie';
       scene.add(lines);

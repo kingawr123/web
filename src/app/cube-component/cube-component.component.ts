@@ -9,6 +9,7 @@ import { getPointsGeometry } from 'src/threejsHelpers/intersection';
 import { OrbitControls } from 'three-orbitcontrols-ts';
 import { compereVectors4 } from 'src/threejsHelpers/vectorsHelper';
 import { debuglog, debug } from 'util';
+import { ColorConsts } from '../../threejsHelpers/colorConst';
 
 @Component({
   selector: 'app-cube-component',
@@ -49,11 +50,12 @@ export class CubeComponentComponent implements OnInit {
 
     const controls = new OrbitControls(camera, renderer.domElement);
 
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth, window.innerHeight - 10);
 
     document.body.getElementsByClassName('renderElement')[0].appendChild(renderer.domElement);
 
     scene.add(new THREE.AmbientLight(0x505050, 3));
+    scene.background = new THREE.Color( ColorConsts.BACKGROUND_COLOR );
 
     const dirLight = addLight();
     scene.add(dirLight);
@@ -61,11 +63,11 @@ export class CubeComponentComponent implements OnInit {
     self.box = addBox();
     const box = self.box;
     box.visible = false;
-    self.helper = new THREE.EdgesHelper(self.box, 0xFF6D00);
+    self.helper = new THREE.EdgesHelper(self.box, ColorConsts.EDGES_COLOR);
     scene.add(self.helper);
     scene.add(box);
 
-    self.camera.position.set(5, 5, 5);
+    self.camera.position.set(6, 4, 5);
     self.camera.lookAt(scene.position);
 
 
@@ -83,7 +85,7 @@ export class CubeComponentComponent implements OnInit {
       scene.remove(...scene.children.filter(e => e.name === 'linie'));
       const intersectionPoints = getPointsGeometry(box, self.planeVector.x, self.planeVector.y, self.planeVector.z, self.planeVector.w);
       const lines = new THREE.LineSegments(intersectionPoints, new THREE.LineBasicMaterial({
-        color: 0xffffff
+        color: ColorConsts.LINES_COLOR
       }));
       lines.name = 'linie';
       scene.add(lines);

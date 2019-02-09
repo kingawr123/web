@@ -1,13 +1,14 @@
 <div class="all">
-  <mat-grid-list cols="20">
-    <mat-grid-tile [colspan]='11' [rowspan]='10'>
+    <mat-grid-list cols="100">
+      <mat-grid-tile [colspan]='100' [rowspan]='1'></mat-grid-tile>
+      <mat-grid-tile [colspan]='50' [rowspan]='49'>
 
-      <div class="renderElement"></div>
+        <div class="renderElement" style="background-color: black; padding-bottom: 20px"></div>
 
-    </mat-grid-tile>
+      </mat-grid-tile>
 
-    <mat-grid-tile [colspan]='9' [rowspan]='10'>
-      <mat-card class="card-style mat-elevation-z8">
+      <mat-grid-tile [colspan]='48' [rowspan]='49'>
+        <mat-card class="card-style mat-elevation-z8">
         <h3>OSTROSŁUP</h3>
         <div>
           <mat-tab-group style="height: 80%" (selectedTabChange)="tabChanged($event)">
@@ -16,9 +17,26 @@
                 <div class="tab-style">Trójkąt</div>
               </ng-template>
               <div class="teory-space2">
-                <mat-slider min="-0.5" max="0.7" step="0.001" [ngModel]="planeVector.w" (input)="planeVector.setW($event.value)"
-                  color="primary"></mat-slider>
-              </div>
+                  <div class="teory-space2">
+                    W tym przypadku przekątna podstawy sześcianu jest również dłuższą podstawą powstałego trapezu
+                    równoramiennego i wynosi ona a√2 przy krawędzi sześcianu równej a.
+                  </div>
+
+                  <mat-grid-list cols="3" rowHeight="50px">
+                    <mat-grid-tile [colspan]='1' [rowspan]='1'>
+                      <div class="slide-box">W:
+                        <mat-slider min="-0.7" max="0.7" step="0.001" [ngModel]="planeVector.w"
+                          (input)="planeVector.setW($event.value)" color="primary"></mat-slider>
+                      </div>
+                    </mat-grid-tile>
+                  </mat-grid-list>
+
+                  <div class="button-style">
+                    <button mat-raised-button (click)="reset1()">
+                      <mat-icon>refresh</mat-icon> Reset
+                    </button>
+                  </div>
+                </div>
             </mat-tab>
 
             <mat-tab>
@@ -26,9 +44,26 @@
                 <div class="tab-style">Kwadrat</div>
               </ng-template>
               <div class="teory-space2">
-                <mat-slider min="-1" max="1" step="0.01" [ngModel]="planeVector.z" (input)="planeVector.setZ($event.value)"
-                  color="primary"></mat-slider>
-              </div>
+                  <div class="teory-space2">
+                    W tym przypadku przekątna podstawy sześcianu jest również dłuższą podstawą powstałego trapezu
+                    równoramiennego i wynosi ona a√2 przy krawędzi sześcianu równej a.
+                  </div>
+
+                  <mat-grid-list cols="3" rowHeight="50px">
+                    <mat-grid-tile [colspan]='1' [rowspan]='1'>
+                      <div class="slide-box">W:
+                        <mat-slider min="-0.7" max="0.7" step="0.001" [ngModel]="planeVector.w"
+                          (input)="planeVector.setW($event.value)" color="primary"></mat-slider>
+                      </div>
+                    </mat-grid-tile>
+                  </mat-grid-list>
+
+                  <div class="button-style">
+                    <button mat-raised-button (click)="reset2()">
+                      <mat-icon>refresh</mat-icon> Reset
+                    </button>
+                  </div>
+                </div>
             </mat-tab>
 
             <mat-tab>
@@ -36,9 +71,26 @@
                 <div class="tab-style">Pięciokąt</div>
               </ng-template>
               <div class="teory-space2">
-                <mat-slider min="-0.5" max="0.7" step="0.001" [ngModel]="planeVector.w" (input)="planeVector.setW($event.value)"
-                  color="primary"></mat-slider>
-              </div>
+                  <div class="teory-space2">
+                    W tym przypadku przekątna podstawy sześcianu jest również dłuższą podstawą powstałego trapezu
+                    równoramiennego i wynosi ona a√2 przy krawędzi sześcianu równej a.
+                  </div>
+
+                  <mat-grid-list cols="3" rowHeight="50px">
+                    <mat-grid-tile [colspan]='1' [rowspan]='1'>
+                      <div class="slide-box">W:
+                        <mat-slider min="-0.7" max="0.7" step="0.001" [ngModel]="planeVector.w"
+                          (input)="planeVector.setW($event.value)" color="primary"></mat-slider>
+                      </div>
+                    </mat-grid-tile>
+                  </mat-grid-list>
+
+                  <div class="button-style">
+                    <button mat-raised-button (click)="reset3()">
+                      <mat-icon>refresh</mat-icon> Reset
+                    </button>
+                  </div>
+                </div>
             </mat-tab>
 
             <mat-tab>
@@ -46,9 +98,26 @@
                 <div class="tab-style">Deltoid</div>
               </ng-template>
               <div class="teory-space2">
-                <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.x" (input)="planeVector.setX($event.value)"
-                  color="primary"></mat-slider>
-              </div>
+                  <div class="teory-space2">
+                    W tym przypadku przekątna podstawy sześcianu jest również dłuższą podstawą powstałego trapezu
+                    równoramiennego i wynosi ona a√2 przy krawędzi sześcianu równej a.
+                  </div>
+
+                  <mat-grid-list cols="3" rowHeight="50px">
+                    <mat-grid-tile [colspan]='1' [rowspan]='1'>
+                      <div class="slide-box">W:
+                        <mat-slider min="-0.7" max="0.7" step="0.001" [ngModel]="planeVector.w"
+                          (input)="planeVector.setW($event.value)" color="primary"></mat-slider>
+                      </div>
+                    </mat-grid-tile>
+                  </mat-grid-list>
+
+                  <div class="button-style">
+                    <button mat-raised-button (click)="reset4()">
+                      <mat-icon>refresh</mat-icon> Reset
+                    </button>
+                  </div>
+                </div>
             </mat-tab>
 
           </mat-tab-group>

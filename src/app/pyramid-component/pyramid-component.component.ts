@@ -8,6 +8,7 @@ import { Camera, Geometry, Scene, Vector3, Clock, Vector4 } from 'three';
 import { getPointsGeometry } from 'src/threejsHelpers/intersection';
 import { OrbitControls } from 'three-orbitcontrols-ts';
 import { compereVectors4 } from 'src/threejsHelpers/vectorsHelper';
+import { ColorConsts } from '../../threejsHelpers/colorConst';
 
 @Component({
   selector: 'app-pyramid-component',
@@ -36,16 +37,13 @@ export class PyramidComponentComponent implements OnInit {
   cameraLookAtTarget: Vector3 = new Vector3(0, 0, 0);
 
   constructor() { }
+
   ngOnInit(): void {
     const self = this;
     const scene = new THREE.Scene();
 
-    // create the camera
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     self.camera = camera;
-
-    const axis = new THREE.AxesHelper(15);
-    scene.add(axis);
 
     const renderer = new THREE.WebGLRenderer();
 
@@ -56,6 +54,7 @@ export class PyramidComponentComponent implements OnInit {
     document.body.getElementsByClassName('renderElement')[0].appendChild(renderer.domElement);
 
     scene.add(new THREE.AmbientLight(0x505050, 3));
+    scene.background = new THREE.Color( ColorConsts.BACKGROUND_COLOR );
 
     const dirLight = addLight();
     scene.add(dirLight);
@@ -63,11 +62,11 @@ export class PyramidComponentComponent implements OnInit {
     self.box = addPyramid();
     const box = self.box;
     box.visible = false;
-    self.helper = new THREE.EdgesHelper(self.box, 0xFF6D00);
+    self.helper = new THREE.EdgesHelper(self.box, ColorConsts.EDGES_COLOR);
     scene.add(self.helper);
     scene.add(box);
 
-    self.camera.position.set(5, 5, 5);
+    self.camera.position.set(4, 4, 4);
     self.camera.lookAt(scene.position);
 
 
@@ -85,17 +84,10 @@ export class PyramidComponentComponent implements OnInit {
       scene.remove(...scene.children.filter(e => e.name === 'linie'));
       const intersectionPoints = getPointsGeometry(box, self.planeVector.x, self.planeVector.y, self.planeVector.z, self.planeVector.w);
       const lines = new THREE.LineSegments(intersectionPoints, new THREE.LineBasicMaterial({
-        color: 0xffffff
+        color: ColorConsts.LINES_COLOR
       }));
       lines.name = 'linie';
       scene.add(lines);
-
-      // scene.remove(...scene.children.filter(e => e.name === 'plane'));
-      // self.plane = addPlane(self.planeVector.x, self.planeVector.y, self.planeVector.z, self.planeVector.w)
-      // self.plane.name = 'plane'
-      // scene.add(self.plane);
-
-
 
       if (!self.startPosition) {
         self.startPosition = self.camera.position;
@@ -147,8 +139,22 @@ export class PyramidComponentComponent implements OnInit {
     this.targetPlaneVector.set(0.1, 0, 0, 0);
   }
 
+  reset1() {
+    this.startPlaneVector = this.planeVector.clone();
+    this.clock.stop();
+    this.clock.start();
+    this.targetPlaneVector.set(0.1, 0, 0, 0);
+  }
+
   cubeClipping2() {
     this.targetPosition = new Vector3(4, 2, 0.5);
+    this.targetPlaneVector.set(0, 0.1, 0, 0);
+  }
+
+  reset2() {
+    this.startPlaneVector = this.planeVector.clone();
+    this.clock.stop();
+    this.clock.start();
     this.targetPlaneVector.set(0, 0.1, 0, 0);
   }
 
@@ -157,8 +163,22 @@ export class PyramidComponentComponent implements OnInit {
     this.targetPlaneVector.set(0, 0.1, 0.13, 0);
   }
 
+  reset3() {
+    this.startPlaneVector = this.planeVector.clone();
+    this.clock.stop();
+    this.clock.start();
+    this.targetPlaneVector.set(0, 0.1, 0.13, 0);
+  }
+
   cubeClipping4() {
     this.targetPosition = new Vector3(3, 3, 3);
+    this.targetPlaneVector.set(0, 0.1, 0.1, 0);
+  }
+
+  reset4() {
+    this.startPlaneVector = this.planeVector.clone();
+    this.clock.stop();
+    this.clock.start();
     this.targetPlaneVector.set(0, 0.1, 0.1, 0);
   }
 }

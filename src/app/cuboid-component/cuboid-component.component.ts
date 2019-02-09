@@ -9,6 +9,7 @@ import { getPointsGeometry } from 'src/threejsHelpers/intersection';
 import { OrbitControls } from 'three-orbitcontrols-ts';
 import { compereVectors4 } from 'src/threejsHelpers/vectorsHelper';
 import { addCuboid } from '../../threejsHelpers/addFigure';
+import { ColorConsts } from 'src/threejsHelpers/colorConst';
 
 @Component({
   selector: 'app-cuboid-component',
@@ -44,9 +45,6 @@ export class CuboidComponentComponent implements OnInit  {
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     self.camera = camera;
 
-    const axis = new THREE.AxesHelper(15);
-    scene.add(axis);
-
     const renderer = new THREE.WebGLRenderer();
 
     const controls = new OrbitControls(camera, renderer.domElement);
@@ -56,6 +54,7 @@ export class CuboidComponentComponent implements OnInit  {
     document.body.getElementsByClassName('renderElement')[0].appendChild(renderer.domElement);
 
     scene.add(new THREE.AmbientLight(0x505050, 3));
+    scene.background = new THREE.Color( ColorConsts.BACKGROUND_COLOR );
 
     const dirLight = addLight();
     scene.add(dirLight);
@@ -64,7 +63,7 @@ export class CuboidComponentComponent implements OnInit  {
     self.box = addCuboid();
     const box = self.box;
     box.visible = false;
-    self.helper = new THREE.EdgesHelper(self.box, 0xFF6D00);
+    self.helper = new THREE.EdgesHelper(self.box, ColorConsts.EDGES_COLOR);
     scene.add(self.helper);
     scene.add(box);
 
@@ -86,7 +85,7 @@ export class CuboidComponentComponent implements OnInit  {
       scene.remove(...scene.children.filter(e => e.name === 'linie'));
       const intersectionPoints = getPointsGeometry(box, self.planeVector.x, self.planeVector.y, self.planeVector.z, self.planeVector.w);
       const lines = new THREE.LineSegments(intersectionPoints, new THREE.LineBasicMaterial({
-        color: 0xffffff
+        color: ColorConsts.LINES_COLOR
       }));
       lines.name = 'linie';
       scene.add(lines);
@@ -141,8 +140,22 @@ export class CuboidComponentComponent implements OnInit  {
     this.targetPlaneVector.set(0.1, 0, 0, 0);
   }
 
+  reset1() {
+    this.startPlaneVector = this.planeVector.clone();
+    this.clock.stop();
+    this.clock.start();
+    this.targetPlaneVector.set(0.1, 0, 0, 0);
+  }
+
   cubeClipping2() {
     this.targetPosition = new Vector3(5, 5, 5);
+    this.targetPlaneVector.set(0.499, 0.4, 0.5, 0);
+  }
+
+  reset2() {
+    this.startPlaneVector = this.planeVector.clone();
+    this.clock.stop();
+    this.clock.start();
     this.targetPlaneVector.set(0.499, 0.4, 0.5, 0);
   }
 
@@ -151,8 +164,22 @@ export class CuboidComponentComponent implements OnInit  {
     this.targetPlaneVector.set(0.5, 0.5, 0.5, -1);
   }
 
+  reset3() {
+    this.startPlaneVector = this.planeVector.clone();
+    this.clock.stop();
+    this.clock.start();
+    this.targetPlaneVector.set(0.5, 0.5, 0.5, -1);
+  }
+
   cubeClipping4() {
     this.targetPosition = new Vector3(5, 5, 5);
+    this.targetPlaneVector.set(0.499, 0.5, 0.5, 0);
+  }
+
+  reset4() {
+    this.startPlaneVector = this.planeVector.clone();
+    this.clock.stop();
+    this.clock.start();
     this.targetPlaneVector.set(0.499, 0.5, 0.5, 0);
   }
 }

@@ -1,12 +1,13 @@
 <div class="all">
-  <mat-grid-list cols="20">
-    <mat-grid-tile [colspan]='11' [rowspan]='10'>
+  <mat-grid-list cols="100">
+    <mat-grid-tile [colspan]='100' [rowspan]='1'></mat-grid-tile>
+    <mat-grid-tile [colspan]='50' [rowspan]='49'>
 
-      <div class="renderElement" style="background-color: black; padding-bottom: 20px"></div>
+      <div class="renderElement"></div>
 
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]='9' [rowspan]='10'>
+    <mat-grid-tile [colspan]='48' [rowspan]='49'>
       <mat-card class="card-style mat-elevation-z8">
         <h3>SZEŚCIAN</h3>
         <div>
@@ -20,20 +21,16 @@
                   W tym przypadku przekątna podstawy sześcianu jest również dłuższą podstawą powstałego trapezu
                   równoramiennego i wynosi ona a√2 przy krawędzi sześcianu równej a.
                 </div>
-                <mat-list>
-                    <mat-list-item>
-                        <div class="slide-box" >
-                            <mat-slider min="-0.7" max="0.7" step="0.001" [ngModel]="planeVector.w" (input)="planeVector.setW($event.value)"
-                              color="primary"></mat-slider>
-                          </div>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <div class="slide-box" >
-                            <mat-slider min="-0.7" max="0.7" step="0.001" [ngModel]="planeVector.z" (input)="planeVector.setZ($event.value)"
-                              color="primary"></mat-slider>
-                          </div>
-                    </mat-list-item>
-                  </mat-list>
+
+                <mat-grid-list cols="3" rowHeight="50px">
+                  <mat-grid-tile [colspan]='1' [rowspan]='1'>
+                    <div class="slide-box">W:
+                      <mat-slider min="-0.7" max="0.7" step="0.001" [ngModel]="planeVector.w"
+                        (input)="planeVector.setW($event.value)" color="primary"></mat-slider>
+                    </div>
+                  </mat-grid-tile>
+                </mat-grid-list>
+
                 <div class="button-style">
                   <button mat-raised-button (click)="reset1()">
                     <mat-icon>refresh</mat-icon> Reset
@@ -51,18 +48,18 @@
                   Powstały przekrój jest pięciokątem, kształtem przypominający diament.
                 </div>
                 <mat-grid-list cols="3" rowHeight="50px">
-                    <mat-grid-tile [colspan]='1' [rowspan]='1'>
-                        <div class="slide-box" >W:
-                            <mat-slider min="-0.7" max="0.7" step="0.001" [ngModel]="planeVector.w" (input)="planeVector.setW($event.value)"
-                              color="primary"></mat-slider>
-                          </div>
-                      </mat-grid-tile>
-                      <mat-grid-tile [colspan]='1' [rowspan]='1'>
-                          <div class="slide-box">X:
-                              <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.x" (input)="planeVector.setX($event.value)"
-                                color="primary"></mat-slider>
-                            </div>
-                        </mat-grid-tile>
+                  <mat-grid-tile [colspan]='1' [rowspan]='1'>
+                    <div class="slide-box">W:
+                      <mat-slider min="-0.7" max="0.7" step="0.001" [ngModel]="planeVector.w"
+                        (input)="planeVector.setW($event.value)" color="primary"></mat-slider>
+                    </div>
+                  </mat-grid-tile>
+                  <mat-grid-tile [colspan]='1' [rowspan]='1'>
+                    <div class="slide-box">X:
+                      <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.x"
+                        (input)="planeVector.setX($event.value)" color="primary"></mat-slider>
+                    </div>
+                  </mat-grid-tile>
                 </mat-grid-list>
                 <div class="button-style">
                   <button mat-raised-button (click)="reset2()">
@@ -77,30 +74,38 @@
                 <div class="tab-style">Trójkąt</div>
               </ng-template>
               <div class="teory-space2">
-                <button mat-icon-button [matMenuTriggerFor]="menu3">
-                  <mat-icon style="color: black">menu</mat-icon>
-                </button>
-                <mat-menu #menu3="matMenu">
-                  <div class="slide-box" mat-menu-item>
-                    <mat-slider min="-2" max="2" step="0.001" [ngModel]="planeVector.w" (input)="planeVector.setW($event.value)"
-                      color="primary"></mat-slider>
-                  </div>
-                  <div class="slide-box" mat-menu-item>
-                    <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.x" (input)="planeVector.setX($event.value)"
-                      color="primary"></mat-slider>
-                  </div>
-                  <div class="slide-box" mat-menu-item>
-                    <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.y" (input)="planeVector.setY($event.value)"
-                      color="primary"></mat-slider>
-                  </div>
-                  <div class="slide-box" mat-menu-item>
-                    <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.z" (input)="planeVector.setZ($event.value)"
-                      color="primary"></mat-slider>
-                  </div>
-                </mat-menu>
+
                 <div class="teory-space2">
-                  Powstały przekrój jest trójkątem równobocznym, którego boki mają długość przekątnej ściany bocznej sześcianu.
+                  Powstały przekrój jest trójkątem równobocznym, którego boki mają długość przekątnej ściany bocznej
+                  sześcianu.
                 </div>
+                <mat-grid-list cols="40" rowHeight="50px">
+                  <mat-grid-tile [colspan]='10' [rowspan]='1'>
+                    <div class="slide-box">W:
+                      <mat-slider min="-3" max="3" step="0.001" [ngModel]="planeVector.w"
+                        (input)="planeVector.setW($event.value)" color="primary"></mat-slider>
+                    </div>
+                  </mat-grid-tile>
+                  <mat-grid-tile [colspan]='10' [rowspan]='1'>
+                    <div class="slide-box">X:
+                      <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.x"
+                        (input)="planeVector.setX($event.value)" color="primary"></mat-slider>
+                    </div>
+                  </mat-grid-tile>
+                  <mat-grid-tile [colspan]='10' [rowspan]='1'>
+                    <div class="slide-box">Y:
+                      <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.y"
+                        (input)="planeVector.setY($event.value)" color="primary"></mat-slider>
+                    </div>
+                  </mat-grid-tile>
+                  <mat-grid-tile [colspan]='10' [rowspan]='1'>
+                    <div class="slide-box">Z:
+                      <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.z"
+                        (input)="planeVector.setZ($event.value)" color="primary"></mat-slider>
+                    </div>
+                  </mat-grid-tile>
+                </mat-grid-list>
+
                 <div class="button-style">
                   <button mat-raised-button (click)="reset3()">
                     <mat-icon>refresh</mat-icon> Reset
@@ -114,18 +119,18 @@
                 <div class="tab-style">Sześciokąt</div>
               </ng-template>
               <div class="teory-space2">
-                <button mat-icon-button [matMenuTriggerFor]="menu4">
-                  <mat-icon style="color: black">menu</mat-icon>
-                </button>
-                <mat-menu #menu4="matMenu">
-                  <div class="slide-box" mat-menu-item>
-                    <mat-slider min="-2" max="2" step="0.001" [ngModel]="planeVector.w" (input)="planeVector.setW($event.value)"
-                      color="primary"></mat-slider>
-                  </div>
-                </mat-menu>
                 <div class="teory-space2">
-                  Powstały przekrój jest sześciokątem foremnym. Punkty przecięcia krawędzi z płaszczyzną dzieli krawędzie sześcianu na połowy.
+                  Powstały przekrój jest sześciokątem foremnym. Punkty przecięcia krawędzi z płaszczyzną dzieli
+                  krawędzie sześcianu na połowy.
                 </div>
+                <mat-grid-list cols="3" rowHeight="50px">
+                    <mat-grid-tile [colspan]='1' [rowspan]='1'>
+                      <div class="slide-box">W:
+                        <mat-slider min="-0.7" max="0.7" step="0.001" [ngModel]="planeVector.w"
+                          (input)="planeVector.setW($event.value)" color="primary"></mat-slider>
+                      </div>
+                    </mat-grid-tile>
+                  </mat-grid-list>
                 <div class="button-style">
                   <button mat-raised-button (click)="reset4()">
                     <mat-icon>refresh</mat-icon> Reset
