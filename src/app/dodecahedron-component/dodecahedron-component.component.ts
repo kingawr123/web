@@ -31,9 +31,9 @@ export class DodecahedronComponentComponent implements OnInit {
   clock: Clock = new Clock();
   targetPosition: Vector3;
   startPosition: Vector3;
-  startPlaneVector: Vector4 = new Vector4(0, 0, 0, 0.1);
+  startPlaneVector: Vector4 = new Vector4(0, 0, 0, 0.0014);
   planeVector: Vector4 = new Vector4(0.1, 0, 0, 0);
-  targetPlaneVector: Vector4 = new Vector4(0.1, 0, 0, 0);
+  targetPlaneVector: Vector4 = new Vector4(0.5, 0.5, 0.5, 0);
   cameraLookAtTarget: Vector3 = new Vector3(0, 0, 0);
 
   constructor() { }
@@ -53,7 +53,7 @@ export class DodecahedronComponentComponent implements OnInit {
     document.body.getElementsByClassName('renderElement')[0].appendChild(renderer.domElement);
 
     scene.add(new THREE.AmbientLight(0x505050, 3));
-    scene.background = new THREE.Color( ColorConsts.BACKGROUND_COLOR );
+    scene.background = new THREE.Color(ColorConsts.BACKGROUND_COLOR);
 
     const dirLight = addLight();
     scene.add(dirLight);
@@ -76,7 +76,7 @@ export class DodecahedronComponentComponent implements OnInit {
       if (!self.targetPlaneVector.equals(self.startPlaneVector)) {
         const elapsedTime = self.clock.getElapsedTime();
         self.planeVector = new THREE.Vector4().lerpVectors(self.startPlaneVector, self.targetPlaneVector, Math.min(elapsedTime / 2.5, 1));
-        if(compereVectors4(self.targetPlaneVector, self.planeVector)) {
+        if (compereVectors4(self.targetPlaneVector, self.planeVector)) {
           self.startPlaneVector = self.targetPlaneVector;
         }
       }
@@ -95,9 +95,9 @@ export class DodecahedronComponentComponent implements OnInit {
 
       if (self.targetPosition && !self.targetPosition.equals(self.startPosition)) {
         const elapsedTime = self.clock.getElapsedTime();
-        const {x,y,z} = new THREE.Vector3().lerpVectors(self.startPosition, self.targetPosition, Math.min(elapsedTime / 2.5, 1));
+        const { x, y, z } = new THREE.Vector3().lerpVectors(self.startPosition, self.targetPosition, Math.min(elapsedTime / 2.5, 1));
         self.camera.position.set(x, y, z);
-        if(self.camera.position.equals(self.targetPosition)) {
+        if (self.camera.position.equals(self.targetPosition)) {
           self.startPosition = self.targetPosition;
         }
       }
@@ -136,21 +136,49 @@ export class DodecahedronComponentComponent implements OnInit {
 
   cubeClipping1() {
     this.targetPosition = new Vector3(5, 5, 5);
-    this.targetPlaneVector.set(-7, 0, 0, -0.2);
+    this.targetPlaneVector.set(0.5, 0.5, 0.5, 0);
+  }
+
+  reset1() {
+    this.startPlaneVector = this.planeVector.clone();
+    this.clock.stop();
+    this.clock.start();
+    this.targetPlaneVector.set(0.5, 0.5, 0.5, 0);
   }
 
   cubeClipping2() {
-    this.targetPosition = new Vector3(6, 1, 2);
-    this.targetPlaneVector.set(0.0001, 0.5, 0.68, 0);
+    this.targetPosition = new Vector3(2, 2, 8);
+    this.targetPlaneVector.set(0.0001, 0, 0.5, -1.5);
+  }
+
+  reset2() {
+    this.startPlaneVector = this.planeVector.clone();
+    this.clock.stop();
+    this.clock.start();
+    this.targetPlaneVector.set(0.0001, 0, 0.5, -1.5);
   }
 
   cubeClipping3() {
-    this.targetPosition = new Vector3(4, 1, 4);
-    this.targetPlaneVector.set(0.1, -0.1001, 0.1, -0.35);
+    this.targetPosition = new Vector3(3, 2, 7);
+    this.targetPlaneVector.set(0.5, 0.5, 0.5, -2.6);
+  }
+
+  reset3() {
+    this.startPlaneVector = this.planeVector.clone();
+    this.clock.stop();
+    this.clock.start();
+    this.targetPlaneVector.set(0.5, 0.5, 0.5, -2.6);
   }
 
   cubeClipping4() {
-    this.targetPosition = new Vector3(5, 5, 5);
-    this.targetPlaneVector.set(0.5, 0.5, 0.5, 0);
+    this.targetPosition = new Vector3(3, 2, 7);
+    this.targetPlaneVector.set(0.5, 0.5, 0.7, -2.6);
+  }
+
+  reset4() {
+    this.startPlaneVector = this.planeVector.clone();
+    this.clock.stop();
+    this.clock.start();
+    this.targetPlaneVector.set(0, 0, 0, 0.0014);
   }
 }

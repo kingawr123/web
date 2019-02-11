@@ -409,18 +409,18 @@ MIT
 
 @angular/material/tabs
 
-@angular/material/button
-
-@angular/material/icon
-
-@angular/material/menu
-
 @angular/forms
 MIT
 
 @angular/material/slider
 
+@angular/material/button
+
+@angular/material/icon
+
 @angular/material/toolbar
+
+@angular/material/menu
 
 zone.js
 MIT
