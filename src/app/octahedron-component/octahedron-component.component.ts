@@ -1,14 +1,12 @@
 import { Component, OnInit, enableProdMode } from '@angular/core';
 import * as THREE from 'three';
 import { MatSliderChange, MatTabChangeEvent } from '@angular/material';
-import { addPlane } from 'src/threejsHelpers/addPlane';
-import { addBox } from 'src/threejsHelpers/addFigure';
 import { addLight } from '../../threejsHelpers/addLight';
 import { Camera, Geometry, Scene, Vector3, Clock, Vector4 } from 'three';
 import { getPointsGeometry } from 'src/threejsHelpers/intersection';
 import { OrbitControls } from 'three-orbitcontrols-ts';
 import { compereVectors4 } from 'src/threejsHelpers/vectorsHelper';
-import { addCuboid, addCone, addDeco, addOctahedron } from '../../threejsHelpers/addFigure';
+import { addOctahedron } from '../../threejsHelpers/addFigure';
 import { ColorConsts } from '../../threejsHelpers/colorConst';
 
 @Component({
@@ -30,9 +28,9 @@ export class OctahedronComponentComponent implements OnInit {
   clock: Clock = new Clock();
   targetPosition: Vector3;
   startPosition: Vector3;
-  startPlaneVector: Vector4 = new Vector4(0, 0, 0, 0.1);
+  startPlaneVector: Vector4 = new Vector4(0, 2, 0, 0);
   planeVector: Vector4 = new Vector4(0.1, 0, 0, 0);
-  targetPlaneVector: Vector4 = new Vector4(0.1, 0, 0, 0);
+  targetPlaneVector: Vector4 = new Vector4(0, 2, 0, -1);
   cameraLookAtTarget: Vector3 = new Vector3(0, 0, 0);
 
   constructor() { }
@@ -64,12 +62,16 @@ export class OctahedronComponentComponent implements OnInit {
     scene.add(self.helper);
     scene.add(box);
 
-    self.camera.position.set(5, 5, 5);
+    self.camera.position.set(4, 3, 6);
     self.camera.lookAt(scene.position);
 
 
     function animate(): void {
       self.camera.lookAt(self.cameraLookAtTarget);
+
+      if(self.planeVector.y == 0 || self.planeVector.y == -0.001){
+        self.planeVector.y += 0.005;
+      }
 
       if (!self.targetPlaneVector.equals(self.startPlaneVector)) {
         const elapsedTime = self.clock.getElapsedTime();
@@ -93,7 +95,7 @@ export class OctahedronComponentComponent implements OnInit {
 
       if (self.targetPosition && !self.targetPosition.equals(self.startPosition)) {
         const elapsedTime = self.clock.getElapsedTime();
-        const {x,y,z} = new THREE.Vector3().lerpVectors(self.startPosition, self.targetPosition, Math.min(elapsedTime / 2.5, 1));
+        const {x,y,z} = new THREE.Vector3().lerpVectors(self.startPosition, self.targetPosition, Math.min(elapsedTime / 2.5, 1.5));
         self.camera.position.set(x, y, z);
         if(self.camera.position.equals(self.targetPosition)) {
           self.startPosition = self.targetPosition;
@@ -126,29 +128,43 @@ export class OctahedronComponentComponent implements OnInit {
       case 2:
         this.cubeClipping3();
         break;
-      case 3:
-        this.cubeClipping4();
-        break;
     }
   }
 
   cubeClipping1() {
-    this.targetPosition = new Vector3(5, 5, 5);
-    this.targetPlaneVector.set(-7, 0, 0, -0.2);
+    this.targetPosition = new Vector3(4, 3, 6);
+    this.targetPlaneVector.set(0, 2, 0, -1);
+  }
+
+  reset1() {
+    this.startPlaneVector = this.planeVector.clone();
+    this.clock.stop();
+    this.clock.start();
+    this.targetPlaneVector.set(0, 2, 0, -1);
   }
 
   cubeClipping2() {
-    this.targetPosition = new Vector3(6, 1, 2);
-    this.targetPlaneVector.set(0.0001, 0.5, 0.68, 0);
+    this.targetPosition = new Vector3(2, 2, 6);
+    this.targetPlaneVector.set(0.001, 0.5, 0.75, 0);
+  }
+
+  reset2() {
+    this.startPlaneVector = this.planeVector.clone();
+    this.clock.stop();
+    this.clock.start();
+    this.targetPlaneVector.set(0.001, 0.5, 0.75, 0);
   }
 
   cubeClipping3() {
-    this.targetPosition = new Vector3(4, 1, 4);
-    this.targetPlaneVector.set(0.1, -0.1001, 0.1, -0.35);
-  }
-
-  cubeClipping4() {
     this.targetPosition = new Vector3(5, 5, 5);
     this.targetPlaneVector.set(0.5, 0.5, 0.5, 0);
   }
+
+  reset3() {
+    this.startPlaneVector = this.planeVector.clone();
+    this.clock.stop();
+    this.clock.start();
+    this.targetPlaneVector.set(0.5, 0.5, 0.5, 0);
+  }
+
 }

@@ -2,29 +2,26 @@
   <mat-toolbar class="mat-elevation-z4">
     <div>
       <i class="material-icons md-36pd" style="margin-right: 0.4em; color: black">dashboard</i>
-      <span mat-raised-button routerLink="startPage" style="color: black; font-family:Georgia, 'Times New Roman', Times, serif">Przekroje Figur</span>
+      <span mat-raised-button routerLink="startPage"
+        style="user-select: none; cursor: pointer; color: black; font-family:Georgia, 'Times New Roman', Times, serif">Przekroje Figur</span>
       <a mat-raised-button routerLink="cube">Sześcian</a>
       <a mat-raised-button routerLink="cuboid">Prostopadłościan</a>
       <a mat-raised-button routerLink="pyramid">Ostrosłup</a>
       <a mat-raised-button routerLink="dodecahedron">Dwunastocian Foremny</a>
       <a mat-raised-button routerLink="octaedr">Oktaedr</a>
       <button style="position: absolute; right: 0" mat-icon-button [matMenuTriggerFor]="menu">
-          <mat-icon style="color: black; size: 5em">menu</mat-icon>
+        <mat-icon style="color: black; size: 5em">menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button routerLink="theory" mat-menu-item>
+          <mat-icon>library_books</mat-icon>
+          <span>Teoria</span>
         </button>
-        <mat-menu #menu="matMenu">
-            <button routerLink="teory" mat-menu-item>
-                <mat-icon>library_books</mat-icon>
-                <span>Teoria</span>
-                </button>
-          <button routerLink="aboutPage" mat-menu-item>
-            <mat-icon>web</mat-icon>
-            <span>O stronie</span>
-          </button>
-          <button routerLink="startPage" mat-menu-item>
-            <mat-icon>refresh</mat-icon>
-            <span>Strona Główna</span>
-            </button>
-        </mat-menu>
+        <button routerLink="startPage" mat-menu-item>
+          <mat-icon>refresh</mat-icon>
+          <span>Strona Główna</span>
+        </button>
+      </mat-menu>
     </div>
   </mat-toolbar>
 </div>

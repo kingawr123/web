@@ -11,11 +11,10 @@ import { CubeComponentComponent } from './cube-component/cube-component.componen
 import { CuboidComponentComponent } from './cuboid-component/cuboid-component.component';
 import { StartPagedComponentComponent } from './start-paged-component/start-paged-component.component';
 import { PyramidComponentComponent } from './pyramid-component/pyramid-component.component';
-import { AboutPageComponentComponent } from './about-page-component/about-page-component.component';
 import { APP_BASE_HREF, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { DodecahedronComponentComponent } from './dodecahedron-component/dodecahedron-component.component';
 import { OctahedronComponentComponent } from './octahedron-component/octahedron-component.component';
-import { TeoryComponentComponent } from './teory-component/teory-component.component';
+import { TheoryComponentComponent } from './theory-component/theory-component.component';
 
 
 
@@ -26,10 +25,9 @@ import { TeoryComponentComponent } from './teory-component/teory-component.compo
     CuboidComponentComponent,
     StartPagedComponentComponent,
     PyramidComponentComponent,
-    AboutPageComponentComponent,
     DodecahedronComponentComponent,
     OctahedronComponentComponent,
-    TeoryComponentComponent,
+    TheoryComponentComponent,
   ],
   imports: [
     BrowserModule,
