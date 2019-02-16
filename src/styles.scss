@@ -17,31 +17,6 @@ body {
   margin-bottom: 0.1em;
 }
 
-.img-plaszczyzna{
-  width: 250px;
-  height: 210px;
-  background-repeat: no-repeat;
-  border: 2px solid #000000;
-  box-sizing: border-box;
-  background-image:url("plaszczyzny.gif");
-}
-.img-szescian{
-  width: 353px;
-  height: 344px;
-  background-repeat: no-repeat;
-  border: 2px solid #000000;
-  box-sizing: border-box;
-  background-image:url("szescian.png");
-}
-.img-szescian5-katZrobiony{
-  width: 1063px;
-  height: 442px;
-  background-repeat: no-repeat;
-  border: 2px solid #000000;
-  background-image:url("szescian5-katZrobiony.png");
-  box-sizing: border-box;
-}
-
 h1{
   vertical-align: middle;
   line-height: 200px;
@@ -50,7 +25,6 @@ h1{
   margin-bottom: 0%;
   margin-top: 0%;
   color:black;
-  font-family: 'Book Antiqua';
   font-size: 5em;
   text-align: center;
   text-decoration-line: underline
@@ -86,7 +60,7 @@ h5{
   margin: 0%;
   color:black;
   font-family: 'Bookman Old';
-  font-size: 1.2em;
+  font-size: 1.5em;
   text-align: left;
 }
 
@@ -105,7 +79,7 @@ ul{
 
 .main-head {
   box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.452);
-  background-image: url("tlo2.jpg");
+  background-image: url("assets/images/tlo2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -131,21 +105,7 @@ ul{
   font-family: Roboto,"Helvetica Neue",sans-serif;
   font-size: 1.3em;
   text-align: left;
-}
-
-.remamber-space-margin{
-margin: 5%;
-}
-
-.remember-space{
-  background-color: #CFD8DC;
-  padding: 10px;
-  font-size: 1.5em;
-  color: black;
-  text-align: left;
-  font-family: Roboto,"Helvetica Neue",sans-serif;
-  box-sizing: border-box;
-  border: 4px solid #000000;
+  border-radius: 10px
 }
 
 .main-page{
@@ -166,6 +126,7 @@ margin: 5%;
   margin-right: 2%;
   margin-bottom: 2%;
   min-height: 280px;
+  border-radius: 18px
 }
 
 .button-style{

@@ -3,11 +3,14 @@
     <mat-grid-tile [colspan]='100' [rowspan]='1'></mat-grid-tile>
     <mat-grid-tile [colspan]='50' [rowspan]='49'>
 
-      <div class="renderElement"></div>
+      <div class="renderElement">
+        <mat-icon style="color: darkslategrey">3d_rotation</mat-icon>
+      </div>
 
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]='48' [rowspan]='49'>
+
       <mat-card class="card-style mat-elevation-z8">
         <h3>SZEŚCIAN</h3>
         <div>
@@ -122,13 +125,13 @@
 
                 </div>
                 <mat-grid-list cols="3" rowHeight="50px">
-                    <mat-grid-tile [colspan]='1' [rowspan]='1'>
-                      <div class="slide-box">W:
-                        <mat-slider min="-0.7" max="0.7" step="0.001" [ngModel]="planeVector.w"
-                          (input)="planeVector.setW($event.value)" color="primary"></mat-slider>
-                      </div>
-                    </mat-grid-tile>
-                  </mat-grid-list>
+                  <mat-grid-tile [colspan]='1' [rowspan]='1'>
+                    <div class="slide-box">W:
+                      <mat-slider min="-0.7" max="0.7" step="0.001" [ngModel]="planeVector.w"
+                        (input)="planeVector.setW($event.value)" color="primary"></mat-slider>
+                    </div>
+                  </mat-grid-tile>
+                </mat-grid-list>
                 <div class="button-style">
                   <button mat-raised-button (click)="reset4()">
                     <mat-icon>refresh</mat-icon> Reset
