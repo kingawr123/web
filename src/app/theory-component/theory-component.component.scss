@@ -14,6 +14,10 @@ margin: 5%;
   background-color: lavender;
 }
 
+.tab-example-style{
+  max-width: 1024px;
+}
+
 .img-plaszczyzna{
   width: 250px;
   height: 210px;
@@ -28,9 +32,10 @@ margin: 5%;
   border: 2px solid #000000;
   box-sizing: border-box;
 }
-.img-szescian5-katZrobiony{
-  width: 1063px;
-  height: 442px;
+.img-szescian-zrobiony{
+  width: 1024px;
+  height: 507px;
+  box-align: center;
   background-repeat: no-repeat;
   border: 2px solid #000000;
   box-sizing: border-box;

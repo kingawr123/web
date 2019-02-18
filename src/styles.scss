@@ -59,7 +59,7 @@ h4{
 h5{
   margin: 0%;
   color:black;
-  font-family: 'Bookman Old';
+  font-family: ' Roboto, Helvetica Neue ,sans-serif';
   font-size: 1.5em;
   text-align: left;
 }
@@ -71,6 +71,7 @@ li{
   text-align: left;
   padding-bottom: 10px;
   margin: auto;
+
 }
 
 ul{
@@ -99,10 +100,11 @@ ul{
   background-color:#FAFAFA;
   height:auto;
   padding-left: 10px;
+  padding-right: 10px;
   padding-top: 10px;
   padding-bottom: 20px;
   color: #424242;
-  font-family: Roboto,"Helvetica Neue",sans-serif;
+  font-family:" Roboto, Helvetica Neue ,sans-serif";
   font-size: 1.3em;
   text-align: left;
   border-radius: 10px
@@ -125,7 +127,7 @@ ul{
   margin-left: 2%;
   margin-right: 2%;
   margin-bottom: 2%;
-  min-height: 280px;
+  min-height: 200px;
   border-radius: 18px
 }
 
@@ -137,7 +139,7 @@ ul{
 }
 
 .tab-style{
-  color: #424242;
+  color: black;
   padding-right: 0.2em;
 }
 

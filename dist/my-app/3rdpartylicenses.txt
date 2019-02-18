@@ -402,8 +402,6 @@ THE SOFTWARE.
 
 @angular/material/grid-list
 
-@angular/material/icon
-
 @angular/material/card
 
 @angular/animations
@@ -417,6 +415,8 @@ MIT
 @angular/material/slider
 
 @angular/material/button
+
+@angular/material/icon
 
 @angular/material/toolbar
 

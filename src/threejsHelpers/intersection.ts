@@ -11,6 +11,7 @@ export function getPointsOfIntersection(line: THREE.Line3, plane: THREE.Plane) {
   return pointsOfIntersection;
 }
 
+
 export function getPointsGeometry(object: THREE.Mesh, x: number, y: number, z: number, offset: number) {
   const mathPlane = new THREE.Plane(new Vector3(x, y, z), offset);
 

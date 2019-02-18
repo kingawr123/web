@@ -1,7 +1,6 @@
 import { Component, OnInit, enableProdMode, DebugElement } from '@angular/core';
 import * as THREE from 'three';
 import { MatSliderChange, MatTabChangeEvent } from '@angular/material';
-import { addPlane } from 'src/threejsHelpers/addPlane';
 import { addBox } from 'src/threejsHelpers/addFigure';
 import { addLight } from '../../threejsHelpers/addLight';
 import { Camera, Geometry, Scene, Vector3, Clock, Vector4 } from 'three';
@@ -21,6 +20,8 @@ export class CubeComponentComponent implements OnInit {
   value: number;
 
   box: THREE.Mesh;
+
+  plane: THREE.Mesh;
 
   camera: THREE.PerspectiveCamera;
 

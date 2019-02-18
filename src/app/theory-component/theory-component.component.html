@@ -25,29 +25,28 @@
               π z krawędziami wielościanu i połączyć punkty leżące na tej samej ścianie. <br><br>
             </p>
 
-                    <div class="remamber-space-margin">
+            <div class="remamber-space-margin">
               <div class="remember-space">
 
                 <ul style="font-family: 'Bookman Old'; ">
-                  <h5><i>Pamiętaj!</i></h5>
+                  <h5>Pamiętaj!</h5>
                 </ul>
 
-                <mat-grid-list cols="4" rowHeight="250px">
-                  <mat-grid-tile [colspan]='2' [rowspan]='1'>
+                <mat-grid-list cols="100" rowHeight="250px">
+                  <mat-grid-tile [colspan]='49' [rowspan]='1'>
                     <li>Aby wyznaczyć krawędź przecięcia się dwóch płaszczyzn (np. płaszczyzny przecinającej i
                       płaszczyzny zawierającej ścianę wielościanu), wystarczy wyznaczyć dwa punkty należące do obu tych
                       płaszczyzn. Prosta poprowadzona przez te punkty jest krawędzią przecięcia danych płaszczyzn.</li>
                   </mat-grid-tile>
 
-                  <mat-grid-tile [colspan]='2' [rowspan]='1'>
-                    <img class="img-plaszczyzna" src="assets/images/plaszczyzny.gif">
-                  </mat-grid-tile>
+                  <mat-grid-tile [colspan]='2' [rowspan]='1'></mat-grid-tile>
 
-                  <mat-grid-tile [colspan]='2' [rowspan]='1'>
+                  <mat-grid-tile [colspan]='49' [rowspan]='1'>
                     <li>Aby wyznaczyć punkt, w którym prosta <i>k </i>przebija płaszczyznę π, wystarczy wyznaczyć punkt
                       przecięcia prostej <i>k </i> i prostej <i>l</i>, która jest krawędzią przecięcia płaszczyzny π
                       zawierającej prostą <i>k </i>.</li>
                   </mat-grid-tile>
+
 
                 </mat-grid-list>
 
@@ -64,7 +63,7 @@
                 <h3>Przykład</h3>
               </div>
 
-              <mat-tab-group style="height: 80%">
+              <mat-tab-group mat-stretch-tabs="center" style="height: 80%">
                 <mat-tab>
                   <ng-template mat-tab-label>
                     <div class="tab-style">Treść</div>
@@ -80,7 +79,7 @@
                       </mat-grid-tile>
 
                       <mat-grid-tile [colspan]='1' [rowspan]='1'>
-                        <img class="img-szescian"src="assets/images/szescian.png" />
+                        <img class="img-szescian" src="assets/images/szescian.png" />
                       </mat-grid-tile>
                     </mat-grid-list>
 
@@ -88,11 +87,48 @@
                 </mat-tab>
 
                 <mat-tab>
-                  <ng-template mat-tab-label>
+                  <ng-template mat-tab-label >
                     <div class="tab-style">Gotowa konstrukcja</div>
                   </ng-template>
                   <div class="teory-space2">
-                    <img class="img-szescian5-katZrobiony" src="assets/images/szescian5-katZrobiony.png" />
+
+                    <mat-tab-group mat-stretch-tabs="center" class="tab-example-style">
+                      <mat-tab>
+                        <ng-template mat-tab-label>
+                          <div class="tab-style">Pierwszy krok</div>
+                        </ng-template>
+                        <hr>
+                        <img class="img-szescian-zrobiony" src="assets/images/szescian1.png">
+                      </mat-tab>
+                      <mat-tab>
+                        <ng-template mat-tab-label>
+                          <div class="tab-style">Drugi krok</div>
+                        </ng-template>
+                        <hr>
+                        <img class="img-szescian-zrobiony" src="assets/images/szescian2.png">
+                      </mat-tab>
+                      <mat-tab>
+                        <ng-template mat-tab-label>
+                          <div class="tab-style">Trzeci krok</div>
+                        </ng-template>
+                        <hr>
+                        <img class="img-szescian-zrobiony" src="assets/images/szescian3.png">
+                      </mat-tab>
+                      <mat-tab>
+                        <ng-template mat-tab-label>
+                          <div class="tab-style">Czwarty krok</div>
+                        </ng-template>
+                        <hr>
+                        <img class="img-szescian-zrobiony" src="assets/images/szescian4.png">
+                      </mat-tab>
+                      <mat-tab>
+                        <ng-template mat-tab-label>
+                          <div class="tab-style">Piąty krok</div>
+                        </ng-template>
+                        <hr>
+                        <img class="img-szescian-zrobiony" src="assets/images/szescian5.png">
+                      </mat-tab>
+                    </mat-tab-group>
                   </div>
                 </mat-tab>
 
@@ -102,18 +138,19 @@
                   </ng-template>
                   <div class="teory-space2">
                     <li>
-                      Przez punkt B prowadzimy prostą równoległą do PQ. Prosta ta leży na płaszczyźnie ABCD i przecina
-                      krawędzie DC i DA odpowiednio w punktach X1 i X3,
+                      Prowadzimy proste DC i DA, które są przedłużeniami krawędzi sześcinu.
                     </li>
                     <li>
-                      Punkt X1 i P leżą na tej samej płaszczyźnie C’CDD’, więc możemy poprowadzić prostą PX1, która
-                      przecina krawędź CC’ w punkcie X2,
+                      Zaznaczone punkty P i Q znajdują się na tej samej płaszczyźnie A'B'C'D', więc możemy poprowadzić przez nie prostą.
                     </li>
                     <li>
-                      Następnie rysujemu prostą X3Q, przecinającą krawędź AA’ w punkcie X4,
+                      Przez punkt B prowadzimy prostą równoległa do odcinka PQ. W miejscach przecięcia się prostych zaznaczamy punkty X1 i X2.
                     </li>
                     <li>
-                      Pięciokąt QPX2BX4 jest szukanym przekrojem.
+                      Powstałe punkty leżą odpowiednio na płaszczyznach DCC'D' i ADD'A', więc prowadzimy 2 proste. Jedną przez punkty X1 i P, która przecina krawędź C'C w punkcie X3. Oraz drugą prostą łączącą punkt X2 z punktem Q, przecinającą krawędź A'A w puncie X4.
+                    </li>
+                    <li>
+                      Pięciokąt QPX2BX4 jest szukanym przez nas przekrojem sześcianu.
                     </li>
                   </div>
                 </mat-tab>
