@@ -110,6 +110,18 @@ ul{
   border-radius: 10px
 }
 
+.inf-style{
+  padding: 10px;
+  font-size: 1.1em;
+  color: #424242;
+  text-align: center;
+  font-family: "Helvetica Neue",sans-serif;
+  box-sizing: border-box;
+  border: 4px solid #c8cce2;
+  border-radius: 18px;
+}
+
+
 .main-page{
   margin-left: 100px;
   margin-right: 100px;
@@ -128,7 +140,7 @@ ul{
   margin-right: 2%;
   margin-bottom: 2%;
   min-height: 200px;
-  border-radius: 18px
+  border-radius: 18px;
 }
 
 .button-style{
