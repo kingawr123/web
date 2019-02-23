@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { MatButtonModule, MatCheckboxModule, MatIconModule, MatSidenavModule, MatListModule, MatToolbarModule,
-MatSliderModule, MatMenuModule, MatProgressSpinner, MatCardModule, MatGridListModule, MatTabsModule} from '@angular/material';
+MatSliderModule, MatMenuModule, MatProgressSpinner, MatCardModule, MatGridListModule, MatTabsModule, MatSlideToggleModule} from '@angular/material';
 import { CubeComponentComponent } from './cube-component/cube-component.component';
 import { CuboidComponentComponent } from './cuboid-component/cuboid-component.component';
 import { StartPagedComponentComponent } from './start-paged-component/start-paged-component.component';
@@ -35,7 +35,7 @@ import { TheoryComponentComponent } from './theory-component/theory-component.co
     FormsModule,
     BrowserAnimationsModule,
     MatButtonModule, MatCheckboxModule, MatIconModule, MatSidenavModule, MatListModule, MatToolbarModule, MatSliderModule, MatMenuModule,
-    MatCardModule, MatGridListModule, MatTabsModule
+    MatCardModule, MatGridListModule, MatTabsModule, MatSlideToggleModule
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },

@@ -9,6 +9,7 @@ import { OrbitControls } from 'three-orbitcontrols-ts';
 import { compereVectors4 } from 'src/threejsHelpers/vectorsHelper';
 import { debuglog, debug } from 'util';
 import { ColorConsts } from '../../threejsHelpers/colorConst';
+import { displayPlane } from 'src/threejsHelpers/addPlane';
 
 @Component({
   selector: 'app-cube-component',
@@ -21,7 +22,9 @@ export class CubeComponentComponent implements OnInit {
 
   box: THREE.Mesh;
 
-  plane: THREE.Mesh;
+  plane: THREE.PlaneHelper;
+  planeEnabled: boolean;
+  planeCopy: THREE.PlaneHelper;
 
   camera: THREE.PerspectiveCamera;
 
@@ -81,12 +84,16 @@ export class CubeComponentComponent implements OnInit {
       }
 
       scene.remove(...scene.children.filter(e => e.name === 'linie'));
-      const intersectionPoints = getPointsGeometry(box, self.planeVector.x, self.planeVector.y, self.planeVector.z, self.planeVector.w);
+      const {intersectionPoints, mathPlane} = getPointsGeometry(box, self.planeVector.x, self.planeVector.y, self.planeVector.z, self.planeVector.w);
       const lines = new THREE.LineSegments(intersectionPoints, new THREE.LineBasicMaterial({
         color: ColorConsts.LINES_COLOR
       }));
       lines.name = 'linie';
       scene.add(lines);
+
+
+      displayPlane(scene, self, mathPlane);
+
 
       if (!self.startPosition) {
         self.startPosition = self.camera.position;

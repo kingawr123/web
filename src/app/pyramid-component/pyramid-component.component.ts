@@ -1,10 +1,10 @@
 import { Component, OnInit, enableProdMode } from '@angular/core';
 import * as THREE from 'three';
 import { MatSliderChange, MatTabChangeEvent } from '@angular/material';
-import { addPlane } from 'src/threejsHelpers/addPlane';
+import { addPlane, displayPlane } from 'src/threejsHelpers/addPlane';
 import { addBox, addPyramid } from 'src/threejsHelpers/addFigure';
 import { addLight } from '../../threejsHelpers/addLight';
-import { Camera, Geometry, Scene, Vector3, Clock, Vector4 } from 'three';
+import { Camera, Geometry, Scene, Vector3, Clock, Vector4, Side, DoubleSide } from 'three';
 import { getPointsGeometry } from 'src/threejsHelpers/intersection';
 import { OrbitControls } from 'three-orbitcontrols-ts';
 import { compereVectors4 } from 'src/threejsHelpers/vectorsHelper';
@@ -26,7 +26,9 @@ export class PyramidComponentComponent implements OnInit {
   lines: THREE.LineSegments;
   helper: THREE.EdgesHelper;
 
-  plane: THREE.Mesh;
+  plane: THREE.PlaneHelper;
+  planeCopy: THREE.PlaneHelper;
+  planeEnabled: boolean;
 
   clock: Clock = new Clock();
   targetPosition: Vector3;
@@ -35,6 +37,7 @@ export class PyramidComponentComponent implements OnInit {
   planeVector: Vector4 = new Vector4(0.1, 0, 0, 0);
   targetPlaneVector: Vector4 = new Vector4(0.1, 0, 0, 0);
   cameraLookAtTarget: Vector3 = new Vector3(0, 0, 0);
+
 
   constructor() { }
 
@@ -82,12 +85,14 @@ export class PyramidComponentComponent implements OnInit {
       }
 
       scene.remove(...scene.children.filter(e => e.name === 'linie'));
-      const intersectionPoints = getPointsGeometry(box, self.planeVector.x, self.planeVector.y, self.planeVector.z, self.planeVector.w);
+      const {intersectionPoints, mathPlane} = getPointsGeometry(box, self.planeVector.x, self.planeVector.y, self.planeVector.z, self.planeVector.w);
       const lines = new THREE.LineSegments(intersectionPoints, new THREE.LineBasicMaterial({
         color: ColorConsts.LINES_COLOR
       }));
       lines.name = 'linie';
       scene.add(lines);
+
+      displayPlane(scene, self, mathPlane);
 
       if (!self.startPosition) {
         self.startPosition = self.camera.position;

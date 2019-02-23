@@ -8,6 +8,7 @@ import { OrbitControls } from 'three-orbitcontrols-ts';
 import { compereVectors4 } from 'src/threejsHelpers/vectorsHelper';
 import { addOctahedron } from '../../threejsHelpers/addFigure';
 import { ColorConsts } from '../../threejsHelpers/colorConst';
+import { displayPlane } from 'src/threejsHelpers/addPlane';
 
 @Component({
   selector: 'app-octahedron-component',
@@ -24,6 +25,10 @@ export class OctahedronComponentComponent implements OnInit {
 
   lines: THREE.LineSegments;
   helper: THREE.EdgesHelper;
+
+  plane: THREE.PlaneHelper;
+  planeEnabled: boolean;
+  planeCopy: THREE.PlaneHelper;
 
   clock: Clock = new Clock();
   targetPosition: Vector3;
@@ -82,12 +87,14 @@ export class OctahedronComponentComponent implements OnInit {
       }
 
       scene.remove(...scene.children.filter(e => e.name === 'linie'));
-      const intersectionPoints = getPointsGeometry(box, self.planeVector.x, self.planeVector.y, self.planeVector.z, self.planeVector.w);
+      const {intersectionPoints, mathPlane} = getPointsGeometry(box, self.planeVector.x, self.planeVector.y, self.planeVector.z, self.planeVector.w);
       const lines = new THREE.LineSegments(intersectionPoints, new THREE.LineBasicMaterial({
         color: ColorConsts.LINES_COLOR
       }));
       lines.name = 'linie';
       scene.add(lines);
+
+      displayPlane(scene, self, mathPlane, 8);
 
       if (!self.startPosition) {
         self.startPosition = self.camera.position;

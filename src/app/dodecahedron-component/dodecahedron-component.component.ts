@@ -1,7 +1,7 @@
 import { Component, OnInit, enableProdMode } from '@angular/core';
 import * as THREE from 'three';
 import { MatSliderChange, MatTabChangeEvent } from '@angular/material';
-import { addPlane } from 'src/threejsHelpers/addPlane';
+import { addPlane, displayPlane } from 'src/threejsHelpers/addPlane';
 import { addBox } from 'src/threejsHelpers/addFigure';
 import { addLight } from '../../threejsHelpers/addLight';
 import { Camera, Geometry, Scene, Vector3, Clock, Vector4 } from 'three';
@@ -27,6 +27,10 @@ export class DodecahedronComponentComponent implements OnInit {
 
   lines: THREE.LineSegments;
   helper: THREE.EdgesHelper;
+
+  plane: THREE.PlaneHelper;
+  planeEnabled: boolean;
+  planeCopy: THREE.PlaneHelper;
 
   clock: Clock = new Clock();
   targetPosition: Vector3;
@@ -82,12 +86,14 @@ export class DodecahedronComponentComponent implements OnInit {
       }
 
       scene.remove(...scene.children.filter(e => e.name === 'linie'));
-      const intersectionPoints = getPointsGeometry(box, self.planeVector.x, self.planeVector.y, self.planeVector.z, self.planeVector.w);
+      const {intersectionPoints, mathPlane} = getPointsGeometry(box, self.planeVector.x, self.planeVector.y, self.planeVector.z, self.planeVector.w);
       const lines = new THREE.LineSegments(intersectionPoints, new THREE.LineBasicMaterial({
         color: ColorConsts.LINES_COLOR
       }));
       lines.name = 'linie';
       scene.add(lines);
+
+      displayPlane(scene, self, mathPlane, 8);
 
       if (!self.startPosition) {
         self.startPosition = self.camera.position;
