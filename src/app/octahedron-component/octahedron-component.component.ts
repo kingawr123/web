@@ -9,6 +9,7 @@ import { compereVectors4 } from 'src/threejsHelpers/vectorsHelper';
 import { addOctahedron } from '../../threejsHelpers/addFigure';
 import { ColorConsts } from '../../threejsHelpers/colorConst';
 import { displayPlane } from 'src/threejsHelpers/addPlane';
+import { PlaneVisibilityService } from '../plane-visibility.service';
 
 @Component({
   selector: 'app-octahedron-component',
@@ -27,7 +28,6 @@ export class OctahedronComponentComponent implements OnInit {
   helper: THREE.EdgesHelper;
 
   plane: THREE.PlaneHelper;
-  planeEnabled: boolean;
   planeCopy: THREE.PlaneHelper;
 
   clock: Clock = new Clock();
@@ -38,7 +38,7 @@ export class OctahedronComponentComponent implements OnInit {
   targetPlaneVector: Vector4 = new Vector4(0, 2, 0, -1);
   cameraLookAtTarget: Vector3 = new Vector3(0, 0, 0);
 
-  constructor() { }
+  constructor(public planeVisibilityService: PlaneVisibilityService) { }
   ngOnInit(): void {
     const self = this;
     const scene = new THREE.Scene();
@@ -74,10 +74,6 @@ export class OctahedronComponentComponent implements OnInit {
     function animate(): void {
       self.camera.lookAt(self.cameraLookAtTarget);
 
-      if(self.planeVector.y == 0 || self.planeVector.y == -0.001){
-        self.planeVector.y += 0.005;
-      }
-
       if (!self.targetPlaneVector.equals(self.startPlaneVector)) {
         const elapsedTime = self.clock.getElapsedTime();
         self.planeVector = new THREE.Vector4().lerpVectors(self.startPlaneVector, self.targetPlaneVector, Math.min(elapsedTime / 2.5, 1));
@@ -94,7 +90,7 @@ export class OctahedronComponentComponent implements OnInit {
       lines.name = 'linie';
       scene.add(lines);
 
-      displayPlane(scene, self, mathPlane, 8);
+      displayPlane(scene, self, mathPlane,self.planeVisibilityService.IsVisible, 8);
 
       if (!self.startPosition) {
         self.startPosition = self.camera.position;

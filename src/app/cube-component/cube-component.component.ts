@@ -10,6 +10,7 @@ import { compereVectors4 } from 'src/threejsHelpers/vectorsHelper';
 import { debuglog, debug } from 'util';
 import { ColorConsts } from '../../threejsHelpers/colorConst';
 import { displayPlane } from 'src/threejsHelpers/addPlane';
+import { PlaneVisibilityService } from '../plane-visibility.service';
 
 @Component({
   selector: 'app-cube-component',
@@ -21,9 +22,8 @@ export class CubeComponentComponent implements OnInit {
   value: number;
 
   box: THREE.Mesh;
-
   plane: THREE.PlaneHelper;
-  planeEnabled: boolean;
+
   planeCopy: THREE.PlaneHelper;
 
   camera: THREE.PerspectiveCamera;
@@ -39,7 +39,7 @@ export class CubeComponentComponent implements OnInit {
   targetPlaneVector: Vector4 = new Vector4(0.1, -0.04001, 0.1, -0.08);
   cameraLookAtTarget: Vector3 = new Vector3(0, 0, 0);
 
-  constructor() { }
+  constructor(public planeVisibilityService: PlaneVisibilityService) { }
   ngOnInit(): void {
     const self = this;
     const scene = new THREE.Scene();
@@ -92,7 +92,7 @@ export class CubeComponentComponent implements OnInit {
       scene.add(lines);
 
 
-      displayPlane(scene, self, mathPlane);
+      displayPlane(scene, self, mathPlane, self.planeVisibilityService.IsVisible);
 
 
       if (!self.startPosition) {

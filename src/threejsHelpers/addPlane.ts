@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { Vector3, Mesh, PlaneGeometry, DoubleSide } from 'three';
+import { ColorConsts } from './colorConst';
 
 export function addPlane(x: number, y:number, z: number) {
 
@@ -15,11 +16,11 @@ export function addPlane(x: number, y:number, z: number) {
   return plane;
 }
 
-export function displayPlane(scene: THREE.Scene, planeData: {plane: THREE.PlaneHelper, planeCopy: THREE.PlaneHelper, planeEnabled: boolean},  mathPlane: THREE.Plane, size = 7) {
+export function displayPlane(scene: THREE.Scene, planeData: {plane: THREE.PlaneHelper, planeCopy: THREE.PlaneHelper},  mathPlane: THREE.Plane, planeEnabled = false,  size = 7,) {
   scene.remove(planeData.plane);
   scene.remove(planeData.planeCopy);
-  if(planeData.planeEnabled) {
-    var plane = new THREE.PlaneHelper( mathPlane, size, 0xD0D0D0 );
+  if(planeEnabled) {
+    var plane = new THREE.PlaneHelper( mathPlane, size, ColorConsts.PLANE_COLOR );
     const material = new THREE.MeshBasicMaterial({
       visible: false
     });
@@ -30,7 +31,7 @@ export function displayPlane(scene: THREE.Scene, planeData: {plane: THREE.PlaneH
     scene.add(plane);
 
     const mathPlaneClone = mathPlane.clone();
-    var planeCopy = new THREE.PlaneHelper( mathPlaneClone, size, 0xD0D0D0 );
+    var planeCopy = new THREE.PlaneHelper( mathPlaneClone, size, ColorConsts.PLANE_COLOR );
 
     planeCopy.plane.set(planeCopy.plane.normal.negate(), -plane.plane.constant);
     planeCopy.material = material;

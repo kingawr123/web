@@ -9,6 +9,7 @@ import { getPointsGeometry } from 'src/threejsHelpers/intersection';
 import { OrbitControls } from 'three-orbitcontrols-ts';
 import { compereVectors4 } from 'src/threejsHelpers/vectorsHelper';
 import { ColorConsts } from '../../threejsHelpers/colorConst';
+import { PlaneVisibilityService } from '../plane-visibility.service';
 
 @Component({
   selector: 'app-pyramid-component',
@@ -28,7 +29,6 @@ export class PyramidComponentComponent implements OnInit {
 
   plane: THREE.PlaneHelper;
   planeCopy: THREE.PlaneHelper;
-  planeEnabled: boolean;
 
   clock: Clock = new Clock();
   targetPosition: Vector3;
@@ -39,7 +39,7 @@ export class PyramidComponentComponent implements OnInit {
   cameraLookAtTarget: Vector3 = new Vector3(0, 0, 0);
 
 
-  constructor() { }
+  constructor(public planeVisibilityService: PlaneVisibilityService) { }
 
   ngOnInit(): void {
     const self = this;
@@ -92,7 +92,7 @@ export class PyramidComponentComponent implements OnInit {
       lines.name = 'linie';
       scene.add(lines);
 
-      displayPlane(scene, self, mathPlane);
+      displayPlane(scene, self, mathPlane, self.planeVisibilityService.IsVisible);
 
       if (!self.startPosition) {
         self.startPosition = self.camera.position;

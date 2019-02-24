@@ -17,7 +17,7 @@
 
         <mat-card class="card-style mat-elevation-z8">
           <h3>SZEŚCIAN</h3>
-          <mat-slide-toggle [(ngModel)]="planeEnabled">Pokaż płaszczyznę</mat-slide-toggle>
+          <mat-slide-toggle [(ngModel)]="planeVisibilityService.IsVisible">Pokaż płaszczyznę</mat-slide-toggle>
           <div>
             <mat-tab-group style="height: 80%" (selectedTabChange)="tabChanged($event)">
               <mat-tab>

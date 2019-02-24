@@ -10,7 +10,7 @@
     <mat-grid-tile [colspan]='48' [rowspan]='49'>
       <mat-card class="card-style mat-elevation-z8">
         <h3>DWUNASTOCIAN FOREMNY</h3>
-        <mat-slide-toggle [(ngModel)]="planeEnabled">Pokaż płaszczyznę</mat-slide-toggle>
+        <mat-slide-toggle [(ngModel)]="planeVisibilityService.IsVisible">Pokaż płaszczyznę</mat-slide-toggle>
         <div>
           <mat-tab-group style="height: 80%" (selectedTabChange)="tabChanged($event)">
             <mat-tab>
@@ -29,18 +29,18 @@
                     </div>
                   </mat-grid-tile>
 
-                  <mat-grid-tile [colspan]='10' [rowspan]='1'>
+                  <!-- <mat-grid-tile [colspan]='10' [rowspan]='1'>
                     <div class="slide-box">Y:
                       <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.y"
                         (input)="planeVector.setY($event.value)" color="primary"></mat-slider>
                     </div>
-                  </mat-grid-tile>
-                  <mat-grid-tile [colspan]='10' [rowspan]='1'>
+                  </mat-grid-tile> -->
+                  <!-- <mat-grid-tile [colspan]='10' [rowspan]='1'>
                     <div class="slide-box">Z:
                       <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.z"
                         (input)="planeVector.setZ($event.value)" color="primary"></mat-slider>
                     </div>
-                  </mat-grid-tile>
+                  </mat-grid-tile> -->
                 </mat-grid-list>
 
                 <div class="button-style">
@@ -74,12 +74,7 @@
                         (input)="planeVector.setY($event.value)" color="primary"></mat-slider>
                     </div>
                   </mat-grid-tile>
-                  <mat-grid-tile [colspan]='10' [rowspan]='1'>
-                    <div class="slide-box">Z:
-                      <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.z"
-                        (input)="planeVector.setZ($event.value)" color="primary"></mat-slider>
-                    </div>
-                  </mat-grid-tile>
+
                 </mat-grid-list>
 
                 <div class="button-style">

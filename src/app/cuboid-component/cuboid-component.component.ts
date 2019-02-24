@@ -10,6 +10,7 @@ import { OrbitControls } from 'three-orbitcontrols-ts';
 import { compereVectors4 } from 'src/threejsHelpers/vectorsHelper';
 import { addCuboid } from '../../threejsHelpers/addFigure';
 import { ColorConsts } from 'src/threejsHelpers/colorConst';
+import { PlaneVisibilityService } from '../plane-visibility.service';
 
 @Component({
   selector: 'app-cuboid-component',
@@ -29,7 +30,6 @@ export class CuboidComponentComponent implements OnInit  {
   helper: THREE.EdgesHelper;
 
   plane: THREE.PlaneHelper;
-  planeEnabled: boolean;
   planeCopy: THREE.PlaneHelper;
 
   clock: Clock = new Clock();
@@ -40,7 +40,7 @@ export class CuboidComponentComponent implements OnInit  {
   targetPlaneVector: Vector4 = new Vector4(0.1, 0, 0, 0);
   cameraLookAtTarget: Vector3 = new Vector3(0, 0, 0);
 
-  constructor() { }
+  constructor(public planeVisibilityService: PlaneVisibilityService) { }
   ngOnInit(): void {
     const self = this;
     const scene = new THREE.Scene();
@@ -93,7 +93,7 @@ export class CuboidComponentComponent implements OnInit  {
       lines.name = 'linie';
       scene.add(lines);
 
-      displayPlane(scene, self, mathPlane, 7.5);
+      displayPlane(scene, self, mathPlane,self.planeVisibilityService.IsVisible ,7.5);
 
       if (!self.startPosition) {
         self.startPosition = self.camera.position;
