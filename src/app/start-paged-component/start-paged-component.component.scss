@@ -1,1 +1,96 @@
 
+//header
+
+header{
+  border-bottom: .5px solid #d1d7df;
+  background-image: url("../../assets/images/tlo2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column
+}
+
+header h1 {
+  margin: 0;
+  padding: 0;
+  color:black;
+  font-size: 5em;
+}
+
+header p {
+  font-size: 1em;
+  color: black;
+  text-align: center;
+  margin: 20px 0 0 0;
+  line-height: 20px;
+}
+
+//informations
+
+.informations{
+  margin: 40px 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 15px;
+}
+
+.informations mat-card {
+  width: 45%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.informations h2 {
+  font-weight: 200;
+  font-size: 3em;
+  width: 100%;
+  text-align: center;
+  background-color: #CFD8DC;
+  margin: 0;
+  padding: 0;
+  border-bottom: .5px solid #d1d7df
+}
+
+.informations .card-text {
+  padding: 30px 20px;
+  background-color:#fff;
+  color: #424242;
+  font-size: 1.2em;
+}
+
+//inf-tech
+
+.inf-tech{
+  border-top: 1px solid #d1d7df;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: .5px solid #d1d7df;
+}
+
+.inf-tech h2 {
+  font-weight: 200;
+  font-size: 3em;
+  margin: 0 0 10px 0;
+  padding: 0;
+  text-align: center;
+}
+
+.inf-tech ul {
+  width: 40%;
+  margin: 30px 50px;
+}
+
+.inf-tech li {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  font-size: 1.6em;
+  line-height: 35px;
+}

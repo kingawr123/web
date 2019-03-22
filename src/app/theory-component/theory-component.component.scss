@@ -1,3 +1,25 @@
+
+//header
+
+header{
+  border-bottom: .5px solid #d1d7df;
+  background-image: url("../../assets/images/tlo2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column
+}
+
+header h1 {
+  margin: 0;
+  padding: 0;
+  color:black;
+  font-size: 4.8em;
+}
+
 .remamber-space-margin{
 margin: 5%;
 }

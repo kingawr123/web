@@ -8,47 +8,32 @@ body {
   height: 100%;
   background-color:white;
 }
-.p-startPage{
-  font-size: 1em;
-  font-family:'Book Antiqua';
-  color: black;
-  text-align: center;
-  margin-top: 0.1em;
-  margin-bottom: 0.1em;
+
+.main-page{
+  margin: 10px 100px 30px 100px;
+  font-family:"Times New Roman";
+  background-color: #FAFAFA
 }
 
-h1{
-  vertical-align: middle;
-  line-height: 200px;
-  height: 200px;
-  width: 100%;
-  margin-bottom: 0%;
-  margin-top: 0%;
-  color:black;
-  font-size: 5em;
-  text-align: center;
-  text-decoration-line: underline;
-  font-family: 'Roboto,"Helvetica Neue",sans-serif';
-}
 
-h2{
-  vertical-align: middle;
-  color:black;
-  font-family: 'Book Antiqua';
-  font-size: 3em;
-  text-align: center;
-  text-decoration-line: underline
-}
+// h2{
+//   vertical-align: middle;
+//   color:black;
+//   font-family: 'Book Antiqua';
+//   font-size: 3em;
+//   text-align: center;
+//   text-decoration-line: underline
+// }
 
-h3{
-  color:black;
-  // font-family: 'Roboto,"Helvetica Neue",sans-serif';
-  font-weight: 200;
-  font-size: 2.5em;
-  text-align: center;
-  margin-bottom: 0.5em;
-  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.76);
-}
+// h3{
+//   color:black;
+//   // font-family: 'Roboto,"Helvetica Neue",sans-serif';
+//   font-weight: 200;
+//   font-size: 2.5em;
+//   text-align: center;
+//   margin-bottom: 0.5em;
+//   box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.76);
+// }
 
 h4{
   color:black;
@@ -66,51 +51,41 @@ h5{
   text-align: left;
 }
 
-li{
-  color:black;
-  font-family:'Book Antiqua';
-  font-size: 23px;
-  text-align: left;
-  padding-bottom: 10px;
-  margin: auto;
+// li{
+//   color:black;
+//   font-family:'Book Antiqua';
+//   font-size: 23px;
+//   text-align: left;
+//   padding-bottom: 10px;
+//   margin: auto;
 
-}
+// }
 
-ul{
-  margin: 2%;
-}
 
-.main-head {
-  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.452);
-  background-image: url("assets/images/tlo2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+// .teory-space1{
+//   background-color:#FAFAFA;
+//   height:auto;
+//   margin: auto;
+//   padding-left: 50px;
+//   padding-right: 50px;
+//   padding-bottom: 40px;
+//   padding-top: 20px;
+//   box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.452);
+// }
 
-.teory-space1{
-  background-color:#FAFAFA;
-  height:auto;
-  margin: auto;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-bottom: 40px;
-  padding-top: 20px;
-  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.452);
-}
-
-.teory-space2{
-  background-color:#FAFAFA;
-  height:auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 20px;
-  color: #424242;
-  font-family:" Roboto, Helvetica Neue ,sans-serif";
-  font-size: 1.3em;
-  text-align: left;
-  border-radius: 10px
-}
+// .teory-space2{
+//   background-color:#FAFAFA;
+//   height:auto;
+//   padding-left: 10px;
+//   padding-right: 10px;
+//   padding-top: 10px;
+//   padding-bottom: 20px;
+//   color: #424242;
+//   font-family:" Roboto, Helvetica Neue ,sans-serif";
+//   font-size: 1.3em;
+//   text-align: left;
+//   border-radius: 10px
+// }
 
 .inf-style{
   margin: 20px;
@@ -125,25 +100,19 @@ ul{
 }
 
 
-.main-page{
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-top: 10px;
-  margin-bottom: 80px;
-  background-color: #FAFAFA
-}
+
 
 .main-navigation{
   box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.452);
 }
 
-.card-style{
-  background-color: #CFD8DC;
-  margin: 10px;
-  padding: 10px;
-  min-height: 200px;
-  border-radius: 18px;
-}
+// .card-style{
+//   background-color: #CFD8DC;
+//   margin: 10px;
+//   padding: 10px;
+//   min-height: 200px;
+//   border-radius: 18px;
+// }
 
 .button-style{
   display: flex;

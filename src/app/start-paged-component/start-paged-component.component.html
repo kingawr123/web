@@ -1,61 +1,48 @@
 <body>
   <div class="main-page">
-    <div class="main-navigation main-head">
+    <header>
       <h1>PRZEKROJE FIGUR</h1>
-      <div style="padding-bottom: 3em">
-        <p class="p-startPage">Ta strona została stworzona w ramach konkursu "Zobaczyć Matematykę".</p>
-        <p class="p-startPage">Ma ona na celu wizualizacje przekrojów figur geometrycznych.</p>
+      <div>
+        <p>Ta strona została stworzona w ramach konkursu "Zobaczyć Matematykę".<br>
+          Ma ona na celu wizualizacje przekrojów figur geometrycznych.</p>
       </div>
+    </header>
+    <div class="informations">
+      <mat-card>
+        <h2>O STRONIE</h2>
+        <div class="card-text">
+          Strona ta powstała w celu zwizualizowania różnych przekrojów
+          figur geometrycznych, jak i pomóc osobom mającym trudności z wyobrażeniem sobie obiektów 3D.
+        </div>
+      </mat-card>
+
+      <mat-card>
+        <h2>O AUTORZE</h2>
+        <div class="card-text">
+          Nazywam się Kinga Wrona i jestem uczennicą pierwszej
+          klasy Liceum Ogólnokształcącego im. Juliusza Słowackiego
+          w Kielcach.
+        </div>
+      </mat-card>
     </div>
-    <div style="padding-top: 10px">
-      <div class="teory-space1">
-        <mat-grid-list cols="4" rowHeight="350px">
-          <mat-grid-tile [colspan]='2' [rowspan]='1'>
 
-            <mat-card class="card-style mat-elevation-z8">
-              <h3>O STRONIE</h3>
-              <div class="teory-space2">
-                Strona ta powstała w celu zwizualizowania różnych przekrojów
-                figur geometrycznych, jak i pomóc osobom mającym trudności z wyobrażeniem sobie obiektów 3D.
-              </div>
-            </mat-card>
+    <div class="inf-tech">
+      <ul>
+        <h2>Użyte Technologie:</h2>
+        <li>HTML</li>
+        <li>TypeScript</li>
+        <li>Angular</li>
+        <li>CSS</li>
+        <li>
+          <a target="_blank" rel="noopener noreferrer" href="https://threejs.org/">Biblioteka Three.js</a>
+        </li>
+      </ul>
 
-          </mat-grid-tile>
-
-          <mat-grid-tile [colspan]='2' [rowspan]='1'>
-            <mat-card class="card-style mat-elevation-z8">
-              <h3>O AUTORZE</h3>
-              <div class="teory-space2">
-                Nazywam się Kinga Wrona i jestem uczennicą pierwszej
-                klasy Liceum Ogólnokształcącego im. Juliusza Słowackiego
-                w Kielcach.
-              </div>
-            </mat-card>
-
-          </mat-grid-tile>
-
-          <mat-grid-tile [colspan]='2' [rowspan]='1'>
-            <ul>
-              <h4>Użyte Technologie:</h4>
-              <li>HTML</li>
-              <li>TypeScript</li>
-              <li>Angular</li>
-              <li>CSS</li>
-              <li>
-                <a target="_blank" rel="noopener noreferrer" href="https://threejs.org/">Biblioteka Three.js</a>
-              </li>
-            </ul>
-          </mat-grid-tile>
-
-          <mat-grid-tile [colspan]='2' [rowspan]='1'>
-            <ul>
-              <h4>Źródła:</h4>
-              <li>Matematyka. Podręcznik do klasy 3. Poziom rozszerzony. Liceum i technikum. Krzysztof Pazdro</li>
-            </ul>
-          </mat-grid-tile>
-
-        </mat-grid-list>
-      </div>
+      <ul>
+        <h2>Źródła:</h2>
+        <li>Matematyka. Podręcznik do klasy 3. Poziom rozszerzony. Liceum i technikum. Krzysztof Pazdro</li>
+      </ul>
     </div>
+
   </div>
 </body>
