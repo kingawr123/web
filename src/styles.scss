@@ -12,28 +12,9 @@ body {
 .main-page{
   margin: 10px 100px 30px 100px;
   font-family:"Times New Roman";
-  background-color: #FAFAFA
+  background-color: #FAFAFA;
+  border-bottom: .5px solid #d1d7df
 }
-
-
-// h2{
-//   vertical-align: middle;
-//   color:black;
-//   font-family: 'Book Antiqua';
-//   font-size: 3em;
-//   text-align: center;
-//   text-decoration-line: underline
-// }
-
-// h3{
-//   color:black;
-//   // font-family: 'Roboto,"Helvetica Neue",sans-serif';
-//   font-weight: 200;
-//   font-size: 2.5em;
-//   text-align: center;
-//   margin-bottom: 0.5em;
-//   box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.76);
-// }
 
 h4{
   color:black;
@@ -42,50 +23,6 @@ h4{
   margin-bottom: 1em;
   text-align: left;
 }
-
-h5{
-  margin: 0%;
-  color:black;
-  font-family: ' Roboto, Helvetica Neue ,sans-serif';
-  font-size: 1.5em;
-  text-align: left;
-}
-
-// li{
-//   color:black;
-//   font-family:'Book Antiqua';
-//   font-size: 23px;
-//   text-align: left;
-//   padding-bottom: 10px;
-//   margin: auto;
-
-// }
-
-
-// .teory-space1{
-//   background-color:#FAFAFA;
-//   height:auto;
-//   margin: auto;
-//   padding-left: 50px;
-//   padding-right: 50px;
-//   padding-bottom: 40px;
-//   padding-top: 20px;
-//   box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.452);
-// }
-
-// .teory-space2{
-//   background-color:#FAFAFA;
-//   height:auto;
-//   padding-left: 10px;
-//   padding-right: 10px;
-//   padding-top: 10px;
-//   padding-bottom: 20px;
-//   color: #424242;
-//   font-family:" Roboto, Helvetica Neue ,sans-serif";
-//   font-size: 1.3em;
-//   text-align: left;
-//   border-radius: 10px
-// }
 
 .inf-style{
   margin: 20px;
@@ -100,20 +37,6 @@ h5{
 }
 
 
-
-
-.main-navigation{
-  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.452);
-}
-
-// .card-style{
-//   background-color: #CFD8DC;
-//   margin: 10px;
-//   padding: 10px;
-//   min-height: 200px;
-//   border-radius: 18px;
-// }
-
 .button-style{
   display: flex;
   align-items: center;
@@ -121,10 +44,6 @@ h5{
   margin-top: 5%;
 }
 
-.tab-style{
-  color: black;
-  padding-right: 0.2em;
-}
 
 mat-slide-toggle{
   color: #424242;
@@ -151,8 +70,4 @@ router-outlet ~ * {
   height: auto;
   width: 100%;
 }
-
-// *:not(i mat-icon) {
-//   font-family: Roboto,"Helvetica Neue",sans-serif!important;
-// }
 

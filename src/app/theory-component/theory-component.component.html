@@ -3,136 +3,125 @@
     <header>
       <h1>TEORIA</h1>
     </header>
-    <mat-card class="card-style mat-elevation-z8">
-      <h3>Przekroje Wielościanów</h3>
-      <div class="teory-space2">
-        <p style="text-align: center; margin-left: 80px; margin-right: 50px">
+    <div class="theory-container">
+      <mat-card>
+        <h2>Przekroje Wielościanów</h2>
+        <p>
           <b>Przekrojem wielościanu</b> płaszczyzną π nazywamy figurę, która jest częścią wspólną płaszczyzny π i
-          tego wielościanu.<br><br>
-          Przekrojem wielościanu może być <b>wielokąt</b>, punkt, odcinek, lub zbiór pusty.<br><br>
+          tego wielościanu.
+          Przekrojem wielościanu może być <b>wielokąt</b>, punkt, odcinek, lub zbiór pusty.
         </p>
-        <div>
-          <h3>Konstrukcje</h3>
-        </div>
-        <p style="text-align: center; margin-left: 80px; margin-right: 50px">
+      </mat-card>
+      <mat-card>
+        <h2>Konstrukcje</h2>
+        <p>
           Jednym ze sposobów wyznaczania przekrojów wielościanów, jest określenie płaszczyzny przecinającej poprzez
           wyznaczenie <b>trzech niewspółliniowych punktów</b>.
           Aby przedstawić przekrój płaszczyzną π wielościanu, wystarczy skonstruować punkty przecięcia płaszczyzny
-          π z krawędziami wielościanu i połączyć punkty leżące na tych samych ścianach. <br>
+          π z krawędziami wielościanu i połączyć punkty leżące na tych samych ścianach.
         </p>
-
-        <div class="remamber-space-margin">
-          <div class="remember-space">
-
-            <ul style="font-family: 'Bookman Old'; ">
-              <h5>Pamiętaj!</h5>
-            </ul>
-
-            <mat-grid-list cols="100" rowHeight="250px">
-              <mat-grid-tile [colspan]='49' [rowspan]='1'>
-                <li>Aby wyznaczyć krawędź przecięcia się dwóch płaszczyzn (np. płaszczyzny przecinającej i
-                  płaszczyzny zawierającej ścianę wielościanu), wystarczy wyznaczyć dwa punkty należące do obu tych
-                  płaszczyzn. Prosta poprowadzona przez te punkty jest krawędzią przecięcia danych płaszczyzn.</li>
-              </mat-grid-tile>
-
-              <mat-grid-tile [colspan]='2' [rowspan]='1'></mat-grid-tile>
-
-              <mat-grid-tile [colspan]='49' [rowspan]='1'>
-                <li>Aby wyznaczyć punkt, w którym prosta <i>k </i>przebija płaszczyznę π, wystarczy wyznaczyć punkt
-                  przecięcia prostej <i>k </i> i prostej <i>l</i>, która jest krawędzią przecięcia płaszczyzny π
-                  zawierającej prostą <i>k </i>.</li>
-              </mat-grid-tile>
+      </mat-card>
+    </div>
 
 
-            </mat-grid-list>
+    <div class="remember-container">
+      <ul>
+        <li>Aby wyznaczyć krawędź przecięcia się dwóch płaszczyzn (np. płaszczyzny przecinającej i
+          płaszczyzny zawierającej ścianę wielościanu), wystarczy wyznaczyć dwa punkty należące do obu tych
+          płaszczyzn. Prosta poprowadzona przez te punkty jest krawędzią przecięcia danych płaszczyzn.
+        </li>
 
-          </div>
-        </div>
-      </div>
-    </mat-card>
+        <li>Aby wyznaczyć punkt, w którym prosta <i>k </i>przebija płaszczyznę π, wystarczy wyznaczyć punkt
+          przecięcia prostej <i>k </i> i prostej <i>l</i>, która jest krawędzią przecięcia płaszczyzny π
+          zawierającej prostą <i>k </i>.
+        </li>
+      </ul>
+    </div>
 
+    <div class="example">
+      <mat-card>
+        <h3>Przykład</h3>
 
-    <div style="min-height: 700px">
-      <mat-card class="card-style mat-elevation-z8">
-        <div class="teory-space2">
-          <div>
-            <h3>Przykład</h3>
-          </div>
+        <mat-tab-group mat-stretch-tabs="center" style="height: 80%">
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <div class="tab-style">Treść</div>
+            </ng-template>
+            <div class="text-with-cube">
 
-          <mat-tab-group mat-stretch-tabs="center" style="height: 80%">
-            <mat-tab>
-              <ng-template mat-tab-label>
-                <div class="tab-style">Treść</div>
-              </ng-template>
-              <div class="teory-space2">
+              <mat-grid-list cols="2" rowHeight="350px">
+                <mat-grid-tile [colspan]='1' [rowspan]='1'>
+                  <p>
+                    Na sześcianie ABCDA'B'C'D' zostały zazaczone punkty P i Q, które odpowiednio należą do
+                    krawędzi C'D' i A'D'. Skonstruuj przekrój sześcianu płaszczyzną PQB.
+                  </p>
+                </mat-grid-tile>
 
-                <mat-grid-list cols="2" rowHeight="350px">
-                  <mat-grid-tile [colspan]='1' [rowspan]='1'>
-                    <p>
-                      Na sześcianie ABCDA'B'C'D' zostały zazaczone punkty P i Q, które odpowiednio należą do
-                      krawędzi C'D' i A'D'. Skonstruuj przekrój sześcianu płaszczyzną PQB.
-                    </p>
-                  </mat-grid-tile>
+                <mat-grid-tile [colspan]='1' [rowspan]='1'>
+                  <img class="img-szescian" src="../../assets/images/szescian.png" />
+                </mat-grid-tile>
+              </mat-grid-list>
 
-                  <mat-grid-tile [colspan]='1' [rowspan]='1'>
-                    <img class="img-szescian" src="assets/images/szescian.png" />
-                  </mat-grid-tile>
-                </mat-grid-list>
+            </div>
+          </mat-tab>
 
-              </div>
-            </mat-tab>
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <div class="tab-style">Gotowa konstrukcja</div>
+            </ng-template>
 
-            <mat-tab>
-              <ng-template mat-tab-label>
-                <div class="tab-style">Gotowa konstrukcja</div>
-              </ng-template>
-              <div class="teory-space2">
+            <div>
+              <mat-tab-group mat-stretch-tabs="center">
+                <mat-tab>
+                  <ng-template mat-tab-label>
+                    <div class="tab-style">Pierwszy krok</div>
+                  </ng-template>
+                  <div class="img-of-cube">
+                    <img class="img-szescian-zrobiony" src="../../assets/images/szescian1.png">
+                  </div>
+                </mat-tab>
+                <mat-tab>
+                  <ng-template mat-tab-label>
+                    <div class="tab-style">Drugi krok</div>
+                  </ng-template>
+                  <div class="img-of-cube">
+                    <img class="img-szescian-zrobiony" src="../../assets/images/szescian2.png">
+                  </div>
+                </mat-tab>
+                <mat-tab>
+                  <ng-template mat-tab-label>
+                    <div class="tab-style">Trzeci krok</div>
+                  </ng-template>
+                  <div class="img-of-cube">
+                    <img class="img-szescian-zrobiony" src="../../assets/images/szescian3.png">
+                  </div>
+                </mat-tab>
+                <mat-tab>
+                  <ng-template mat-tab-label>
+                    <div class="tab-style">Czwarty krok</div>
+                  </ng-template>
+                  <div class="img-of-cube">
+                    <img class="img-szescian-zrobiony" src="../../assets/images/szescian4.png">
+                  </div>
+                </mat-tab>
+                <mat-tab>
+                  <ng-template mat-tab-label>
+                    <div class="tab-style">Piąty krok</div>
+                  </ng-template>
+                  <div class="img-of-cube">
+                    <img class="img-szescian-zrobiony" src="../../assets/images/szescian5.png">
+                  </div>
+                </mat-tab>
+              </mat-tab-group>
+            </div>
+          </mat-tab>
 
-                <mat-tab-group mat-stretch-tabs="center" class="tab-example-style">
-                  <mat-tab>
-                    <ng-template mat-tab-label>
-                      <div class="tab-style">Pierwszy krok</div>
-                    </ng-template>
-                    <hr>
-                    <img class="img-szescian-zrobiony" src="assets/images/szescian1.png">
-                  </mat-tab>
-                  <mat-tab>
-                    <ng-template mat-tab-label>
-                      <div class="tab-style">Drugi krok</div>
-                    </ng-template>
-                    <hr>
-                    <img class="img-szescian-zrobiony" src="assets/images/szescian2.png">
-                  </mat-tab>
-                  <mat-tab>
-                    <ng-template mat-tab-label>
-                      <div class="tab-style">Trzeci krok</div>
-                    </ng-template>
-                    <hr>
-                    <img class="img-szescian-zrobiony" src="assets/images/szescian3.png">
-                  </mat-tab>
-                  <mat-tab>
-                    <ng-template mat-tab-label>
-                      <div class="tab-style">Czwarty krok</div>
-                    </ng-template>
-                    <hr>
-                    <img class="img-szescian-zrobiony" src="assets/images/szescian4.png">
-                  </mat-tab>
-                  <mat-tab>
-                    <ng-template mat-tab-label>
-                      <div class="tab-style">Piąty krok</div>
-                    </ng-template>
-                    <hr>
-                    <img class="img-szescian-zrobiony" src="assets/images/szescian5.png">
-                  </mat-tab>
-                </mat-tab-group>
-              </div>
-            </mat-tab>
-
-            <mat-tab>
-              <ng-template mat-tab-label>
-                <div class="tab-style">Opis konstrukcji</div>
-              </ng-template>
-              <div class="teory-space2">
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <div class="tab-style">Opis konstrukcji</div>
+            </ng-template>
+            <div class="description">
+              <ul>
                 <li>
                   Prowadzimy 2 proste, które są przedłużeniami krawędzi sześcinu DC i DA.
                 </li>
@@ -152,11 +141,11 @@
                 <li>
                   Pięciokąt QPX3BX4 jest szukanym przez nas przekrojem sześcianu.
                 </li>
-              </div>
-            </mat-tab>
+              </ul>
+            </div>
+          </mat-tab>
 
-          </mat-tab-group>
-        </div>
+        </mat-tab-group>
       </mat-card>
     </div>
   </div>

@@ -20,24 +20,101 @@ header h1 {
   font-size: 4.8em;
 }
 
-.remamber-space-margin{
-margin: 5%;
+//theory
+
+.theory-container {
+  margin: 20px 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 15px;
 }
 
-.remember-space{
-  padding: 10px;
-  font-size: 1.5em;
-  color: black;
-  text-align: left;
-  font-family: "Helvetica Neue",sans-serif;
-  box-sizing: border-box;
-  border: 4px solid #000000;
-  border-radius: 18px;
-  background-color: lavender;
+.theory-container mat-card {
+  width: 45%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.tab-example-style{
+.theory-container h2 {
+  font-weight: 200;
+  font-size: 2.8em;
+  width: 100%;
   text-align: center;
+  background-color: #CFD8DC;
+  margin: 0;
+  padding: 5px 0;
+  border-bottom: .5px solid #d1d7df
+}
+
+.theory-container p {
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 20px;
+}
+
+//remamber-container
+
+.remember-container {
+  margin: 40px 0;
+  background-color: #CFD8DC;
+  border: .5px solid black;
+}
+
+.remember-container ul {
+  margin: 0 100px;
+  padding: 25px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+.remember-container li {
+  font-size: 1.4em;
+  width: 45%;
+}
+
+//example
+
+.example {
+  // min-height: 600px;
+  margin: 0;
+  padding: 0;
+}
+
+.example mat-card {
+  margin: 0;
+  padding: 0;
+}
+
+.example h3 {
+  font-weight: 200;
+  font-size: 2.8em;
+  width: 100%;
+  text-align: center;
+  background-color: #CFD8DC;
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: .5px solid #d1d7df
+}
+
+.example .tab-style {
+  color: black;
+  padding-right: 0.2em;
+}
+
+.text-with-cube {
+  margin: 20px 40px;
+}
+
+.text-with-cube p {
+  font-size: 1.7em;
 }
 
 .img-plaszczyzna{
@@ -54,11 +131,29 @@ margin: 5%;
   border: 2px solid #000000;
   box-sizing: border-box;
 }
+
+.img-of-cube{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
 .img-szescian-zrobiony{
   width: 1024px;
   height: 507px;
-  box-align: center;
-  background-repeat: no-repeat;
-  border: 2px solid #000000;
-  box-sizing: border-box;
 }
+
+.description {
+  margin: 0;
+  padding: 0;
+}
+
+.description ul {
+  margin: 20px 30px;
+}
+
+.description li {
+  font-size: 1.4em;
+}
+
