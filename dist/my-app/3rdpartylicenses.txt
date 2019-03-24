@@ -404,17 +404,17 @@ THE SOFTWARE.
 
 @angular/material/card
 
-@angular/forms
-MIT
-
 @angular/animations
 MIT
 
-@angular/material/slide-toggle
-
 @angular/material/tabs
 
+@angular/forms
+MIT
+
 @angular/material/slider
+
+@angular/material/slide-toggle
 
 @angular/material/button
 
