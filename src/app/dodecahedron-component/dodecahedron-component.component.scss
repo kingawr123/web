@@ -1,0 +1,50 @@
+.card-with-inf {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-with-inf mat-card {
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+
+.card-with-inf h1 {
+  font-weight: 200;
+  font-size: 2.5em;
+  width: 100%;
+  text-align: center;
+  background-color: #CFD8DC;
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: .5px solid #d1d7df
+}
+
+.info{
+  margin: 0;
+  padding: 5px 20px;
+  border: 4px solid #c8cce2;
+}
+
+.info p {
+  font-size: 1.1em;
+  color: #424242;
+  text-align: center;
+  font-family: "Helvetica Neue",sans-serif;
+}
+
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 10px 150px;
+}
+
+.buttons button {
+  margin-left: 0.5em;
+  color:white;
+  background-color: rgb(70, 73, 83);
+}

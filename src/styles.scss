@@ -16,35 +16,6 @@ body {
   border-bottom: .5px solid #d1d7df
 }
 
-h4{
-  color:black;
-  font-family:'Book Antiqua';
-  font-size: 2em;
-  margin-bottom: 1em;
-  text-align: left;
-}
-
-.inf-style{
-  margin: 20px;
-  padding: 10px;
-  font-size: 1.1em;
-  color: #424242;
-  text-align: center;
-  font-family: "Helvetica Neue",sans-serif;
-  box-sizing: border-box;
-  border: 4px solid #c8cce2;
-  border-radius: 18px;
-}
-
-
-.button-style{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 5%;
-}
-
-
 mat-slide-toggle{
   color: #424242;
 }
@@ -59,10 +30,6 @@ mat-slider{
   height: auto;
   box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.452);
   padding: 0%;
-}
-
-.all{
-  margin: auto;
 }
 
 router-outlet ~ * {

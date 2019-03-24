@@ -3,7 +3,13 @@ mat-toolbar {
 
   a {
     margin-left: 0.5em;
-    color:white;
-    background-color: #424242;
+    font-size: 0.7em;
+    color :white;
+    background-color: rgb(70, 73, 83);
+    text-transform: uppercase;
+  }
+
+  a:hover {
+    background-color: rgb(145, 170, 180);
   }
 }

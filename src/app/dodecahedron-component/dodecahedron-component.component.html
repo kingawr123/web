@@ -1,54 +1,35 @@
-<div class="all">
-  <mat-grid-list cols="100">
-    <mat-grid-tile [colspan]='100' [rowspan]='1'></mat-grid-tile>
-    <mat-grid-tile [colspan]='50' [rowspan]='49'>
+<mat-grid-list cols="100">
+  <mat-grid-tile [colspan]='100' [rowspan]='1'></mat-grid-tile>
+  <mat-grid-tile [colspan]='50' [rowspan]='49'>
+    <div class="renderElement" style="background-color: black; padding-bottom: 20px"></div>
+  </mat-grid-tile>
 
-      <div class="renderElement" style="background-color: black; padding-bottom: 20px"></div>
-
-    </mat-grid-tile>
-
-    <mat-grid-tile [colspan]='48' [rowspan]='49'>
-      <mat-card class="card-style mat-elevation-z8">
-        <h3>DWUNASTOŚCIAN FOREMNY</h3>
-        <mat-slide-toggle [(ngModel)]="planeVisibilityService.IsVisible">Pokaż płaszczyznę</mat-slide-toggle>
+  <mat-grid-tile [colspan]='48' [rowspan]='49'>
+    <div class="card-with-inf">
+      <mat-card>
+        <h1>DWUNASTOŚCIAN FOREMNY</h1>
+        <div class="info">
+          <p>Możesz poruszać figurą przytrzymując lewy przycisk myszy i poruszając nią!</p>
+        </div>
         <div>
           <mat-tab-group style="height: 80%" (selectedTabChange)="tabChanged($event)">
             <mat-tab>
               <ng-template mat-tab-label>
                 <div class="tab-style">Sześciokąt</div>
               </ng-template>
-              <div class="teory-space2">
-                <div class="teory-space2">
-
-                </div>
-                <mat-grid-list cols="40" rowHeight="50px">
-                  <mat-grid-tile [colspan]='10' [rowspan]='1'>
-                    <div class="slide-box">W:
-                      <mat-slider min="-3" max="3" step="0.001" [ngModel]="planeVector.w"
-                        (input)="planeVector.setW($event.value)" color="primary"></mat-slider>
-                    </div>
-                  </mat-grid-tile>
-
-                  <!-- <mat-grid-tile [colspan]='10' [rowspan]='1'>
-                    <div class="slide-box">Y:
-                      <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.y"
-                        (input)="planeVector.setY($event.value)" color="primary"></mat-slider>
-                    </div>
-                  </mat-grid-tile> -->
-                  <!-- <mat-grid-tile [colspan]='10' [rowspan]='1'>
-                    <div class="slide-box">Z:
-                      <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.z"
-                        (input)="planeVector.setZ($event.value)" color="primary"></mat-slider>
-                    </div>
-                  </mat-grid-tile> -->
-                </mat-grid-list>
-
-                <div class="button-style">
-                  <button mat-raised-button (click)="reset1()">
-                    <mat-icon>refresh</mat-icon> Reset
-                  </button>
-                </div>
-
+              <mat-grid-list cols="40" rowHeight="100px">
+                <mat-grid-tile [colspan]='10' [rowspan]='1'>
+                  <div class="slide-box">W:
+                    <mat-slider min="-3" max="3" step="0.001" [ngModel]="planeVector.w"
+                      (input)="planeVector.setW($event.value)" color="primary"></mat-slider>
+                  </div>
+                </mat-grid-tile>
+              </mat-grid-list>
+              <div class="buttons">
+                <mat-slide-toggle [(ngModel)]="planeVisibilityService.IsVisible">Pokaż płaszczyznę</mat-slide-toggle>
+                <button mat-raised-button (click)="reset1()">
+                  <mat-icon>refresh</mat-icon> Reset
+                </button>
               </div>
             </mat-tab>
 
@@ -56,32 +37,27 @@
               <ng-template mat-tab-label>
                 <div class="tab-style">Czworokąt</div>
               </ng-template>
-              <div class="teory-space2">
-                <div class="teory-space2">
+              <mat-grid-list cols="40" rowHeight="100px">
+                <mat-grid-tile [colspan]='10' [rowspan]='1'>
+                  <div class="slide-box">W:
+                    <mat-slider min="-3" max="3" step="0.001" [ngModel]="planeVector.w"
+                      (input)="planeVector.setW($event.value)" color="primary"></mat-slider>
+                  </div>
+                </mat-grid-tile>
 
-                </div>
-                <mat-grid-list cols="40" rowHeight="50px">
-                  <mat-grid-tile [colspan]='10' [rowspan]='1'>
-                    <div class="slide-box">W:
-                      <mat-slider min="-3" max="3" step="0.001" [ngModel]="planeVector.w"
-                        (input)="planeVector.setW($event.value)" color="primary"></mat-slider>
-                    </div>
-                  </mat-grid-tile>
+                <mat-grid-tile [colspan]='10' [rowspan]='1'>
+                  <div class="slide-box">Y:
+                    <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.y"
+                      (input)="planeVector.setY($event.value)" color="primary"></mat-slider>
+                  </div>
+                </mat-grid-tile>
 
-                  <mat-grid-tile [colspan]='10' [rowspan]='1'>
-                    <div class="slide-box">Y:
-                      <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.y"
-                        (input)="planeVector.setY($event.value)" color="primary"></mat-slider>
-                    </div>
-                  </mat-grid-tile>
-
-                </mat-grid-list>
-
-                <div class="button-style">
-                  <button mat-raised-button (click)="reset2()">
-                    <mat-icon>refresh</mat-icon> Reset
-                  </button>
-                </div>
+              </mat-grid-list>
+              <div class="buttons">
+                <mat-slide-toggle [(ngModel)]="planeVisibilityService.IsVisible">Pokaż płaszczyznę</mat-slide-toggle>
+                <button mat-raised-button (click)="reset2()">
+                  <mat-icon>refresh</mat-icon> Reset
+                </button>
               </div>
             </mat-tab>
 
@@ -89,37 +65,32 @@
               <ng-template mat-tab-label>
                 <div class="tab-style">Trójkąt</div>
               </ng-template>
-              <div class="teory-space2">
-                <div class="teory-space2">
+              <mat-grid-list cols="40" rowHeight="100px">
+                <mat-grid-tile [colspan]='10' [rowspan]='1'>
+                  <div class="slide-box">W:
+                    <mat-slider min="-3" max="3" step="0.001" [ngModel]="planeVector.w"
+                      (input)="planeVector.setW($event.value)" color="primary"></mat-slider>
+                  </div>
+                </mat-grid-tile>
 
-                </div>
-                <mat-grid-list cols="40" rowHeight="50px">
-                  <mat-grid-tile [colspan]='10' [rowspan]='1'>
-                    <div class="slide-box">W:
-                      <mat-slider min="-3" max="3" step="0.001" [ngModel]="planeVector.w"
-                        (input)="planeVector.setW($event.value)" color="primary"></mat-slider>
-                    </div>
-                  </mat-grid-tile>
-
-                  <mat-grid-tile [colspan]='10' [rowspan]='1'>
-                    <div class="slide-box">Y:
-                      <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.y"
-                        (input)="planeVector.setY($event.value)" color="primary"></mat-slider>
-                    </div>
-                  </mat-grid-tile>
-                  <mat-grid-tile [colspan]='10' [rowspan]='1'>
-                    <div class="slide-box">Z:
-                      <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.z"
-                        (input)="planeVector.setZ($event.value)" color="primary"></mat-slider>
-                    </div>
-                  </mat-grid-tile>
-                </mat-grid-list>
-
-                <div class="button-style">
-                  <button mat-raised-button (click)="reset3()">
-                    <mat-icon>refresh</mat-icon> Reset
-                  </button>
-                </div>
+                <mat-grid-tile [colspan]='10' [rowspan]='1'>
+                  <div class="slide-box">Y:
+                    <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.y"
+                      (input)="planeVector.setY($event.value)" color="primary"></mat-slider>
+                  </div>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]='10' [rowspan]='1'>
+                  <div class="slide-box">Z:
+                    <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.z"
+                      (input)="planeVector.setZ($event.value)" color="primary"></mat-slider>
+                  </div>
+                </mat-grid-tile>
+              </mat-grid-list>
+              <div class="buttons">
+                <mat-slide-toggle [(ngModel)]="planeVisibilityService.IsVisible">Pokaż płaszczyznę</mat-slide-toggle>
+                <button mat-raised-button (click)="reset3()">
+                  <mat-icon>refresh</mat-icon> Reset
+                </button>
               </div>
             </mat-tab>
 
@@ -127,45 +98,37 @@
               <ng-template mat-tab-label>
                 <div class="tab-style">Pięciokąt</div>
               </ng-template>
-              <div class="teory-space2">
-                <div class="teory-space2">
+              <mat-grid-list cols="40" rowHeight="100px">
+                <mat-grid-tile [colspan]='10' [rowspan]='1'>
+                  <div class="slide-box">W:
+                    <mat-slider min="-3" max="3" step="0.001" [ngModel]="planeVector.w"
+                      (input)="planeVector.setW($event.value)" color="primary"></mat-slider>
+                  </div>
+                </mat-grid-tile>
 
-                </div>
-                <mat-grid-list cols="40" rowHeight="50px">
-                  <mat-grid-tile [colspan]='10' [rowspan]='1'>
-                    <div class="slide-box">W:
-                      <mat-slider min="-3" max="3" step="0.001" [ngModel]="planeVector.w"
-                        (input)="planeVector.setW($event.value)" color="primary"></mat-slider>
-                    </div>
-                  </mat-grid-tile>
-
-                  <mat-grid-tile [colspan]='10' [rowspan]='1'>
-                    <div class="slide-box">Y:
-                      <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.y"
-                        (input)="planeVector.setY($event.value)" color="primary"></mat-slider>
-                    </div>
-                  </mat-grid-tile>
-                  <mat-grid-tile [colspan]='10' [rowspan]='1'>
-                    <div class="slide-box">Z:
-                      <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.z"
-                        (input)="planeVector.setZ($event.value)" color="primary"></mat-slider>
-                    </div>
-                  </mat-grid-tile>
-                </mat-grid-list>
-
-                <div class="button-style">
-                  <button mat-raised-button (click)="reset4()">
-                    <mat-icon>refresh</mat-icon> Reset
-                  </button>
-                </div>
+                <mat-grid-tile [colspan]='10' [rowspan]='1'>
+                  <div class="slide-box">Y:
+                    <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.y"
+                      (input)="planeVector.setY($event.value)" color="primary"></mat-slider>
+                  </div>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]='10' [rowspan]='1'>
+                  <div class="slide-box">Z:
+                    <mat-slider min="-1" max="0.99" step="0.01" [ngModel]="planeVector.z"
+                      (input)="planeVector.setZ($event.value)" color="primary"></mat-slider>
+                  </div>
+                </mat-grid-tile>
+              </mat-grid-list>
+              <div class="buttons">
+                <mat-slide-toggle [(ngModel)]="planeVisibilityService.IsVisible">Pokaż płaszczyznę</mat-slide-toggle>
+                <button mat-raised-button (click)="reset4()">
+                  <mat-icon>refresh</mat-icon> Reset
+                </button>
               </div>
             </mat-tab>
-
           </mat-tab-group>
         </div>
       </mat-card>
-
-    </mat-grid-tile>
-
-  </mat-grid-list>
-</div>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
